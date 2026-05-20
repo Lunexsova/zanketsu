@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Pages -->
+  <url>
+    <loc>https://zanketsu.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Affiliate Marketing Program Pages -->
+  <url>
+    <loc>https://zanketsu.com/marketing.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/marketing-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/marketing.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/marketing-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/marketing-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/marketing.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://zanketsu.com/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/legal-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/legal.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/legal-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/legal-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/legal.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Blog Index Pages -->
+  <url>
+    <loc>https://zanketsu.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 1: Clinic Management -->
+  <url>
+    <loc>https://zanketsu.com/blog/eyadat-nizam-idara-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/clinic-management-system-danger-signs-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/clinic-management-system-danger-signs-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/clinic-management-system-danger-signs-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 2: Why Beauty Clinics Fail -->
+  <url>
+    <loc>https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/why-beauty-clinics-fail-first-year-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/why-beauty-clinics-fail-first-year-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/why-beauty-clinics-fail-first-year-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 3: Gym Digital Transformation -->
+  <url>
+    <loc>https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/gym-fitness-digital-brand-transformation-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/gym-fitness-digital-brand-transformation-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/gym-fitness-digital-brand-transformation-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 4: Salon & Spa Industry Trends -->
+  <url>
+    <loc>https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/salon-spa-industry-trends-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/salon-spa-industry-trends-2026-2027.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/salon-spa-industry-trends-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 5: SaaS vs Desktop Software -->
+  <url>
+    <loc>https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/saas-vs-desktop-software-business-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/saas-vs-desktop-software-business-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/saas-vs-desktop-software-business-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 6: Passive Income Guide -->
+  <url>
+    <loc>https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/passive-income-affiliate-marketing-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/passive-income-affiliate-marketing-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/passive-income-affiliate-marketing-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
