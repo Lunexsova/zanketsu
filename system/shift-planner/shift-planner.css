@@ -1,0 +1,392 @@
+:root {
+    --void: #050508;
+    --obsidian: #0a0a10;
+    --ink: #12121a;
+    --amber: #f59e0b;
+    --amber-glow: rgba(245, 158, 11, 0.25);
+    --white: #fafafa;
+    --silver: #a8a8b3;
+    --border-color: rgba(245, 158, 11, 0.12);
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-ar);
+    background: var(--void);
+    color: var(--white);
+    min-height: 100vh;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app-container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(10, 10, 16, 0.5);
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+}
+
+.back-btn:hover {
+    color: var(--amber);
+    border-color: var(--amber);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+}
+
+.planner-sidebar, .planner-main {
+    background: var(--obsidian);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.section-title-amber {
+    color: var(--amber);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--silver);
+    margin-bottom: 0.4rem;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.65rem 0.9rem;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--amber);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--amber);
+    color: var(--void);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.employee-list {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.employee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.employee-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.employee-info {
+    display: flex;
+    align-items: center;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.day-column {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.day-header {
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--amber);
+    background: rgba(245, 158, 11, 0.05);
+    padding: 0.35rem;
+    border-radius: 4px;
+}
+
+.shift-slot {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.shift-slot:hover {
+    border-color: var(--amber);
+    background: rgba(245, 158, 11, 0.03);
+}
+
+.shift-slot-header {
+    color: var(--silver);
+    font-size: 0.7rem;
+    margin-bottom: 0.25rem;
+}
+
+.assigned-employee {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: var(--void);
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.remove-assign-btn {
+    border: none;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.remove-assign-btn:hover {
+    color: #ef4444;
+}
+
+.cost-panel {
+    background: rgba(245, 158, 11, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.cost-label {
+    font-size: 0.95rem;
+    color: var(--silver);
+}
+
+.cost-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--amber);
+    font-family: var(--font-en);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.export-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--silver);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    color: var(--white);
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+@media print {
+    .zank-nav, .zank-footer, .back-btn, .planner-sidebar, .export-row, .remove-assign-btn {
+        display: none !important;
+    }
+    .app-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+    }
+    .planner-main {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: #fff;
+        color: #000;
+    }
+    .calendar-grid {
+        grid-template-columns: repeat(7, 1fr) !important;
+        display: grid !important;
+    }
+    .day-column {
+        border: 1px solid #ccc;
+        background: #fff;
+        min-height: auto;
+    }
+    .day-header {
+        background: #eee;
+        color: #000;
+    }
+    .shift-slot {
+        border: 1px solid #ddd;
+        min-height: 50px;
+    }
+    .cost-panel {
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        color: #000;
+    }
+    .cost-value {
+        color: #000;
+    }
+    .watermark-print {
+        display: block !important;
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.8rem;
+        color: #777;
+        border-top: 1px dashed #ccc;
+        padding-top: 1rem;
+    }
+}
+
+.watermark-print {
+    display: none;
+}
+
+select option {
+    background-color: #12121a;
+    color: #fafafa;
+}
