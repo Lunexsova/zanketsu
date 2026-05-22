@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bold monochromatic catalog templates for tech businesses, hipster salons, and modern creative studios. Minimal design with maximum impact. Free by Zanketsu.">
+    <meta name="keywords" content="monospace catalog, typewriter design, tech business template, hipster salon, mono catalog, Zanketsu">
+    <meta name="author" content="Zanketsu">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="كتالوج الآلة الكاتبة الرقمية — تصاميم مونوسبيس | زانكتسو">
+    <meta property="og:description" content="كتالوج خدمات بتصاميم أحادية اللون وخطوط مونوسبيس. Terminal Green, Typewriter Beige, Clean Mono. مجاني 100% من زانكتسو.">
+    <meta property="og:type" content="website">
+    
+    <title>Monospace Typewriter Catalog — Zanketsu Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/icons.min.css">
+    <style>
+        :root{--void:#050505;--obsidian:#0a0a0a;--silver:#888;--white:#f5f5f5;--font-ar:'Cairo',sans-serif;--font-mono:'Courier New',monospace;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:var(--font-ar);background:var(--void);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1rem;position:relative;overflow-x:hidden;}
+        body::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.02) 0%,transparent 70%);pointer-events:none;}
+        .container{max-width:1040px;width:100%;text-align:center;position:relative;}
+        .back-btn{position:absolute;top:2rem;right:2rem;display:inline-flex;align-items:center;gap:.5rem;color:var(--silver);text-decoration:none;font-size:.82rem;padding:.5rem 1rem;border:1px solid rgba(255,255,255,.1);border-radius:2px;font-family:var(--font-mono);transition:all .3s;}
+        .back-btn:hover{color:var(--white);border-color:rgba(255,255,255,.4);}
+        .header{margin-bottom:3.5rem;}
+        .header h1{font-size:2rem;font-weight:900;color:var(--white);margin-bottom:.8rem;font-family:var(--font-mono);letter-spacing:.06em;}
+        .header p{font-size:.88rem;color:var(--silver);font-family:var(--font-mono);}
+        .design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
+        .design-card{background:var(--obsidian);border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:1.2rem;cursor:pointer;transition:all .4s;text-decoration:none;color:inherit;}
+        .design-card:hover{border-color:rgba(255,255,255,.45);transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.5);}
+        .design-mockup{width:100%;aspect-ratio:3/4;border-radius:2px;padding:.9rem;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;}
+        .design-card[data-style="mono"]       .design-mockup{background:#fff;border:2px solid #111;}
+        .design-card[data-style="typewriter"] .design-mockup{background:#f8f4ec;border:1px solid #555;}
+        .design-card[data-style="terminal"]   .design-mockup{background:#0a1a0a;border:1px solid #00ff41;}
+        .mock-title-bar{width:50%;height:6px;margin:0 auto 8px;border-radius:1px;}
+        .design-card[data-style="mono"] .mock-title-bar{background:#111;}
+        .design-card[data-style="typewriter"] .mock-title-bar{background:#333;}
+        .design-card[data-style="terminal"] .mock-title-bar{background:#00ff41;}
+        .mock-body{flex:1;display:flex;flex-direction:column;gap:5px;}
+        .mock-cat{width:40%;height:4px;border-radius:1px;}
+        .design-card[data-style="mono"] .mock-cat{background:#000;}
+        .design-card[data-style="typewriter"] .mock-cat{background:#333;}
+        .design-card[data-style="terminal"] .mock-cat{background:#00ff41;}
+        .mock-row{display:flex;justify-content:space-between;}
+        .mock-item-bar{width:50%;height:3px;border-radius:1px;}
+        .design-card[data-style="mono"] .mock-item-bar{background:#ccc;}
+        .design-card[data-style="typewriter"] .mock-item-bar{background:#bbb;}
+        .design-card[data-style="terminal"] .mock-item-bar{background:rgba(0,255,65,.5);}
+        .mock-price-bar{width:13%;height:3px;border-radius:1px;}
+        .design-card[data-style="mono"] .mock-price-bar{background:#000;}
+        .design-card[data-style="typewriter"] .mock-price-bar{background:#333;}
+        .design-card[data-style="terminal"] .mock-price-bar{background:#00ff41;}
+        .mock-footer-line{width:40px;height:2px;margin:0 auto;border-radius:1px;}
+        .design-card[data-style="mono"] .mock-footer-line{background:#ccc;}
+        .design-card[data-style="typewriter"] .mock-footer-line{background:#aaa;}
+        .design-card[data-style="terminal"] .mock-footer-line{background:rgba(0,255,65,.4);}
+        .design-name{font-size:1rem;font-weight:700;font-family:var(--font-mono);letter-spacing:.05em;}
+        .design-desc{font-size:.78rem;color:var(--silver);text-align:center;line-height:1.5;font-family:var(--font-mono);}
+        @media(max-width:900px){.design-grid{grid-template-columns:1fr 1fr;}.back-btn{position:static;margin-bottom:2rem;}}
+        @media(max-width:560px){.design-grid{grid-template-columns:1fr;}}
+    </style>
+
+    <!-- JSON-LD Structured Data / SEO Schema -->
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Zanketsu Monospace Typewriter Catalog",
+        "url": "https://zanketsu.com/system/EN/mono/",
+        "description": "Bold monochromatic catalog templates for tech businesses, creative studios, and modern salons.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zanketsu",
+            "url": "https://zanketsu.com"
+        }
+    }
+    </script>
+    <!-- hreflang: tells Google this page has Arabic/English equivalents -->
+    <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/mono/">
+    <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/mono/">
+    <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/mono/">
+</head>
+<body>
+    <!-- nav:zanketsu-shared -->
+    <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+    <nav class="zank-nav" id="zankNav">
+        <a href="../../../index-en.html" class="zank-nav-logo">
+            <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+        </a>
+        <ul class="zank-nav-links">
+            <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+            <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+            <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+            <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+            <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+            <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+            <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+        </ul>
+        
+        <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+    </nav>
+    <div class="zank-mobile-overlay" id="zankMobileOverlay">
+        <div class="zank-mobile-drawer">
+            <div class="zank-mobile-header">
+                <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+                <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <ul class="zank-mobile-links">
+                <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+                <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+                <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+                <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+                <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+                <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+                <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+            </ul>
+            <div class="zank-mobile-footer">
+                <div class="zank-hero-badge">
+                    <i class="ph-duotone ph-clock-countdown"></i>
+                    قادم في 2027
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var t=document.getElementById("zankNavToggle");
+        var o=document.getElementById("zankMobileOverlay");
+        var c=document.getElementById("zankMobileClose");
+        if(t&&o&&c){
+            t.addEventListener("click",function(){o.classList.add("open");});
+            c.addEventListener("click",function(){o.classList.remove("open");});
+            o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+        }
+    })();
+    </script>
+
+    <a href="../../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> ../index.html</a>
+    <div class="container">
+        <div class="header">
+            <h1>> CATALOG_MONO_STUDIO.exe</h1>
+            <p>// تصاميم أحادية اللون بخطوط برمجية لمن يفضلون الأناقة الصامتة والتميز غير التقليدي</p>
+        </div>
+        <div class="design-grid">
+            <a href="editor.html?theme=mono" class="design-card" data-style="mono">
+                <div class="design-mockup">
+                    <div class="mock-title-bar"></div>
+                    <div class="mock-body">
+                        <div class="mock-cat"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                    </div>
+                    <div class="mock-footer-line"></div>
+                </div>
+                <div class="design-name">CLEAN_MONO</div>
+                <p class="design-desc">// أبيض ناصع + أسود فاحم. لا ألوان، لا تشويش. التميز في البساطة.</p>
+            </a>
+            <a href="editor.html?theme=typewriter" class="design-card" data-style="typewriter">
+                <div class="design-mockup">
+                    <div class="mock-title-bar"></div>
+                    <div class="mock-body">
+                        <div class="mock-cat"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                    </div>
+                    <div class="mock-footer-line"></div>
+                </div>
+                <div class="design-name">TYPEWRITER_BEIGE</div>
+                <p class="design-desc">// ورق بيج عتيق بخط آلة كاتبة كلاسيكية لمن يحبون الأصالة والتراث.</p>
+            </a>
+            <a href="editor.html?theme=terminal" class="design-card" data-style="terminal">
+                <div class="design-mockup">
+                    <div class="mock-title-bar"></div>
+                    <div class="mock-body">
+                        <div class="mock-cat"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                    </div>
+                    <div class="mock-footer-line"></div>
+                </div>
+                <div class="design-name">TERMINAL_GREEN</div>
+                <p class="design-desc">// أخضر نيون على أسود مثل شاشة الـ terminal. للأعمال التكنولوجية الجريئة.</p>
+            </a>
+        </div>
+    </div>
+    <!-- footer:zanketsu-shared -->
+    <footer class="zank-footer">
+        <a href="../../../index-en.html" class="zank-footer-logo">
+            <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+        </a>
+        <div class="zank-footer-links">
+            <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> الرئيسية</a>
+            <a href="../../index.html"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a>
+            <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a>
+            <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> الشروط</a>
+            <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> الخصوصية</a>
+        </div>
+        
+        <p class="zank-footer-copy">
+            <i class="ph-duotone ph-copyright"></i>
+            <span>جميع الحقوق محفوظة</span>
+            <span>&copy; 2026 Zanketsu</span>
+            <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+        </p>
+    </footer>
+</body>
+</html>

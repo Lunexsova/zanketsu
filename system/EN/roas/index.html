@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free ROAS & Ad Performance Calculator — Zanketsu</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Calculate Return on Ad Spend (ROAS), Customer Acquisition Cost (CAC), and net profit for your social media campaigns in one click. Essential marketing ROI tool. Free by Zanketsu.">
+    <meta name="keywords" content="ROAS calculator, ad performance, customer acquisition cost, CAC, marketing ROI, social media ads, Zanketsu">
+    <meta name="author" content="Zanketsu (زانكتسو)">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Icons CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="roas.css">
+
+    <!-- JSON-LD Structured Data / SEO Schema -->
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Zanketsu ROAS & Ad Performance Calculator",
+        "url": "https://zanketsu.com/system/EN/roas/",
+        "description": "Calculate ROAS, CAC, and net profit for social media ad campaigns with a single click.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zanketsu",
+            "url": "https://zanketsu.com"
+        }
+    }
+    </script>
+    <!-- hreflang: tells Google this page has Arabic/English equivalents -->
+    <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/roas/">
+    <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/roas/">
+    <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/roas/">
+</head>
+<body>
+    <!-- nav:zanketsu-shared -->
+    <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+    <nav class="zank-nav" id="zankNav">
+        <a href="../../../index-en.html" class="zank-nav-logo">
+            <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+        </a>
+        <ul class="zank-nav-links">
+            <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+            <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+            <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+            <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+            <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+            <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+            <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+        </ul>
+        <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+    </nav>
+
+    <div class="zank-mobile-overlay" id="zankMobileOverlay">
+        <div class="zank-mobile-drawer">
+            <div class="zank-mobile-header">
+                <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+                <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <ul class="zank-mobile-links">
+                <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+                <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+                <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+                <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+                <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+                <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+                <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+            </ul>
+            <div class="zank-mobile-footer">
+                <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> قادم في 2027</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var t=document.getElementById("zankNavToggle");
+        var o=document.getElementById("zankMobileOverlay");
+        var c=document.getElementById("zankMobileClose");
+        if(t&&o&&c){
+            t.addEventListener("click",function(){o.classList.add("open");});
+            c.addEventListener("click",function(){o.classList.remove("open");});
+            o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+        }
+    })();
+    </script>
+
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Controls Column -->
+        <main class="calculator-card">
+            <a href="../../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> رجوع للوحة الأدوات</a>
+            
+            <div class="input-group">
+                <label class="input-label" for="currencySelect">عملة الحساب:</label>
+                <select id="currencySelect" class="form-control" style="background: #111115; border:1px solid rgba(255,255,255,0.1); color:#fff; padding:0.4rem; border-radius:4px; outline:none; width:100%;">
+                    <option value="ر.س" style="background: #111115; color: #fff;">ريال سعودي (SAR)</option>
+                    <option value="$" style="background: #111115; color: #fff;">دولار أمريكي (USD)</option>
+                    <option value="د.ك" style="background: #111115; color: #fff;">دينار كويتي (KWD)</option>
+                    <option value="ر.ق" style="background: #111115; color: #fff;">ريال قطري (QAR)</option>
+                    <option value="د.إ" style="background: #111115; color: #fff;">درهم إماراتي (AED)</option>
+                    <option value="د.ب" style="background: #111115; color: #fff;">دينار بحريني (BHD)</option>
+                    <option value="ر.ع" style="background: #111115; color: #fff;">ريال عماني (OMR)</option>
+                    <option value="ج.م" style="background: #111115; color: #fff;">جنيه مصري (EGP)</option>
+                    <option value="¥" style="background: #111115; color: #fff;">يوان صيني (CNY)</option>
+                    <option value="JP¥" style="background: #111115; color: #fff;">ين ياباني (JPY)</option>
+                    <option value="€" style="background: #111115; color: #fff;">يورو (EUR)</option>
+                </select>
+            </div>
+
+            <h2 class="section-title">
+                <i class="ph-duotone ph-chart-pie"></i>
+                مدخلات الحملة الإعلانية
+            </h2>
+
+            <!-- Ad Budget -->
+            <div class="input-group">
+                <div class="input-label-row">
+                    <span class="input-label">الميزانية الإعلانية الإجمالية:</span>
+                    <span class="input-value-badge" id="budgetVal">1,000 ر.س</span>
+                </div>
+                <input type="range" id="budget" class="input-range" min="100" max="50000" step="100" value="1000">
+            </div>
+
+            <!-- Average CPC -->
+            <div class="input-group">
+                <div class="input-label-row">
+                    <span class="input-label">متوسط تكلفة النقرة (CPC):</span>
+                    <span class="input-value-badge" id="cpcVal">1.50 ر.س</span>
+                </div>
+                <input type="range" id="cpc" class="input-range" min="0.1" max="10" step="0.1" value="1.5">
+            </div>
+
+            <!-- Conversion Rate -->
+            <div class="input-group">
+                <div class="input-label-row">
+                    <span class="input-label">نسبة تحويل المبيعات (Conversion Rate %):</span>
+                    <span class="input-value-badge" id="convRateVal">3%</span>
+                </div>
+                <input type="range" id="convRate" class="input-range" min="0.5" max="15" step="0.5" value="3">
+            </div>
+
+            <!-- Average Order Value (AOV) -->
+            <div class="input-group">
+                <div class="input-label-row">
+                    <span class="input-label">متوسط قيمة الفاتورة للعميل (AOV):</span>
+                    <span class="input-value-badge" id="aovVal">150 ر.س</span>
+                </div>
+                <input type="range" id="aov" class="input-range" min="10" max="1000" step="5" value="150">
+            </div>
+
+            <!-- Simulation Zone -->
+            <div class="simulation-slider">
+                <div class="simulation-title">
+                    <i class="ph-duotone ph-sparkles animate-pulse"></i>
+                    محاكي تحسين معدل التحويل
+                </div>
+                <p style="font-size: 0.8rem; color: var(--silver); line-height: 1.4; margin-bottom: 0.75rem;">
+                    انظر كيف يؤدي زيادة معدل التحويل بمقدار ضئيل عبر تحسين تجربة الهبوط وبناء العروض إلى مضاعفة العوائد:
+                </p>
+                <div class="input-group" style="margin-bottom: 0;">
+                    <div class="input-label-row">
+                        <span class="input-label" style="font-size: 0.8rem;">نسبة التحسين الإضافية:</span>
+                        <span class="input-value-badge" id="simVal" style="background:rgba(59,130,246,0.1); color: var(--blue);">+2%</span>
+                    </div>
+                    <input type="range" id="simSlider" class="input-range" min="0" max="10" step="0.5" value="2">
+                </div>
+            </div>
+        </main>
+
+        <!-- Results Column -->
+        <aside class="results-card">
+            <h2 class="section-title section-title-blue">
+                <i class="ph-duotone ph-chart-line-up"></i>
+                تحليل أداء ومؤشرات الحملة
+            </h2>
+
+            <div class="results-grid">
+                <!-- Total Clicks -->
+                <div class="result-box">
+                    <span class="result-title">عدد النقرات المتوقعة:</span>
+                    <span class="result-value" id="clicksVal">0</span>
+                </div>
+
+                <!-- Total Purchases -->
+                <div class="result-box">
+                    <span class="result-title">عدد العملاء والمبيعات:</span>
+                    <span class="result-value" id="purchasesVal">0</span>
+                </div>
+
+                <!-- CAC -->
+                <div class="result-box">
+                    <span class="result-title">تكلفة الاستحواذ (CAC):</span>
+                    <span class="result-value" id="cacVal">0.00 ر.س</span>
+                </div>
+
+                <!-- Total Revenue -->
+                <div class="result-box">
+                    <span class="result-title">إجمالي المبيعات المحققة:</span>
+                    <span class="result-value" id="revenueVal">0.00 ر.س</span>
+                </div>
+
+                <!-- Net ROI -->
+                <div class="result-box">
+                    <span class="result-title">صافي الأرباح (عائد الاستثمار ROI):</span>
+                    <span class="result-value" id="roiVal">0.00%</span>
+                </div>
+
+                <!-- ROAS Highlight -->
+                <div class="result-box result-box-highlight">
+                    <span class="result-title" style="color: var(--blue);">العائد على الإنفاق الإعلاني (ROAS):</span>
+                    <span class="result-value result-value-blue" id="roasVal">0.00x</span>
+                </div>
+            </div>
+
+            <!-- Profitability Status -->
+            <div id="statusBadge" class="status-badge">جاري احتساب البيانات...</div>
+
+            <!-- Promotion Card -->
+            <div class="promo-card" style="margin-top: 1.5rem;">
+                <div class="promo-tag">
+                    <i class="ph-duotone ph-funnel animate-pulse"></i>
+                    كيف تزيد معدل التحويل الفعلي؟
+                </div>
+                <p class="promo-desc">
+                    تقدم باقة **Zanketsu** التسويقية أدوات ذكية لتصميم الكتالوجات وعروض المبيعات وبوابات حجز المواعيد الآلية التي ترفع معدلات التحويل بأكثر من 40%، مما يقلل بشكل هائل من تكلفة الاستحواذ (CAC).
+                </p>
+                <a href="../../../index-en.html#contact" target="_blank" class="promo-btn">
+                    <i class="ph-bold ph-rocket-launch"></i> ضاعف عوائد إعلاناتك الآن
+                </a>
+            </div>
+            
+            <div class="watermark-print">
+                تم الإنشاء والطباعة بواسطة zanketsu.com
+            </div>
+        </aside>
+    </div>
+
+    <!-- Script Block -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const budgetInput = document.getElementById('budget');
+            const cpcInput = document.getElementById('cpc');
+            const convRateInput = document.getElementById('convRate');
+            const aovInput = document.getElementById('aov');
+            const simSliderInput = document.getElementById('simSlider');
+            const currencySelect = document.getElementById('currencySelect');
+
+            function updateCalculations() {
+                const budget = parseFloat(budgetInput.value);
+                const cpc = parseFloat(cpcInput.value);
+                const baseConvRate = parseFloat(convRateInput.value);
+                const aov = parseFloat(aovInput.value);
+                const simVal = parseFloat(simSliderInput.value);
+                const currency = currencySelect.value;
+
+                // Update input badges
+                document.getElementById('budgetVal').textContent = `${budget.toLocaleString()} ${currency}`;
+                document.getElementById('cpcVal').textContent = `${cpc.toFixed(2)} ${currency}`;
+                document.getElementById('convRateVal').textContent = `${baseConvRate}%`;
+                document.getElementById('aovVal').textContent = `${aov} ${currency}`;
+                document.getElementById('simVal').textContent = `+${simVal}%`;
+
+                // Calculate combined conversion rate
+                const convRate = baseConvRate + simVal;
+
+                // Metrics calculations
+                const clicks = Math.floor(budget / cpc);
+                const purchases = (clicks * convRate) / 100;
+                
+                const revenue = purchases * aov;
+                const netProfit = revenue - budget;
+                const roas = budget > 0 ? revenue / budget : 0;
+                const roi = budget > 0 ? (netProfit / budget) * 100 : 0;
+                const cac = purchases > 0 ? budget / purchases : budget;
+
+                // Update UI results
+                document.getElementById('clicksVal').textContent = clicks.toLocaleString();
+                document.getElementById('purchasesVal').textContent = purchases.toFixed(1);
+                document.getElementById('cacVal').textContent = `${cac.toFixed(2)} ${currency}`;
+                document.getElementById('revenueVal').textContent = `${revenue.toFixed(2)} ${currency}`;
+                document.getElementById('roiVal').textContent = `${roi.toFixed(2)}%`;
+                document.getElementById('roasVal').textContent = `${roas.toFixed(2)}x`;
+
+                // Update Status Badge
+                const badge = document.getElementById('statusBadge');
+                if (roas < 1) {
+                    badge.textContent = "حملة خاسرة ❌ (الإيرادات أقل من الميزانية)";
+                    badge.className = "status-badge status-danger";
+                } else if (roas >= 1 && roas < 2.5) {
+                    badge.textContent = "حملة متوسطة ⚠️ (عائد متوازن يغطي التكاليف فقط)";
+                    badge.className = "status-badge status-warning";
+                } else {
+                    badge.textContent = "حملة ممتازة ومربحة للغاية! 🔥";
+                    badge.className = "status-badge status-success";
+                }
+            }
+
+            // Bind listeners
+            [budgetInput, cpcInput, convRateInput, aovInput, simSliderInput].forEach(input => {
+                input.addEventListener('input', updateCalculations);
+            });
+            currencySelect.addEventListener('change', updateCalculations);
+
+            // Initial trigger
+            updateCalculations();
+        });
+    </script>
+
+    <!-- footer:zanketsu-shared -->
+    <footer class="zank-footer" style="margin-top: 5rem;">
+        <a href="../../../index-en.html" class="zank-footer-logo">
+            <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+        </a>
+        <div class="zank-footer-links">
+            <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> الرئيسية</a>
+            <a href="../../index.html"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a>
+            <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a>
+            <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> الشروط</a>
+            <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> الخصوصية</a>
+        </div>
+        <p class="zank-footer-copy">
+            <i class="ph-duotone ph-copyright"></i>
+            <span>جميع الحقوق محفوظة</span>
+            <span>&copy; 2026 Zanketsu</span>
+            <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+        </p>
+    </footer>
+</body>
+</html>

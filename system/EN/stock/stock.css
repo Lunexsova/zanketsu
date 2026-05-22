@@ -1,0 +1,333 @@
+:root {
+    --void: #050508;
+    --obsidian: #0a0a10;
+    --ink: #12121a;
+    --green: #10b981;
+    --green-glow: rgba(16, 185, 129, 0.25);
+    --white: #fafafa;
+    --silver: #a8a8b3;
+    --border-color: rgba(16, 185, 129, 0.12);
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-ar);
+    background: var(--void);
+    color: var(--white);
+    min-height: 100vh;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app-container {
+    max-width: 1250px;
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(10, 10, 16, 0.5);
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+}
+
+.back-btn:hover {
+    color: var(--green);
+    border-color: var(--green);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+}
+
+.calculator-card, .results-card {
+    background: var(--obsidian);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.section-title-green {
+    color: var(--green);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--silver);
+    margin-bottom: 0.4rem;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.65rem 0.9rem;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--green);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--green);
+    color: var(--void);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Stock Status Badges */
+.status-pill {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+}
+
+.status-safe {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-low {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.status-expired {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Stock table style */
+.table-container {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.custom-table th {
+    background: rgba(16, 185, 129, 0.05);
+    border-bottom: 2px solid var(--border-color);
+    color: var(--green);
+    padding: 0.75rem;
+    font-weight: 700;
+}
+
+.custom-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    vertical-align: middle;
+}
+
+.custom-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.qty-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.qty-btn:hover {
+    background: var(--green);
+    color: var(--void);
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Filters styling */
+.filters-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+    .filters-row {
+        flex-direction: column;
+    }
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--silver);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    color: var(--white);
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.export-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+@media print {
+    .zank-nav, .zank-footer, .back-btn, .calculator-card, .export-row, .qty-controls, .delete-btn, .filters-row {
+        display: none !important;
+    }
+    .app-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+    }
+    .results-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: #fff;
+        color: #000;
+    }
+    .custom-table th {
+        background: #eee;
+        color: #000;
+        border-bottom: 2px solid #ccc;
+    }
+    .custom-table td {
+        border-bottom: 1px solid #ccc;
+        color: #000;
+    }
+    .status-pill {
+        border: 1px solid #000;
+        background: #fff;
+        color: #000;
+    }
+    .watermark-print {
+        display: block !important;
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.8rem;
+        color: #777;
+        border-top: 1px dashed #ccc;
+        padding-top: 1rem;
+    }
+}
+
+.watermark-print {
+    display: none;
+}

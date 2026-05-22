@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Image Compressor & Converter (WebP, PNG, JPG) — Zanketsu</title>
+    <meta name="description" content="Compress and convert images locally in your browser to WebP, PNG, or JPG with dimension adjustments. No uploads required — 100% private image optimization. Free tool by Zanketsu.">
+    <meta name="keywords" content="image compressor, WebP converter, image optimizer, PNG to WebP, JPG converter, local image tool, Zanketsu">
+    <meta name="author" content="Zanketsu">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zanketsu.com/system/EN/image-converter/index.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zanketsu — Smart Image Compressor & Converter">
+    <meta property="og:description" content="Professional tool to compress and convert image formats instantly and securely inside your browser.">
+    <meta property="og:url" content="https://zanketsu.com/system/EN/image-converter/index.html">
+    <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/icons.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="converter.css">
+
+    <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Zanketsu Image Compressor & Converter",
+        "url": "https://zanketsu.com/system/EN/image-converter/",
+        "description": "Compress and convert images to WebP, PNG, or JPG locally — no server uploads, fully private.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "inLanguage": "en",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zanketsu",
+            "url": "https://zanketsu.com"
+        }
+    }
+    </script>
+    <!-- hreflang: tells Google this page has Arabic/English equivalents -->
+    <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/image-converter/">
+    <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/image-converter/">
+    <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/image-converter/">
+</head>
+<body>
+    <!-- nav:zanketsu-shared -->
+    <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+    <nav class="zank-nav" id="zankNav">
+        <a href="../../../index-en.html" class="zank-nav-logo">
+            <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+        </a>
+        <ul class="zank-nav-links">
+            <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+            <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+            <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+            <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Marketing</a></li>
+            <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+            <li><a href="../../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Business Tools</a></li>
+            <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+        </ul>
+        <button class="zank-nav-toggle" id="zankNavToggle" aria-label="Menu"><i class="ph-bold ph-list"></i></button>
+    </nav>
+
+    <div class="zank-mobile-overlay" id="zankMobileOverlay">
+        <div class="zank-mobile-drawer">
+            <div class="zank-mobile-header">
+                <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+                <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <ul class="zank-mobile-links">
+                <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+                <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+                <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+                <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Marketing</a></li>
+                <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+                <li><a href="../../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Business Tools</a></li>
+                <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="zank-mobile-footer">
+                <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> Coming in 2027</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var t=document.getElementById("zankNavToggle");
+        var o=document.getElementById("zankMobileOverlay");
+        var c=document.getElementById("zankMobileClose");
+        if(t&&o&&c){
+            t.addEventListener("click",function(){o.classList.add("open");});
+            c.addEventListener("click",function(){o.classList.remove("open");});
+            o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+        }
+    })();
+    </script>
+
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Input & Options Card -->
+        <main class="calculator-card">
+            <a href="../../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Back to Dashboard</a>
+            
+            <div class="header-section">
+                <h1 class="main-title"><i class="ph-duotone ph-image-square"></i> Smart Image Compressor & Converter</h1>
+                <p class="subtitle">Compress image size, resize dimensions and instantly convert to any format securely 100% locally in your browser.</p>
+            </div>
+
+            <!-- Drag & Drop Upload Zone -->
+            <div class="upload-zone" id="dropzone">
+                <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+                <i class="ph-duotone ph-cloud-arrow-up upload-icon"></i>
+                <h3>Drag & Drop Images Here</h3>
+                <p>Or click to browse your files</p>
+                <span class="upload-limit">Supports multiple images (max 30) in JPG, PNG, WEBP, BMP, GIF formats</span>
+            </div>
+
+            <!-- Settings Panel (Hidden until image loaded) -->
+            <div class="settings-panel" id="settingsPanel" style="display: none;">
+                <div class="panel-section">
+                    <h3 class="section-title"><i class="ph-duotone ph-gear"></i> Settings & Format Options</h3>
+                    
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="outputFormat">Output Format:</label>
+                            <select id="outputFormat" class="form-control">
+                                <option value="image/webp">WEBP (Ideal for Web)</option>
+                                <option value="image/jpeg">JPEG (Standard Image)</option>
+                                <option value="image/png">PNG (Lossless Quality)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group" id="qualityWrapper">
+                            <label for="qualityRange">Compression Quality: <span id="qualityVal">85%</span></label>
+                            <div class="range-container">
+                                <input type="range" id="qualityRange" min="10" max="100" value="85" class="range-slider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title"><i class="ph-duotone ph-arrows-out-line"></i> Resize Dimensions (Optional)</h3>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="resizeWidth">Width (px):</label>
+                            <input type="number" id="resizeWidth" class="form-control" placeholder="Original Width">
+                        </div>
+                        <div class="input-group">
+                            <label for="resizeHeight">Height (px):</label>
+                            <input type="number" id="resizeHeight" class="form-control" placeholder="Original Height">
+                        </div>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="keepAspectRatio" checked>
+                        <span class="checkmark"></span>
+                        Keep original aspect ratio
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <!-- Preview & Results Card -->
+        <aside class="results-card" id="resultsCard">
+            <div class="no-image-placeholder" id="noImgPlaceholder">
+                <i class="ph-duotone ph-image"></i>
+                <p>Upload images to view compression details and download</p>
+            </div>
+
+            <div class="results-content" id="resultsContent" style="display: none;">
+                <h3 class="section-title"><i class="ph-duotone ph-chart-bar"></i> Results & Live Previews</h3>
+
+                <!-- Single Image Preview Section -->
+                <div id="singlePreviewSection">
+                    <!-- Real-time Stats -->
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <span class="stat-label">Original Size</span>
+                            <span class="stat-value" id="origSize">-</span>
+                        </div>
+                        <div class="stat-box accent-box">
+                            <span class="stat-label">New Size</span>
+                            <span class="stat-value" id="compSize">-</span>
+                        </div>
+                        <div class="stat-box savings-box" id="savingsWrapper">
+                            <span class="stat-label">Space Saved</span>
+                            <span class="stat-value" id="savingsVal">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Live Comparison Views -->
+                    <div class="comparison-container">
+                        <div class="preview-box">
+                            <span class="preview-label">Processed Preview</span>
+                            <div class="img-wrapper">
+                                <img id="processedPreview" alt="Processed Preview">
+                            </div>
+                            <span class="img-dims" id="processedDims">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="ph-bold ph-download-simple"></i>
+                        Download Processed Image
+                    </button>
+                </div>
+
+                <!-- Multiple Images List Section -->
+                <div id="multiPreviewSection" style="display: none;">
+                    <div class="multi-images-container" id="multiImagesContainer">
+                        <!-- Dynamic multi-image items will be rendered here -->
+                    </div>
+
+                    <!-- ZIP Download Button -->
+                    <button class="zip-download-btn" id="zipDownloadBtn">
+                        <i class="ph-bold ph-folder-archive"></i>
+                        Download All Images (ZIP)
+                    </button>
+                </div>
+
+                <!-- Reset Button -->
+                <button class="reset-btn" id="resetBtn">
+                    <i class="ph-bold ph-arrow-counter-clockwise"></i>
+                    Upload More Images
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Print Watermark -->
+    <div class="watermark-print">Created & printed via zanketsu.com</div>
+
+    <!-- Shared Footer -->
+    <footer class="zank-footer">
+        <a href="../../../index-en.html" class="zank-footer-logo">
+            <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+        </a>
+        <div class="zank-footer-links">
+            <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+            <a href="../../index.html"><i class="ph-duotone ph-briefcase"></i> Tools</a>
+            <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+            <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+            <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+        </div>
+        <p class="zank-footer-copy">
+            <i class="ph-duotone ph-copyright"></i>
+            <span>All Rights Reserved</span>
+            <span>&copy; 2026 Zanketsu</span>
+            <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="converter.js"></script>
+</body>
+</html>
