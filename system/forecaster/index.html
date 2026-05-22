@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زانكتسو Zanketsu — المتنبئ المالي ونمو المشاريع 📈</title>
+    <meta name="description" content="تنبأ بالأرباح والميزانية المستقبلية لمشروعك مجاناً. لوحة تحكم مالية تفاعلية تحسب وقت نفاذ السيولة (Runway) ومعدل النمو بمخططات بيانية متحركة.">
+    <meta name="keywords" content="تخطيط مالي, توقع المبيعات, تنبؤ الارباح, حساب runway, SaaS runway calculator, Zanketsu, زانكتسو">
+    <meta name="author" content="Zanketsu (زانكتسو)">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zanketsu.com/system/forecaster/index.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="زانكتسو — المتنبئ المالي ونمو المشاريع">
+    <meta property="og:description" content="أداة تفاعلية للتنبؤ المالي وحساب خط الأمان والنمو للاشتراكات والمشاريع الرقمية.">
+    <meta property="og:url" content="https://zanketsu.com/system/forecaster/index.html">
+    <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/icons.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="forecaster.css">
+
+    <!-- Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "زانكتسو Zanketsu — المتنبئ المالي ونمو المشاريع 📈",
+        "url": "https://zanketsu.com/system/forecaster/index.html",
+        "description": "تنبأ بالأرباح والميزانية المستقبلية لمشروعك مجاناً. لوحة تحكم مالية تفاعلية تحسب وقت نفاذ السيولة (Runway) ومعدل النمو بمخططات بيانية متحركة.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5. Requires Chart.js.",
+        "inLanguage": "ar",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Zanketsu",
+            "url": "https://zanketsu.com"
+        }
+    }
+    </script>
+    <!-- hreflang: tells Google this page has Arabic/English equivalents -->
+    <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/forecaster/">
+    <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/forecaster/">
+    <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/forecaster/">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <link rel="stylesheet" href="../../assets/css/zanketsu-nav.css">
+    <nav class="zank-nav" id="zankNav">
+        <a href="../../index.html" class="zank-nav-logo">
+            <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+        </a>
+        <ul class="zank-nav-links">
+            <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+            <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+            <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+            <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+            <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+            <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+            <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+        </ul>
+        <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+    </nav>
+
+    <div class="zank-mobile-overlay" id="zankMobileOverlay">
+        <div class="zank-mobile-drawer">
+            <div class="zank-mobile-header">
+                <a href="../../index.html"><img src="../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+                <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <ul class="zank-mobile-links">
+                <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+                <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+                <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+                <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+                <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+                <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+                <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+            </ul>
+            <div class="zank-mobile-footer">
+                <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> قادم في 2027</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="forecast-wrapper">
+        <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-right"></i> العودة للأدوات</a>
+        
+        <!-- Header -->
+        <header class="forecast-header">
+            <div class="header-info">
+                <h1>المتنبئ المالي ونمو المشاريع 📈</h1>
+                <p>تنبأ بمدى استقرار شركتك المالي، واحسب مدة الأمان النقدي (Runway)، وخطط لسيناريوهات النمو بذكاء فائق.</p>
+            </div>
+        </header>
+
+        <!-- Metrics Grid Summary -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <span class="lbl">الإيراد المتكرر شهرياً (MRR)</span>
+                <span class="val" id="mrrVal">$0</span>
+            </div>
+            <div class="metric-card">
+                <span class="lbl">الإيراد المتكرر سنوياً (ARR)</span>
+                <span class="val" id="arrVal">$0</span>
+            </div>
+            <div class="metric-card highlight-safety">
+                <span class="lbl">مدة الأمان المالي (Runway)</span>
+                <span class="val" id="runwayVal">0 أشهر</span>
+            </div>
+            <div class="metric-card">
+                <span class="lbl">القيمة الكلية للعميل (LTV)</span>
+                <span class="val" id="ltvVal">$0</span>
+            </div>
+        </section>
+
+        <!-- Main Content Core -->
+        <main class="forecast-workspace">
+            
+            <!-- Column 1: Financial Sliders Parameters -->
+            <section class="parameters-panel">
+                <div class="tool-card">
+                    <h3><i class="ph-duotone ph-sliders"></i> معطيات التخطيط المالي</h3>
+                    
+                    <!-- Parameter 1 -->
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label for="subscribers">المشتركون الحاليون</label>
+                            <span class="slider-value" id="subscribersText">200 مشترك</span>
+                        </div>
+                        <input type="range" id="subscribers" min="10" max="5000" step="10" value="200" oninput="calculateForecast()">
+                    </div>
+
+                    <!-- Parameter 2 -->
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label for="avgPrice">متوسط قيمة الاشتراك شهرياً</label>
+                            <span class="slider-value" id="avgPriceText">$49 /شاهد</span>
+                        </div>
+                        <input type="range" id="avgPrice" min="5" max="1000" step="5" value="49" oninput="calculateForecast()">
+                    </div>
+
+                    <!-- Parameter 3 -->
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label for="growthRate">معدل النمو المأمول شهرياً (%)</label>
+                            <span class="slider-value" id="growthRateText">10%</span>
+                        </div>
+                        <input type="range" id="growthRate" min="0" max="50" step="1" value="10" oninput="calculateForecast()">
+                    </div>
+
+                    <!-- Parameter 4 -->
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label for="churnRate">معدل إلغاء الاشتراكات / Churn (%)</label>
+                            <span class="slider-value" id="churnRateText">4%</span>
+                        </div>
+                        <input type="range" id="churnRate" min="0" max="30" step="0.5" value="4" oninput="calculateForecast()">
+                    </div>
+
+                    <!-- Parameter 5 -->
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label for="expenses">المصاريف التشغيلية شهرياً</label>
+                            <span class="slider-value" id="expensesText">$5,000</span>
+                        </div>
+                        <input type="range" id="expenses" min="100" max="50000" step="100" value="5000" oninput="calculateForecast()">
+                    </div>
+
+                    <!-- Parameter 6 -->
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label for="cashInBank">السيولة النقدية الحالية في البنك</label>
+                            <span class="slider-value" id="cashInBankText">$30,000</span>
+                        </div>
+                        <input type="range" id="cashInBank" min="0" max="250000" step="1000" value="30000" oninput="calculateForecast()">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Column 2: Chart & AI diagnostics report -->
+            <section class="visuals-panel">
+                
+                <!-- Chart Box -->
+                <div class="tool-card chart-card">
+                    <h3><i class="ph-duotone ph-chart-line-up"></i> خط التوقعات المالي التفاعلي (12 شهراً)</h3>
+                    <div class="chart-container">
+                        <canvas id="forecastChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- AI Diagnostics Report Box -->
+                <div class="tool-card report-card">
+                    <h3><i class="ph-duotone ph-sparkles"></i> التقرير المالي والتشخيص الذكي لمشروعك</h3>
+                    <div class="report-content" id="reportContent">
+                        <!-- Dynamic HTML diagnostic report -->
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- Nav Mobile Drawer script -->
+    <script>
+        (function(){
+            var t=document.getElementById("zankNavToggle");
+            var o=document.getElementById("zankMobileOverlay");
+            var c=document.getElementById("zankMobileClose");
+            if(t&&o&&c){
+                t.addEventListener("click",function(){o.classList.add("open");});
+                c.addEventListener("click",function(){o.classList.remove("open");});
+                o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+            }
+        })();
+    </script>
+
+    <!-- Forecaster Application Logic -->
+    <script>
+        let myChart = null;
+
+        function formatCurrency(val) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+        }
+
+        function calculateForecast() {
+            // Retrieve parameters
+            const subs = parseInt(document.getElementById('subscribers').value);
+            const price = parseFloat(document.getElementById('avgPrice').value);
+            const growth = parseFloat(document.getElementById('growthRate').value) / 100;
+            const churn = parseFloat(document.getElementById('churnRate').value) / 100;
+            const expense = parseFloat(document.getElementById('expenses').value);
+            const bank = parseFloat(document.getElementById('cashInBank').value);
+
+            // Update text values
+            document.getElementById('subscribersText').innerText = `${subs} مشترك`;
+            document.getElementById('avgPriceText').innerText = formatCurrency(price);
+            document.getElementById('growthRateText').innerText = `${Math.round(growth*100)}%`;
+            document.getElementById('churnRateText').innerText = `${churn*100}%`;
+            document.getElementById('expensesText').innerText = formatCurrency(expense);
+            document.getElementById('cashInBankText').innerText = formatCurrency(bank);
+
+            // Instant Metrics
+            const currentMRR = subs * price;
+            const currentARR = currentMRR * 12;
+            const ltv = churn > 0 ? (price / churn) : 0;
+
+            document.getElementById('mrrVal').innerText = formatCurrency(currentMRR);
+            document.getElementById('arrVal').innerText = formatCurrency(currentARR);
+            document.getElementById('ltvVal').innerText = ltv > 0 ? formatCurrency(ltv) : '∞';
+
+            // Calculate Runway
+            let runwayMonths = 0;
+            let currentCash = bank;
+            let currentSubs = subs;
+            let mrrHistory = [];
+            let cashHistory = [];
+            let labels = [];
+
+            // Add starting values
+            mrrHistory.push(currentMRR);
+            cashHistory.push(currentCash);
+            labels.push('الآن');
+
+            const netMonthlyFlow = currentMRR - expense;
+
+            if (netMonthlyFlow >= 0) {
+                document.getElementById('runwayVal').innerText = 'آمن (تدفق إيجابي) 🟢';
+                document.getElementById('runwayVal').style.color = '#10b981';
+            } else {
+                // Cash depletion simulation
+                const rawRunway = currentCash / Math.abs(netMonthlyFlow);
+                runwayMonths = isFinite(rawRunway) ? Math.round(rawRunway) : 0;
+                document.getElementById('runwayVal').innerText = `${runwayMonths} أشهر ⚠️`;
+                document.getElementById('runwayVal').style.color = '#ef4444';
+            }
+
+            // Simulate 12 Months
+            let monthlyCash = bank;
+            let monthlySubs = subs;
+
+            for (let month = 1; month <= 12; month++) {
+                // Growth & Churn effect
+                const addedSubs = monthlySubs * growth;
+                const lostSubs = monthlySubs * churn;
+                monthlySubs = Math.max(0, monthlySubs + addedSubs - lostSubs);
+
+                const monthlyMRR = monthlySubs * price;
+                const netIncome = monthlyMRR - expense;
+                monthlyCash = Math.max(0, monthlyCash + netIncome);
+
+                mrrHistory.push(Math.round(monthlyMRR));
+                cashHistory.push(Math.round(monthlyCash));
+                labels.push(`شهر ${month}`);
+            }
+
+            // Update/Render chart
+            renderChart(labels, mrrHistory, cashHistory);
+
+            // Generate AI style Arabic diagnostics text
+            generateDiagnosticsReport(currentMRR, expense, growth, churn, ltv, runwayMonths, netMonthlyFlow);
+        }
+
+        function renderChart(labels, mrrData, cashData) {
+            const ctx = document.getElementById('forecastChart').getContext('2d');
+            
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'الإيراد الشهري (MRR)',
+                            data: mrrData,
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.05)',
+                            borderWidth: 3,
+                            tension: 0.35,
+                            fill: true
+                        },
+                        {
+                            label: 'الرصيد النقدي المتوفر (Cash Balance)',
+                            data: cashData,
+                            borderColor: '#06b6d4',
+                            backgroundColor: 'rgba(6, 182, 212, 0.05)',
+                            borderWidth: 3,
+                            tension: 0.35,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#a8a8b3',
+                                font: {
+                                    family: 'Cairo',
+                                    size: 11
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#a8a8b3', font: { family: 'Cairo' } },
+                            grid: { color: 'rgba(255,255,255,0.02)' }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#a8a8b3',
+                                font: { family: 'Cairo' },
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            },
+                            grid: { color: 'rgba(255,255,255,0.02)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateDiagnosticsReport(mrr, expense, growth, churn, ltv, runway, flow) {
+            const reportDiv = document.getElementById('reportContent');
+            let statusHTML = '';
+
+            const mrrToExpense = mrr / (expense || 1);
+
+            if (flow >= 0) {
+                statusHTML += `
+                    <div class="alert-success">
+                        <i class="ph-bold ph-check-circle"></i>
+                        <strong>تدفق مالي ممتاز وإيجابي:</strong> مشروعك يدر أرباحاً شهرية تفوق نفقاته التشغيلية بمقدار <strong>${formatCurrency(flow)}</strong>. لا يوجد أي خطر على خط الأمان المالي.
+                    </div>
+                `;
+            } else {
+                statusHTML += `
+                    <div class="alert-danger">
+                        <i class="ph-bold ph-warning-circle"></i>
+                        <strong>تنبيه خط أمان مالي منخفض:</strong> إيراداتك الحالية لا تغطي المصاريف التشغيلية. الرصيد النقدي الحالي سينفد خلال <strong>${runway} أشهر</strong> تقريباً إذا لم يتم زيادة المشتركين أو خفض النفقات.
+                    </div>
+                `;
+            }
+
+            // Churn alert diagnostics
+            if (churn > 0.08) {
+                statusHTML += `
+                    <div class="alert-warning">
+                        <i class="ph-bold ph-warning"></i>
+                        <strong>معدل إلغاء الاشتراكات مرتفع (${Math.round(churn*100)}%):</strong> هذا يعني أنك تفقد العملاء بسرعة كبيرة. يجب مراجعة جودة الخدمة أو دعم العملاء فوراً لرفع الـ LTV (${formatCurrency(ltv)}).
+                    </div>
+                `;
+            }
+
+            // High growth compliment
+            if (growth > churn && growth > 0.1) {
+                statusHTML += `
+                    <div class="alert-info">
+                        <i class="ph-bold ph-rocket-launch"></i>
+                        <strong>نمو قوي ومتسارع (${Math.round(growth*100)}%):</strong> إستراتيجية الاستحواذ على العملاء لديك ممتازة وتتخطى معدل الفقد الطبيعي. حافظ على هذا الزخم.
+                    </div>
+                `;
+            }
+
+            // Recommendations section
+            let recommendations = '';
+            if (flow < 0) {
+                recommendations = `
+                    <li><strong>توسيع الـ Runway:</strong> حاول خفض التكاليف التشغيلية بنسبة 15% فوراً لشراء المزيد من الوقت لإثبات فكرة المشروع.</li>
+                    <li><strong>رفع أسعار الباقات:</strong> متوسط الاشتراك الحالي هو <strong>${formatCurrency(document.getElementById('avgPrice').value)}</strong>. تجربة رفع السعر بنسبة 10% قد تحل مشكل الميزانية فوراً.</li>
+                `;
+            } else {
+                recommendations = `
+                    <li><strong>إعادة الاستثمار للنمو:</strong> نظراً للتدفق المالي الإيجابي، يمكنك استثمار 20% من الفائض شهرياً في حملات إعلانية مدفوعة لزيادة المشتركين وتنمية الـ ARR.</li>
+                    <li><strong>تحسين الـ Churn:</strong> التركيز على تجربة العملاء المخلصين لضمان بقائهم لأطول فترة ممكنة لرفع متوسط القيمة التراكمية.</li>
+                `;
+            }
+
+            reportDiv.innerHTML = `
+                ${statusHTML}
+                <div class="recommendations-box">
+                    <h4>الخطوات والتوصيات المقترحة للمشروع:</h4>
+                    <ul>
+                        ${recommendations}
+                        <li><strong>القيمة الكلية للعميل (LTV):</strong> العميل الحالي يعادل <strong>${formatCurrency(ltv)}</strong> كإيرادات متوقعة طوال بقائه. تأكد من أن تكلفة الاستحواذ عليه (CAC) أقل من ثلث هذا المبلغ.</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateForecast();
+        });
+    </script>
+</body>
+</html>

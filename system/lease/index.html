@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زانكتسو Zanketsu — صانع عقود الإيجار والعقارات 🏆</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="أداة مجانية لتصميم وتوثيق عقود الإيجار السكنية والتجارية مع إمكانية الطباعة المباشرة. صممتها منصة زانكتسو (Zanketsu) لتسهيل التعاملات العقارية.">
+    <meta name="keywords" content="عقد إيجار, عقود عقارات, نموذج عقد إيجار, طباعة عقد إيجار, زانكتسو, Zanketsu, عقارات, إدارة أملاك">
+    <meta name="author" content="Zanketsu (زانكتسو)">
+    <meta name="robots" content="index, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="lease.css">
+
+    <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "زانكتسو Zanketsu — صانع عقود الإيجار والعقارات 🏆",
+    "url": "https://zanketsu.com/system/lease/index.html",
+    "description": "أداة مجانية لتصميم وتوثيق عقود الإيجار السكنية والتجارية مع إمكانية الطباعة المباشرة. صممتها منصة زانكتسو (Zanketsu) لتسهيل التعاملات العقارية.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "ar",
+    "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Zanketsu",
+        "url": "https://zanketsu.com"
+    }
+}
+    </script>
+    <!-- hreflang: tells Google this page has Arabic/English equivalents -->
+    <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/lease/">
+    <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/lease/">
+    <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/lease/">
+</head>
+<body>
+    <!-- nav:zanketsu-shared -->
+    <link rel="stylesheet" href="../../assets/css/zanketsu-nav.css">
+    <nav class="zank-nav" id="zankNav">
+        <a href="../../index.html" class="zank-nav-logo">
+            <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+        </a>
+        <ul class="zank-nav-links">
+            <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+            <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+            <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+            <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+            <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+            <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+            <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+        </ul>
+        
+        <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+    </nav>
+    <div class="zank-mobile-overlay" id="zankMobileOverlay">
+        <div class="zank-mobile-drawer">
+            <div class="zank-mobile-header">
+                <a href="../../index.html"><img src="../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+                <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <ul class="zank-mobile-links">
+                <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+                <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+                <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+                <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+                <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+                <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+                <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+            </ul>
+            <div class="zank-mobile-footer">
+                <div class="zank-hero-badge">
+                    <i class="ph-duotone ph-clock-countdown"></i>
+                    قادم في 2027
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var t=document.getElementById("zankNavToggle");
+        var o=document.getElementById("zankMobileOverlay");
+        var c=document.getElementById("zankMobileClose");
+        if(t&&o&&c){
+            t.addEventListener("click",function(){o.classList.add("open");});
+            c.addEventListener("click",function(){o.classList.remove("open");});
+            o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+        }
+    })();
+    </script>
+
+    <!-- App Header -->
+    <header class="app-header">
+        <a href="../index.html" class="header-logo">
+            <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="110" height="30">
+            <span class="header-title">صانع عقود العقارات والإيجار 🏢</span>
+        </a>
+        <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> لوحة الأدوات</a>
+    </header>
+
+    <!-- App Container -->
+    <div class="app-container">
+        
+        <!-- Controls Sidebar -->
+        <aside class="controls-panel">
+            <h2 class="panel-title">
+                <i class="ph-duotone ph-file-text"></i>
+                إعداد بيانات العقد
+            </h2>
+
+            <!-- Landlord Info -->
+            <div class="form-section">
+                <h3 class="form-section-title">
+                    <i class="ph-duotone ph-user-circle-plus"></i>
+                    بيانات المؤجر (صاحب الملك)
+                </h3>
+                <div class="form-group">
+                    <label for="landlordName">اسم المؤجر الكامل:</label>
+                    <input type="text" id="landlordName" class="form-control" value="عبد الله بن أحمد الرشيد">
+                </div>
+                <div class="form-group">
+                    <label for="landlordID">رقم الهوية / السجل:</label>
+                    <input type="text" id="landlordID" class="form-control" value="1092837465">
+                </div>
+            </div>
+
+            <!-- Tenant Info -->
+            <div class="form-section">
+                <h3 class="form-section-title">
+                    <i class="ph-duotone ph-user-circle"></i>
+                    بيانات المستأجر
+                </h3>
+                <div class="form-group">
+                    <label for="tenantName">اسم المستأجر الكامل:</label>
+                    <input type="text" id="tenantName" class="form-control" value="محمد حسن الشمري">
+                </div>
+                <div class="form-group">
+                    <label for="tenantID">رقم الهوية / الإقامة:</label>
+                    <input type="text" id="tenantID" class="form-control" value="2304958671">
+                </div>
+            </div>
+
+            <!-- Property Info -->
+            <div class="form-section">
+                <h3 class="form-section-title">
+                    <i class="ph-duotone ph-house"></i>
+                    بيانات العقار المؤجر
+                </h3>
+                <div class="form-group">
+                    <label for="propertyType">نوع العقار:</label>
+                    <input type="text" id="propertyType" class="form-control" value="شقة سكنية (الدور الثاني - رقم 5)">
+                </div>
+                <div class="form-group">
+                    <label for="propertyAddress">العنوان والوصف:</label>
+                    <input type="text" id="propertyAddress" class="form-control" value="حي الياسمين، طريق الملك عبد العزيز، الرياض">
+                </div>
+            </div>
+
+            <!-- Lease Terms -->
+            <div class="form-section">
+                <h3 class="form-section-title">
+                    <i class="ph-duotone ph-calendar"></i>
+                    شروط التعاقد والمالية
+                </h3>
+                <div class="form-group">
+                    <label for="leaseDuration">مدة العقد:</label>
+                    <input type="text" id="leaseDuration" class="form-control" value="سنة واحدة (أثنا عشر شهراً)">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="startDate">تاريخ البدء:</label>
+                        <input type="text" id="startDate" class="form-control" value="2026-06-01">
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">تاريخ الانتهاء:</label>
+                        <input type="text" id="endDate" class="form-control" value="2027-05-31">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="rentAmount">قيمة الإيجار السنوي:</label>
+                    <input type="text" id="rentAmount" class="form-control" value="36,000 ريال سعودي">
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">طريقة الدفع:</label>
+                    <input type="text" id="paymentMethod" class="form-control" value="دفعات ربع سنوية (كل 3 أشهر بمبلغ 9,000 ريال)">
+                </div>
+            </div>
+
+            <!-- Additional Terms -->
+            <div class="form-section">
+                <h3 class="form-section-title">
+                    <i class="ph-duotone ph-info"></i>
+                    شروط وبنود إضافية
+                </h3>
+                <div class="form-group">
+                    <label for="additionalTerms">البنود الإضافية:</label>
+                    <textarea id="additionalTerms" class="form-control" rows="4" style="resize:vertical;">- يلتزم المستأجر بسداد فواتير الكهرباء والمياه طوال مدة العقد.
+- يدفع المستأجر مبلغ 2,000 ريال سعودي كتأمين مسترد عند تسليم العقار بحالته الأصلية.
+- لا يحق للمستأجر التنازل عن الإيجار للغير أو التأجير من الباطن دون موافقة المؤجر خطياً.</textarea>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Preview Panel -->
+        <main class="preview-panel">
+            <div class="actions-bar">
+                <button class="action-btn action-btn-primary" onclick="window.print();">
+                    <i class="ph-bold ph-printer"></i>
+                    طباعة العقد وتصديره
+                </button>
+            </div>
+
+            <!-- Contract A4 Document -->
+            <div class="contract-document" id="contractDoc">
+                <div class="doc-header">
+                    <div class="doc-logo">ZANKETSU REAL ESTATE</div>
+                    <h1 class="doc-title">عقد إيجار عقاري موحد</h1>
+                    <div class="doc-meta">تم إنشاء هذا النموذج وتوثيقه بواسطة أدوات زانكتسو للأعمال</div>
+                </div>
+
+                <div class="doc-section">
+                    <p>
+                        إنه في يومه وتاريخه، تم الاتفاق والتعاقد بين كل من:
+                    </p>
+                    <p style="margin-top: 0.6rem;">
+                        <strong>الطرف الأول (المؤجر):</strong> السيد/ة <span class="field-highlight" id="p-landlordName">عبد الله بن أحمد الرشيد</span>، 
+                        بموجب الهوية الوطنية/سجل رقم: <span class="field-highlight" id="p-landlordID">1092837465</span>.
+                    </p>
+                    <p style="margin-top: 0.4rem;">
+                        <strong>الطرف الثاني (المستأجر):</strong> السيد/ة <span class="field-highlight" id="p-tenantName">محمد حسن الشمري</span>، 
+                        بموجب الهوية الوطنية/الإقامة رقم: <span class="field-highlight" id="p-tenantID">2304958671</span>.
+                    </p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 class="doc-section-title">أولاً: وصف العين المؤجرة</h3>
+                    <p>
+                        أجر الطرف الأول للطرف الثاني ما هو <span class="field-highlight" id="p-propertyType">شقة سكنية (الدور الثاني - رقم 5)</span> 
+                        الكائنة في العنوان التالي: <span class="field-highlight" id="p-propertyAddress">حي الياسمين، طريق الملك عبد العزيز، الرياض</span>، 
+                        بغرض الاستخدام المتفق عليه.
+                    </p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 class="doc-section-title">ثانياً: مدة التعاقد والشرط المالي</h3>
+                    <p>
+                        تبدأ مدة الإيجار المتفق عليها وهي <span class="field-highlight" id="p-leaseDuration">سنة واحدة (أثنا عشر شهراً)</span> 
+                        اعتباراً من تاريخ <span class="field-highlight" id="p-startDate">2026-06-01</span> 
+                        وحتى تاريخ انتهاء العقد في <span class="field-highlight" id="p-endDate">2027-05-31</span>.
+                    </p>
+                    <p style="margin-top: 0.6rem;">
+                        القيمة الإيجارية السنوية الإجمالية المتفق عليها هي <span class="field-highlight" id="p-rentAmount">36,000 ريال سعودي</span>، 
+                        وتدفع على النحو التالي: <span class="field-highlight" id="p-paymentMethod">دفعات ربع سنوية (كل 3 أشهر بمبلغ 9,000 ريال)</span>.
+                    </p>
+                </div>
+
+                <div class="doc-section">
+                    <h3 class="doc-section-title">ثالثاً: البنود والشروط الإضافية</h3>
+                    <div style="white-space: pre-wrap;" id="p-additionalTerms">- يلتزم المستأجر بسداد فواتير الكهرباء والمياه طوال مدة العقد.
+- يدفع المستأجر مبلغ 2,000 ريال سعودي كتأمين مسترد عند تسليم العقار بحالته الأصلية.
+- لا يحق للمستأجر التنازل عن الإيجار للغير أو التأجير من الباطن دون موافقة المؤجر خطياً.</div>
+                </div>
+
+                <div class="doc-section" style="margin-top: 2rem;">
+                    <p style="font-size: 0.85rem; color: #444; line-height: 1.6;">
+                        بموجب التوقيعات أدناه، يقر الطرفان بموافقتهما وقبولهما التام لكافة الشروط والأحكام الواردة في هذا العقد والتزامهما التام بها.
+                    </p>
+                </div>
+
+                <!-- Signatures -->
+                <div class="signatures-box">
+                    <div class="signature-line">
+                        <strong>توقيع الطرف الأول (المؤجر)</strong>
+                        <div style="height: 50px;"></div>
+                    </div>
+                    <div class="signature-line">
+                        <strong>توقيع الطرف الثاني (المستأجر)</strong>
+                        <div style="height: 50px;"></div>
+                    </div>
+                </div>
+
+                <!-- Powered by Zanketsu Watermark -->
+                <div class="print-watermark">
+                    <i class="ph-fill ph-check-square"></i>
+                    تم الإنشاء والطباعة بواسطة zanketsu.com
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sync Logic Javascript -->
+    <script>
+        (function() {
+            // Elements
+            const inputs = {
+                landlordName: document.getElementById('landlordName'),
+                landlordID: document.getElementById('landlordID'),
+                tenantName: document.getElementById('tenantName'),
+                tenantID: document.getElementById('tenantID'),
+                propertyType: document.getElementById('propertyType'),
+                propertyAddress: document.getElementById('propertyAddress'),
+                leaseDuration: document.getElementById('leaseDuration'),
+                startDate: document.getElementById('startDate'),
+                endDate: document.getElementById('endDate'),
+                rentAmount: document.getElementById('rentAmount'),
+                paymentMethod: document.getElementById('paymentMethod'),
+                additionalTerms: document.getElementById('additionalTerms')
+            };
+
+            const previews = {
+                landlordName: document.getElementById('p-landlordName'),
+                landlordID: document.getElementById('p-landlordID'),
+                tenantName: document.getElementById('p-tenantName'),
+                tenantID: document.getElementById('p-tenantID'),
+                propertyType: document.getElementById('p-propertyType'),
+                propertyAddress: document.getElementById('p-propertyAddress'),
+                leaseDuration: document.getElementById('p-leaseDuration'),
+                startDate: document.getElementById('p-startDate'),
+                endDate: document.getElementById('p-endDate'),
+                rentAmount: document.getElementById('p-rentAmount'),
+                paymentMethod: document.getElementById('p-paymentMethod'),
+                additionalTerms: document.getElementById('p-additionalTerms')
+            };
+
+            // Event Listeners
+            Object.keys(inputs).forEach(key => {
+                if (inputs[key] && previews[key]) {
+                    inputs[key].addEventListener('input', (e) => {
+                        previews[key].textContent = e.target.value;
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

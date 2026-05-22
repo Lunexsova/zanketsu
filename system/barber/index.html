@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="كتالوج خدمات أنيق لصالونات الباربر والحلاقة الرجالية الكلاسيكية. 3 تصاميم ماهوغاني وذهبية وعتيقة جاهزة للطباعة. أداة مجانية من زانكتسو Zanketsu.">
+    <meta name="keywords" content="كتالوج حلاقة رجالي, قائمة أسعار باربر, تصميم كلاسيكي, Barber Menu, Zanketsu, زانكتسو">
+    <meta name="author" content="Zanketsu">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="كتالوج الباربر الكلاسيكي — صالونات الحلاقة الرجالية | زانكتسو">
+    <meta property="og:description" content="كتالوج خدمات أنيق لصالونات الباربر والحلاقة الرجالية الكلاسيكية. 3 تصاميم ماهوغاني وذهبية وعتيقة جاهزة للطباعة. أداة مجانية من زانكتسو Zanketsu.">
+    <meta property="og:type" content="website">
+    <title>زانكتسو — اختر مظهر كتالوج الباربر الكلاسيكي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/icons.min.css">
+    <style>
+        :root{--void:#0f0a06;--obsidian:#1a1108;--mahogany:#6b2d1c;--gold:#c9a248;--silver:#a8988a;--white:#fdf6ec;--font-ar:'Cairo',sans-serif;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:var(--font-ar);background:var(--void);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1rem;position:relative;overflow-x:hidden;}
+        body::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 40%,rgba(107,45,28,.07) 0%,transparent 55%),radial-gradient(circle at 80% 60%,rgba(201,162,72,.04) 0%,transparent 55%);pointer-events:none;}
+        .container{max-width:1040px;width:100%;text-align:center;position:relative;}
+        .back-btn{position:absolute;top:2rem;right:2rem;display:inline-flex;align-items:center;gap:.5rem;color:var(--silver);text-decoration:none;font-size:.85rem;padding:.5rem 1rem;border:1px solid rgba(201,162,72,.2);border-radius:4px;transition:all .3s;}
+        .back-btn:hover{color:var(--gold);border-color:var(--gold);}
+        .header{margin-bottom:3.5rem;}
+        .header h1{font-size:2.1rem;font-weight:900;background:linear-gradient(135deg,var(--white) 0%,var(--gold) 60%,#c9a248 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.8rem;}
+        .header p{font-size:.95rem;color:var(--silver);}
+        .design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
+        .design-card{background:var(--obsidian);border:1px solid rgba(201,162,72,.12);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:1.2rem;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;}
+        .design-card:hover{border-color:var(--gold);transform:translateY(-8px);box-shadow:0 15px 30px rgba(201,162,72,.15);}
+        .design-mockup{width:100%;aspect-ratio:3/4;border-radius:6px;padding:.9rem;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;box-shadow:0 5px 15px rgba(0,0,0,.4);}
+        .design-card[data-style="barber"]  .design-mockup{background:linear-gradient(160deg,#fdf6ec,#f5ead8);border:2px solid #6b2d1c;}
+        .design-card[data-style="dark"]    .design-mockup{background:#1a0e07;border:1px solid #c9a248;}
+        .design-card[data-style="vintage"] .design-mockup{background:#f9f0dc;border:1px solid #8b6347;}
+        .mock-header{text-align:center;padding-bottom:4px;}
+        .mock-title-bar{width:50%;height:6px;margin:0 auto;border-radius:2px;}
+        .design-card[data-style="barber"]  .mock-title-bar{background:#6b2d1c;}
+        .design-card[data-style="dark"]    .mock-title-bar{background:#c9a248;}
+        .design-card[data-style="vintage"] .mock-title-bar{background:#6b2d1c;}
+        .mock-body{flex:1;display:flex;flex-direction:column;gap:6px;margin:.6rem 0;}
+        .mock-cat{width:35%;height:4px;border-radius:1px;margin-bottom:2px;}
+        .design-card[data-style="barber"]  .mock-cat{background:#6b2d1c;}
+        .design-card[data-style="dark"]    .mock-cat{background:#c9a248;}
+        .design-card[data-style="vintage"] .mock-cat{background:#6b2d1c;}
+        .mock-row{display:flex;justify-content:space-between;align-items:center;}
+        .mock-item-bar{width:50%;height:3px;border-radius:1px;}
+        .design-card[data-style="barber"]  .mock-item-bar{background:#c9a87a;}
+        .design-card[data-style="dark"]    .mock-item-bar{background:#a8988a;}
+        .design-card[data-style="vintage"] .mock-item-bar{background:#c9a87a;}
+        .mock-price-bar{width:13%;height:3px;border-radius:1px;}
+        .design-card[data-style="barber"]  .mock-price-bar{background:#6b2d1c;}
+        .design-card[data-style="dark"]    .mock-price-bar{background:#c9a248;}
+        .design-card[data-style="vintage"] .mock-price-bar{background:#9b3a1e;}
+        .mock-footer-line{width:40px;height:2px;margin:0 auto;border-radius:1px;}
+        .design-card[data-style="barber"]  .mock-footer-line{background:#c9a248;}
+        .design-card[data-style="dark"]    .mock-footer-line{background:#c9a248;}
+        .design-card[data-style="vintage"] .mock-footer-line{background:#8b6347;}
+        .design-name{font-size:1.1rem;font-weight:700;color:var(--white);}
+        .design-desc{font-size:.8rem;color:var(--silver);text-align:center;line-height:1.5;}
+        @media(max-width:900px){.design-grid{grid-template-columns:repeat(2,1fr);}.back-btn{position:static;margin-bottom:2rem;}}
+        @media(max-width:560px){.design-grid{grid-template-columns:1fr;}}
+    </style>
+
+    <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "زانكتسو — اختر مظهر كتالوج الباربر الكلاسيكي",
+    "url": "https://zanketsu.com/system/barber/index.html",
+    "description": "أداة اختيار وتصميم مظهر كتالوج الخدمات والأسعار المخصص لصالونات الحلاقة والباربر الرجالي.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "ar",
+    "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Zanketsu",
+        "url": "https://zanketsu.com"
+    }
+}
+    </script>
+    <!-- hreflang: tells Google this page has Arabic/English equivalents -->
+    <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/barber/">
+    <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/barber/">
+    <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/barber/">
+</head>
+<body>
+    <!-- nav:zanketsu-shared -->
+    <link rel="stylesheet" href="../../assets/css/zanketsu-nav.css">
+    <nav class="zank-nav" id="zankNav">
+        <a href="../../index.html" class="zank-nav-logo">
+            <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+        </a>
+        <ul class="zank-nav-links">
+            <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+            <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+            <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+            <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+            <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+            <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+            <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+        </ul>
+        
+        <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+    </nav>
+    <div class="zank-mobile-overlay" id="zankMobileOverlay">
+        <div class="zank-mobile-drawer">
+            <div class="zank-mobile-header">
+                <a href="../../index.html"><img src="../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+                <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <ul class="zank-mobile-links">
+                <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+                <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+                <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+                <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+                <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+                <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+                <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+            </ul>
+            <div class="zank-mobile-footer">
+                <div class="zank-hero-badge">
+                    <i class="ph-duotone ph-clock-countdown"></i>
+                    قادم في 2027
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var t=document.getElementById("zankNavToggle");
+        var o=document.getElementById("zankMobileOverlay");
+        var c=document.getElementById("zankMobileClose");
+        if(t&&o&&c){
+            t.addEventListener("click",function(){o.classList.add("open");});
+            c.addEventListener("click",function(){o.classList.remove("open");});
+            o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+        }
+    })();
+    </script>
+
+    <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> رجوع للوحة الأدوات</a>
+    <div class="container">
+        <div class="header">
+            <h1>✂️ كتالوج الباربر الكلاسيكي</h1>
+            <p>تصاميم رجولية أصيلة وكلاسيكية لصالونات الحلاقة التقليدية وصالات الباربر الفخمة</p>
+        </div>
+        <div class="design-grid">
+            <a href="editor.html?theme=barber" class="design-card" data-style="barber">
+                <div class="design-mockup">
+                    <div class="mock-header"><div class="mock-title-bar"></div></div>
+                    <div class="mock-body">
+                        <div class="mock-cat"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-cat" style="margin-top:.3rem;"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                    </div>
+                    <div class="mock-footer-line"></div>
+                </div>
+                <div class="design-name">Classic Barber</div>
+                <p class="design-desc">كريم دافئ مع حدود ماهوغاني كلاسيكية، الطابع الأصيل للحلاقة التقليدية الراقية.</p>
+            </a>
+            <a href="editor.html?theme=dark" class="design-card" data-style="dark">
+                <div class="design-mockup">
+                    <div class="mock-header"><div class="mock-title-bar"></div></div>
+                    <div class="mock-body">
+                        <div class="mock-cat"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-cat" style="margin-top:.3rem;"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                    </div>
+                    <div class="mock-footer-line"></div>
+                </div>
+                <div class="design-name">Dark Mahogany</div>
+                <p class="design-desc">خلفية بنية غامقة مع ذهبي ملكي ساطع، لصالونات الباربر الفاخرة والمتميزة الطابع.</p>
+            </a>
+            <a href="editor.html?theme=vintage" class="design-card" data-style="vintage">
+                <div class="design-mockup">
+                    <div class="mock-header"><div class="mock-title-bar"></div></div>
+                    <div class="mock-body">
+                        <div class="mock-cat"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                        <div class="mock-cat" style="margin-top:.3rem;"></div>
+                        <div class="mock-row"><div class="mock-item-bar"></div><div class="mock-price-bar"></div></div>
+                    </div>
+                    <div class="mock-footer-line"></div>
+                </div>
+                <div class="design-name">Vintage Paper</div>
+                <p class="design-desc">ورق عتيق بإطار مزدوج ونص مائل إيطالي، مثالي للصالونات ذات التاريخ والموروث.</p>
+            </a>
+        </div>
+    </div>
+    <!-- footer:zanketsu-shared -->
+    <footer class="zank-footer">
+        <a href="../../index.html" class="zank-footer-logo">
+            <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+        </a>
+        <div class="zank-footer-links">
+            <a href="../../index.html"><i class="ph-duotone ph-house"></i> الرئيسية</a>
+            <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a>
+            <a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a>
+            <a href="../../legal.html#terms"><i class="ph-duotone ph-shield-check"></i> الشروط</a>
+            <a href="../../legal.html#privacy"><i class="ph-duotone ph-lock-key"></i> الخصوصية</a>
+        </div>
+        
+        <p class="zank-footer-copy">
+            <i class="ph-duotone ph-copyright"></i>
+            <span>جميع الحقوق محفوظة</span>
+            <span>&copy; 2026 Zanketsu</span>
+            <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+        </p>
+    </footer>
+</body>
+</html>
