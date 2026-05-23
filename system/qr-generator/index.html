@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زانكتسو — صانع رموز الـ QR والباركود 🔗</title>
+  <link rel="canonical" href="https://zanketsu.com/system/qr-generator/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/qr-generator/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/qr-generator/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/qr-generator/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/qr-generator/">
+  <meta property="og:title" content="زانكتسو — صانع رموز الـ QR والباركود 🔗">
+  <meta property="og:description" content="أداة مجانية تفاعلية لصناعة وتصميم رموز الاستجابة السريعة (QR Codes) لشبكات الواي فاي، الروابط، ورسائل الواتساب.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="أداة مجانية تفاعلية لصناعة وتصميم رموز الاستجابة السريعة (QR Codes) لشبكات الواي فاي، الروابط، ورسائل الواتساب.">
+  <meta name="keywords" content="زانكت, زانكتسو, زانكيتسو, زانك, زانكتو, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, صانع باركود">
+  <meta name="author" content="زانكتسو">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="qr-generator.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "زانكتسو — صانع رموز الـ QR والباركود 🔗",
+  "url": "https://zanketsu.com/system/qr-generator/index.html",
+  "description": "أداة مجانية تفاعلية لصناعة وتصميم رموز الاستجابة السريعة (QR Codes) والباركود لشبكات الواي فاي، الروابط، ورسائل الواتساب.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "inLanguage": "ar",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "زانكتسو",
+    "alternateName": ["زانكت", "زانكيتسو", "زانك", "زانكتو"],
+    "url": "https://zanketsu.com"
+  }
+}
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../index.html" class="zank-nav-logo">
+      <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+      <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+      <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+      <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+      <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+      <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+      <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+    </ul>
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+  </nav>
+
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../index.html"><img src="../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+        <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+        <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+        <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+        <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+        <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+        <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> قادم في 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Input Configurations -->
+    <main class="calculator-card">
+      <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> رجوع للوحة الأدوات</a>
+      <h2 class="section-title">
+        <i class="ph-duotone ph-qr-code"></i>
+        إعدادات وتخصيص الرمز
+      </h2>
+
+      <!-- Tabs Selection -->
+      <div class="tabs-header">
+        <button class="tab-btn active" data-tab="url"><i class="ph-bold ph-link"></i> رابط / نص</button>
+        <button class="tab-btn" data-tab="wifi"><i class="ph-bold ph-wifi-high"></i> شبكة واي فاي</button>
+        <button class="tab-btn" data-tab="whatsapp"><i class="ph-bold ph-whatsapp-logo"></i> رسالة واتساب</button>
+        <button class="tab-btn" data-tab="phone"><i class="ph-bold ph-phone"></i> رقم هاتف</button>
+      </div>
+
+      <!-- Tab: URL / Text -->
+      <div class="tab-content active" id="tab-url">
+        <div class="form-group">
+          <label class="form-label" for="urlInput">الرابط الإلكتروني أو النص:</label>
+          <input class="form-control" id="urlInput" placeholder="https://zanketsu.com" type="text"/>
+        </div>
+      </div>
+
+      <!-- Tab: WiFi -->
+      <div class="tab-content" id="tab-wifi">
+        <div class="form-group">
+          <label class="form-label" for="wifiSSID">اسم الشبكة (SSID):</label>
+          <input class="form-control" id="wifiSSID" placeholder="Zanketsu_Guest_WiFi" type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="wifiPass">كلمة مرور الشبكة:</label>
+          <input type="password" id="wifiPass" class="form-control" value="Zanketsu2026" placeholder="رمز المرور...">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="wifiEnc">نوع التشفير الأمن:</label>
+          <select id="wifiEnc" class="form-control">
+            <option value="WPA">WPA/WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="nopass">بدون كلمة مرور</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tab: WhatsApp -->
+      <div class="tab-content" id="tab-whatsapp">
+        <div class="form-group">
+          <label class="form-label" for="waPhone">رقم الجوال (مع كود الدولة وبدون +):</label>
+          <input class="form-control" id="waPhone" placeholder="966500000000" type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="waMsg">رسالة الترحيب التلقائية:</label>
+          <textarea id="waMsg" class="form-control" rows="2" placeholder="مرحباً زانكتسو، أود طلب استشارة تجارية...">مرحباً زانكتسو، أود معرفة تفاصيل أكثر عن حزمة FlexHub-X1 لعملي.</textarea>
+        </div>
+      </div>
+
+      <!-- Tab: Phone -->
+      <div class="tab-content" id="tab-phone">
+        <div class="form-group">
+          <label class="form-label" for="telNumber">رقم الاتصال المباشر:</label>
+          <input class="form-control" id="telNumber" placeholder="966500000000" type="text"/>
+        </div>
+      </div>
+
+      <!-- Styling Customize -->
+      <h3 style="font-size: 0.95rem; margin-top: 2rem; color: var(--silver); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">الألوان والأبعاد:</h3>
+      
+      <div class="color-pickers-row">
+        <div class="form-group">
+          <label class="form-label" for="qrColor">لون النقاط والرمز:</label>
+          <input type="color" id="qrColor" class="form-control" value="#050508" style="padding:0.2rem; height:40px;">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="qrBgColor">لون الخلفية:</label>
+          <input type="color" id="qrBgColor" class="form-control" value="#ffffff" style="padding:0.2rem; height:40px;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="qrSize">حجم ودقة الرمز (بكسل):</label>
+        <select id="qrSize" class="form-control">
+          <option value="128">128 × 128 px (صغير)</option>
+          <option value="256" selected>256 × 256 px (متوسط)</option>
+          <option value="512">512 × 512 px (كبير ودقة عالية)</option>
+        </select>
+      </div>
+    </main>
+
+    <!-- Preview Column -->
+    <aside class="results-card">
+      <h2 class="section-title section-title-purple">
+        <i class="ph-duotone ph-image"></i>
+        معاينة وتنزيل الرمز المولد
+      </h2>
+
+      <!-- QR Code Output -->
+      <div class="qr-output-container">
+        <div id="qrcode"></div>
+      </div>
+
+      <button id="downloadBtn" class="btn-secondary">
+        <i class="ph-bold ph-download-simple"></i> تنزيل كملف PNG
+      </button>
+      
+      <div class="watermark-print">
+        تم الإنشاء والطباعة بواسطة zanketsu.com
+      </div>
+    </aside>
+  </div>
+
+  <!-- QRCode JS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+  <!-- Script Block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let activeTab = 'url';
+
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      const qrColorInput = document.getElementById('qrColor');
+      const qrBgColorInput = document.getElementById('qrBgColor');
+      const qrSizeSelect = document.getElementById('qrSize');
+      const downloadBtn = document.getElementById('downloadBtn');
+
+      // Inputs
+      const inputs = [
+        'urlInput', 'wifiSSID', 'wifiPass', 'wifiEnc', 'waPhone', 'waMsg', 'telNumber'
+      ];
+
+      // Tabs toggle handler
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+
+          this.classList.add('active');
+          activeTab = this.getAttribute('data-tab');
+          document.getElementById(`tab-${activeTab}`).classList.add('active');
+          
+          generateQR();
+        });
+      });
+
+      // Generate function
+      function generateQR() {
+        const container = document.getElementById('qrcode');
+        container.innerHTML = '';
+
+        let text = '';
+        if (activeTab === 'url') {
+          text = document.getElementById('urlInput').value;
+        } else if (activeTab === 'wifi') {
+          const ssid = document.getElementById('wifiSSID').value;
+          const pass = document.getElementById('wifiPass').value;
+          const enc = document.getElementById('wifiEnc').value;
+          text = `WIFI:S:${ssid};T:${enc};P:${pass};;`;
+        } else if (activeTab === 'whatsapp') {
+          const phone = document.getElementById('waPhone').value;
+          const msg = encodeURIComponent(document.getElementById('waMsg').value);
+          text = `https://wa.me/${phone}?text=${msg}`;
+        } else if (activeTab === 'phone') {
+          text = `tel:${document.getElementById('telNumber').value}`;
+        }
+
+        if (!text) text = 'https://zanketsu.com';
+
+        const size = parseInt(qrSizeSelect.value) || 256;
+        const fgColor = qrColorInput.value;
+        const bgColor = qrBgColorInput.value;
+
+        // Create QRObject
+        new QRCode(container, {
+          text: text,
+          width: size,
+          height: size,
+          colorDark : fgColor,
+          colorLight : bgColor,
+          correctLevel : QRCode.CorrectLevel.H
+        });
+      }
+
+      // Bind inputs change triggers
+      inputs.forEach(id => {
+        document.getElementById(id).addEventListener('input', generateQR);
+        document.getElementById(id).addEventListener('change', generateQR);
+      });
+
+      [qrColorInput, qrBgColorInput, qrSizeSelect].forEach(input => {
+        input.addEventListener('change', generateQR);
+      });
+
+      // Download trigger
+      downloadBtn.addEventListener('click', function() {
+        const canvas = document.querySelector('#qrcode canvas');
+        const img = document.querySelector('#qrcode img');
+        let src = '';
+
+        if (canvas) {
+          src = canvas.toDataURL('image/png');
+        } else if (img) {
+          src = img.src;
+        }
+
+        if (src) {
+          const link = document.createElement('a');
+          link.download = 'zanketsu-qrcode.png';
+          link.href = src;
+          link.click();
+        } else {
+          alert("خطأ: لم يتم توليد رمز الـ QR بنجاح.");
+        }
+      });
+
+      // Initial render
+      // Small delay to ensure qrcode library loaded
+      setTimeout(generateQR, 300);
+    });
+  </script>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer" style="margin-top: 5rem;">
+    <a href="../../index.html" class="zank-footer-logo">
+      <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../index.html"><i class="ph-duotone ph-house"></i> الرئيسية</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a>
+      <a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a>
+      <a href="../../legal.html#terms"><i class="ph-duotone ph-shield-check"></i> الشروط</a>
+      <a href="../../legal.html#privacy"><i class="ph-duotone ph-lock-key"></i> الخصوصية</a>
+    </div>
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>جميع الحقوق محفوظة</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>

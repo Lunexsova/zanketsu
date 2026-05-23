@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زانكتسو — نبض السوق والبورصة العالمية 📈</title>
+  <link rel="canonical" href="https://zanketsu.com/system/trading/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/trading/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/trading/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/trading/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/trading/">
+  <meta property="og:title" content="زانكتسو — نبض السوق والبورصة العالمية 📈">
+  <meta property="og:description" content="أداة مجانية لمتابعة أسعار الذهب والنفط والعملات والعملات الرقمية العالمية بشكل مباشر مع حاسبة تحويل متطورة ورسم بياني تفاعلي.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="أداة مجانية لمتابعة أسعار الذهب والنفط والعملات والعملات الرقمية العالمية بشكل مباشر مع حاسبة تحويل متطورة ورسم بياني تفاعلي.">
+  <meta name="keywords" content="زانكت, زانكتسو, زانكيتسو, زانك, زانكتو, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, تتبع البورصة, أسعار الذهب اليوم, سعر النفط برنت, تحويل العملات, بيتكوين, تداول مالي">
+  <meta name="author" content="زانكتسو">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="trading.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "زانكتسو — نبض السوق والبورصة العالمية 📈",
+  "url": "https://zanketsu.com/system/trading/index.html",
+  "description": "أداة مجانية لمتابعة أسعار الذهب والنفط والعملات والعملات الرقمية العالمية بشكل مباشر مع حاسبة تحويل متطورة ورسم بياني تفاعلي.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "inLanguage": "ar",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "زانكتسو",
+    "alternateName": ["زانكت", "زانكيتسو", "زانك", "زانكتو"],
+    "url": "https://zanketsu.com"
+  }
+}
+  </script>
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../index.html" class="zank-nav-logo">
+      <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+      <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+      <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+      <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+      <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+      <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+      <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+    </ul>
+    
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+  </nav>
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../index.html"><img src="../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+        <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+        <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+        <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+        <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+        <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+        <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge">
+          <i class="ph-duotone ph-clock-countdown"></i>
+          قادم في 2027
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <a href="../index.html" class="header-logo">
+      <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="110" height="30">
+      <span class="header-title">نبض السوق وتتبع الأسواق 📈</span>
+    </a>
+    <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> لوحة الأدوات</a>
+  </header>
+
+  <!-- App Container -->
+  <div class="app-container">
+    
+    <!-- Market Monitor Panel -->
+    <main class="monitor-panel">
+      
+      <div class="live-status">
+        <span class="live-dot"></span>
+        <span>تحديث تلقائي حي ومباشر (كل 3 ثوانٍ)</span>
+      </div>
+
+      <!-- Market Grid -->
+      <div class="market-grid">
+        <!-- Gold 24K -->
+        <div class="market-card selected" onclick="selectAsset('gold24')" id="card-gold24">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #d4af37;"><i class="ph-duotone ph-coins"></i></div>
+              <div>
+                <div class="asset-name">الذهب عيار 24</div>
+                <div class="asset-symbol">XAU / SAR (جرام)</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-up" id="trend-gold24">
+              <i class="ph-bold ph-trend-up"></i> +0.34%
+            </div>
+          </div>
+          <div class="asset-price" id="price-gold24">289.45 ر.س</div>
+          <div class="asset-meta">
+            <span>الأعلى: 291.10</span>
+            <span>الأدنى: 288.15</span>
+          </div>
+        </div>
+
+        <!-- Brent Oil -->
+        <div class="market-card" onclick="selectAsset('oil')" id="card-oil">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #3b82f6;"><i class="ph-duotone ph-drop"></i></div>
+              <div>
+                <div class="asset-name">نفط برنت</div>
+                <div class="asset-symbol">BRENT / USD (برميل)</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-down" id="trend-oil">
+              <i class="ph-bold ph-trend-down"></i> -0.12%
+            </div>
+          </div>
+          <div class="asset-price" id="price-oil">83.15 $</div>
+          <div class="asset-meta">
+            <span>الأعلى: 84.05</span>
+            <span>الأدنى: 82.80</span>
+          </div>
+        </div>
+
+        <!-- USD / SAR -->
+        <div class="market-card" onclick="selectAsset('usdsar')" id="card-usdsar">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #10b981;"><i class="ph-duotone ph-coins"></i></div>
+              <div>
+                <div class="asset-name">الدولار مقابل الريال</div>
+                <div class="asset-symbol">USD / SAR</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-up" id="trend-usdsar">
+              <i class="ph-bold ph-trend-up"></i> +0.02%
+            </div>
+          </div>
+          <div class="asset-price" id="price-usdsar">3.7512 ر.س</div>
+          <div class="asset-meta">
+            <span>الأعلى: 3.7525</span>
+            <span>الأدنى: 3.7505</span>
+          </div>
+        </div>
+
+        <!-- USD / EGP -->
+        <div class="market-card" onclick="selectAsset('usdegp')" id="card-usdegp">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #c084fc;"><i class="ph-duotone ph-money"></i></div>
+              <div>
+                <div class="asset-name">الدولار مقابل المصري</div>
+                <div class="asset-symbol">USD / EGP</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-down" id="trend-usdegp">
+              <i class="ph-bold ph-trend-down"></i> -0.15%
+            </div>
+          </div>
+          <div class="asset-price" id="price-usdegp">47.50 ج.م</div>
+          <div class="asset-meta">
+            <span>الأعلى: 47.85</span>
+            <span>الأدنى: 47.35</span>
+          </div>
+        </div>
+
+        <!-- USD / KWD -->
+        <div class="market-card" onclick="selectAsset('usdkwd')" id="card-usdkwd">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #38bdf8;"><i class="ph-duotone ph-wallet"></i></div>
+              <div>
+                <div class="asset-name">الدولار مقابل الكويتي</div>
+                <div class="asset-symbol">USD / KWD</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-up" id="trend-usdkwd">
+              <i class="ph-bold ph-trend-up"></i> +0.01%
+            </div>
+          </div>
+          <div class="asset-price" id="price-usdkwd">0.3072 د.ك</div>
+          <div class="asset-meta">
+            <span>الأعلى: 0.3075</span>
+            <span>الأدنى: 0.3070</span>
+          </div>
+        </div>
+
+        <!-- USD / QAR -->
+        <div class="market-card" onclick="selectAsset('usdqar')" id="card-usdqar">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #fb7185;"><i class="ph-duotone ph-credit-card"></i></div>
+              <div>
+                <div class="asset-name">الدولار مقابل القطري</div>
+                <div class="asset-symbol">USD / QAR</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-up" id="trend-usdqar">
+              <i class="ph-bold ph-trend-up"></i> +0.00%
+            </div>
+          </div>
+          <div class="asset-price" id="price-usdqar">3.6415 ر.ق</div>
+          <div class="asset-meta">
+            <span>الأعلى: 3.6420</span>
+            <span>الأدنى: 3.6410</span>
+          </div>
+        </div>
+
+        <!-- USD / CNY -->
+        <div class="market-card" onclick="selectAsset('usdcny')" id="card-usdcny">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #facc15;"><i class="ph-duotone ph-currency-cny"></i></div>
+              <div>
+                <div class="asset-name">الدولار مقابل الصيني</div>
+                <div class="asset-symbol">USD / CNY</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-down" id="trend-usdcny">
+              <i class="ph-bold ph-trend-down"></i> -0.08%
+            </div>
+          </div>
+          <div class="asset-price" id="price-usdcny">7.2435 ¥</div>
+          <div class="asset-meta">
+            <span>الأعلى: 7.2510</span>
+            <span>الأدنى: 7.2380</span>
+          </div>
+        </div>
+
+        <!-- Bitcoin -->
+        <div class="market-card" onclick="selectAsset('btc')" id="card-btc">
+          <div class="market-card-header">
+            <div class="asset-info">
+              <div class="asset-icon" style="color: #f59e0b;"><i class="ph-duotone ph-currency-btc"></i></div>
+              <div>
+                <div class="asset-name">بيتكوين</div>
+                <div class="asset-symbol">BTC / USD</div>
+              </div>
+            </div>
+            <div class="asset-trend trend-up" id="trend-btc">
+              <i class="ph-bold ph-trend-up"></i> +2.45%
+            </div>
+          </div>
+          <div class="asset-price" id="price-btc">67,420 $</div>
+          <div class="asset-meta">
+            <span>الأعلى: 67,900</span>
+            <span>الأدنى: 65,800</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart Display -->
+      <div class="chart-container">
+        <div class="chart-header">
+          <h3 class="chart-title" id="chart-title-text">المخطط البياني التفاعلي: الذهب عيار 24 (آخر 10 تحديثات)</h3>
+          <div style="font-size: 0.8rem; color: var(--silver);"><i class="ph-fill ph-activity"></i> مباشر</div>
+        </div>
+        <div style="position: relative; height: 280px; width: 100%;">
+          <canvas id="marketChart"></canvas>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Controls / Calculator Sidebar -->
+    <aside class="controls-panel">
+      <h2 class="panel-title">
+        <i class="ph-duotone ph-calculator"></i>
+        حاسبة التحويل والاستثمار
+      </h2>
+
+      <!-- Converter Form -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-coins"></i>
+          محول أسعار الأصول
+        </h3>
+        
+        <div class="form-group">
+          <label for="calcAsset">الأصل المراد حسابه:</label>
+          <select id="calcAsset" class="form-control" onchange="updateCalc()">
+            <option value="gold24">الذهب عيار 24 (جرام)</option>
+            <option value="oil">نفط برنت (برميل)</option>
+            <option value="usdsar">الدولار مقابل الريال (SAR)</option>
+            <option value="usdegp">الدولار مقابل المصري (EGP)</option>
+            <option value="usdkwd">الدولار مقابل الكويتي (KWD)</option>
+            <option value="usdqar">الدولار مقابل القطري (QAR)</option>
+            <option value="usdcny">الدولار مقابل الصيني (CNY)</option>
+            <option value="btc">بيتكوين (BTC)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="calcAmount">الكمية:</label>
+          <input type="number" id="calcAmount" class="form-control" value="10" min="0.001" step="any" oninput="updateCalc()">
+        </div>
+
+        <div class="form-group" style="margin-top: 1.5rem; background: rgba(16, 185, 129, 0.04); padding: 1rem; border-radius: 6px; border: 1px dashed rgba(16, 185, 129, 0.2);">
+          <label style="color: var(--green-neon); font-weight: 700;">القيمة التقديرية بالريال السعودي:</label>
+          <div id="resultSar" style="font-size: 1.8rem; font-weight: 900; color: var(--white); margin-top: 0.2rem;">2,894.50 ر.س</div>
+        </div>
+
+        <div class="form-group" style="background: rgba(255, 255, 255, 0.02); padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color);">
+          <label>القيمة التقديرية بالدولار الأمريكي:</label>
+          <div id="resultUsd" style="font-size: 1.3rem; font-weight: 700; color: var(--silver); margin-top: 0.2rem;">771.87 $</div>
+        </div>
+      </div>
+
+      <!-- Currency Converter Form -->
+      <div class="form-section" style="margin-top: 1rem;">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-currency-circle-dollar"></i>
+          حاسبة تحويل العملات
+        </h3>
+        
+        <div class="form-group">
+          <label for="currencyFrom">من عملة:</label>
+          <select id="currencyFrom" class="form-control" onchange="convertCurrency()">
+            <option value="USD" selected>دولار أمريكي (USD)</option>
+            <option value="SAR">ريال سعودي (SAR)</option>
+            <option value="EGP">جنيه مصري (EGP)</option>
+            <option value="KWD">دينار كويتي (KWD)</option>
+            <option value="QAR">ريال قطري (QAR)</option>
+            <option value="CNY">يوان صيني (CNY)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="currencyTo">إلى عملة:</label>
+          <select id="currencyTo" class="form-control" onchange="convertCurrency()">
+            <option value="USD">دولار أمريكي (USD)</option>
+            <option value="SAR">ريال سعودي (SAR)</option>
+            <option value="EGP" selected>جنيه مصري (EGP)</option>
+            <option value="KWD">دينار كويتي (KWD)</option>
+            <option value="QAR">ريال قطري (QAR)</option>
+            <option value="CNY">يوان صيني (CNY)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="currencyAmount">المبلغ المراد تحويله:</label>
+          <input type="number" id="currencyAmount" class="form-control" value="100" min="0.01" step="any" oninput="convertCurrency()">
+        </div>
+
+        <div class="form-group" style="margin-top: 1.5rem; background: rgba(16, 185, 129, 0.04); padding: 1rem; border-radius: 6px; border: 1px dashed rgba(16, 185, 129, 0.2);">
+          <label style="color: var(--green-neon); font-weight: 700;">نتيجة التحويل المقدرة:</label>
+          <div id="currencyResult" style="font-size: 1.8rem; font-weight: 900; color: var(--white); margin-top: 0.2rem;">4,750.00 ج.م</div>
+        </div>
+      </div>
+
+
+    </aside>
+
+  </div>
+
+  <!-- Live Simulation & Chart script -->
+  <script>
+    // Assets data state
+    const assets = {
+      gold24: { name: 'الذهب عيار 24', symbol: 'XAU / SAR', price: 289.45, change: 0.34, history: [287.5, 288.1, 287.9, 288.3, 288.0, 289.1, 288.8, 289.2, 289.0, 289.45], unit: 'جرام', code: 'SAR' },
+      oil: { name: 'نفط برنت', symbol: 'BRENT / USD', price: 83.15, change: -0.12, history: [84.2, 83.9, 83.5, 83.7, 83.1, 83.4, 83.0, 83.3, 82.9, 83.15], unit: 'برميل', code: 'USD' },
+      usdsar: { name: 'الدولار مقابل الريال', symbol: 'USD / SAR', price: 3.7512, change: 0.02, history: [3.7508, 3.7510, 3.7511, 3.7509, 3.7512, 3.7510, 3.7511, 3.7513, 3.7510, 3.7512], unit: 'دولار', code: 'SAR' },
+      usdegp: { name: 'الدولار مقابل المصري', symbol: 'USD / EGP', price: 47.50, change: -0.15, history: [47.20, 47.30, 47.25, 47.40, 47.35, 47.45, 47.38, 47.52, 47.48, 47.50], unit: 'جنيه', code: 'EGP' },
+      usdkwd: { name: 'الدولار مقابل الكويتي', symbol: 'USD / KWD', price: 0.3072, change: 0.01, history: [0.3068, 0.3070, 0.3069, 0.3071, 0.3070, 0.3072, 0.3071, 0.3073, 0.3070, 0.3072], unit: 'دينار', code: 'KWD' },
+      usdqar: { name: 'الدولار مقابل القطري', symbol: 'USD / QAR', price: 3.6415, change: 0.00, history: [3.6410, 3.6412, 3.6415, 3.6411, 3.6414, 3.6413, 3.6415, 3.6412, 3.6416, 3.6415], unit: 'ريال', code: 'QAR' },
+      usdcny: { name: 'الدولار مقابل الصيني', symbol: 'USD / CNY', price: 7.2435, change: -0.08, history: [7.2100, 7.2250, 7.2180, 7.2300, 7.2280, 7.2400, 7.2350, 7.2450, 7.2410, 7.2435], unit: 'يوان', code: 'CNY' },
+      btc: { name: 'بيتكوين', symbol: 'BTC / USD', price: 67420.00, change: 2.45, history: [65800, 66100, 65950, 66300, 66200, 66800, 66500, 67100, 66900, 67420], unit: 'بيتكوين', code: 'USD' }
+    };
+
+    let selectedAssetId = 'gold24';
+    let chartInstance = null;
+
+    // Initialize Chart
+    function initChart() {
+      const ctx = document.getElementById('marketChart').getContext('2d');
+      const asset = assets[selectedAssetId];
+      
+      const isUp = asset.change >= 0;
+      const strokeColor = isUp ? '#10b981' : '#ef4444';
+      const fillColor = isUp ? 'rgba(16, 185, 129, 0.05)' : 'rgba(239, 68, 68, 0.05)';
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 10}, (_, i) => `T-${10-i}`),
+          datasets: [{
+            label: asset.name,
+            data: [...asset.history],
+            borderColor: strokeColor,
+            backgroundColor: fillColor,
+            borderWidth: 3,
+            fill: true,
+            tension: 0.3,
+            pointBackgroundColor: strokeColor,
+            pointBorderColor: 'rgba(255,255,255,0.8)',
+            pointRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              grid: { color: 'rgba(255, 255, 255, 0.03)' },
+              ticks: { color: '#a1a1aa', font: { family: 'Cairo' } }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#a1a1aa', font: { family: 'Cairo' } }
+            }
+          }
+        }
+      });
+    }
+
+    // Switch selected asset
+    function selectAsset(assetId) {
+      selectedAssetId = assetId;
+      
+      // Toggle selected class in UI
+      document.querySelectorAll('.market-card').forEach(card => card.classList.remove('selected'));
+      const cardEl = document.getElementById(`card-${assetId}`);
+      if (cardEl) cardEl.classList.add('selected');
+      
+      // Update title text
+      document.getElementById('chart-title-text').textContent = `المخطط البياني التفاعلي: ${assets[assetId].name} (آخر 10 تحديثات)`;
+      
+      // Sync with calculator selector
+      const calcSelect = document.getElementById('calcAsset');
+      if (calcSelect) calcSelect.value = assetId;
+
+      // Re-render chart data
+      const asset = assets[assetId];
+      const isUp = asset.change >= 0;
+      const strokeColor = isUp ? '#10b981' : '#ef4444';
+
+      chartInstance.data.datasets[0].label = asset.name;
+      chartInstance.data.datasets[0].data = [...asset.history];
+      chartInstance.data.datasets[0].borderColor = strokeColor;
+      chartInstance.data.datasets[0].pointBackgroundColor = strokeColor;
+      chartInstance.update();
+
+      updateCalc();
+    }
+
+    // Live Market Simulator (Interval loops every 3 seconds)
+    setInterval(() => {
+      Object.keys(assets).forEach(key => {
+        const asset = assets[key];
+        
+        // Add minor random fluctuation (-0.5% to +0.5%)
+        const changePercent = (Math.random() - 0.5) * 0.4;
+        const delta = asset.price * (changePercent / 100);
+        
+        // Set decimal places depending on asset type
+        let decimals = 2;
+        if (key === 'usdsar' || key === 'usdkwd' || key === 'usdqar' || key === 'usdcny') {
+          decimals = 4;
+        }
+        asset.price = parseFloat((asset.price + delta).toFixed(decimals));
+        
+        // Calculate trend percent
+        const baseHistory = asset.history[0];
+        asset.change = parseFloat((((asset.price - baseHistory) / baseHistory) * 100).toFixed(2));
+        
+        // Append to history list
+        asset.history.shift();
+        asset.history.push(asset.price);
+
+        // Update UI Card values
+        const priceEl = document.getElementById(`price-${key}`);
+        const trendEl = document.getElementById(`trend-${key}`);
+
+        const symbolMap = {
+          'SAR': 'ر.س',
+          'EGP': 'ج.م',
+          'KWD': 'د.ك',
+          'QAR': 'ر.ق',
+          'CNY': '¥',
+          'USD': '$'
+        };
+        const symbol = symbolMap[asset.code] || '$';
+
+        if (priceEl) {
+          priceEl.textContent = `${asset.price.toLocaleString(undefined, {minimumFractionDigits: decimals, maximumFractionDigits: decimals})} ${symbol}`;
+        }
+        if (trendEl) {
+          const isUp = asset.change >= 0;
+          trendEl.className = `asset-trend ${isUp ? 'trend-up' : 'trend-down'}`;
+          trendEl.innerHTML = `<i class="ph-bold ph-trend-${isUp ? 'up' : 'down'}"></i> ${isUp ? '+' : ''}${asset.change}%`;
+        }
+      });
+
+      // Update active chart if necessary
+      const activeAsset = assets[selectedAssetId];
+      chartInstance.data.datasets[0].data = [...activeAsset.history];
+      chartInstance.update('none'); // silent update
+
+      // Live updates for calculators
+      updateCalc();
+      convertCurrency();
+
+    }, 3000);
+
+    // Calculator Logic for metals, energy, crypto, currencies
+    function updateCalc() {
+      const assetId = document.getElementById('calcAsset').value;
+      const amount = parseFloat(document.getElementById('calcAmount').value) || 0;
+      const asset = assets[assetId];
+
+      let valSar = 0;
+      let valUsd = 0;
+
+      if (assetId === 'gold24') {
+        valSar = amount * asset.price;
+        valUsd = valSar / assets.usdsar.price;
+      } else if (assetId === 'oil') {
+        valUsd = amount * asset.price;
+        valSar = valUsd * assets.usdsar.price;
+      } else if (assetId.startsWith('usd')) {
+        valUsd = amount;
+        valSar = amount * assets.usdsar.price;
+      } else if (assetId === 'btc') {
+        valUsd = amount * asset.price;
+        valSar = valUsd * assets.usdsar.price;
+      }
+
+      let targetSymbol = 'ر.س';
+      let targetVal = valSar;
+      if (assetId.startsWith('usd') && assetId !== 'usdsar') {
+        const code = asset.code;
+        const symbolMap = { 'EGP': 'ج.م', 'KWD': 'د.ك', 'QAR': 'ر.ق', 'CNY': '¥' };
+        targetSymbol = symbolMap[code] || code;
+        targetVal = amount * asset.price;
+      }
+
+      document.getElementById('resultSar').textContent = `${targetVal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${targetSymbol}`;
+      document.getElementById('resultUsd').textContent = `${valUsd.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} $`;
+    }
+
+    // Dedicated Multi-Currency to Multi-Currency Converter
+    function convertCurrency() {
+      const from = document.getElementById('currencyFrom').value;
+      const to = document.getElementById('currencyTo').value;
+      const amount = parseFloat(document.getElementById('currencyAmount').value) || 0;
+
+      // rates: 1 USD = rate units
+      const rates = {
+        USD: 1.0,
+        SAR: assets.usdsar.price,
+        EGP: assets.usdegp.price,
+        KWD: assets.usdkwd.price,
+        QAR: assets.usdqar.price,
+        CNY: assets.usdcny.price
+      };
+
+      const val = amount * (rates[to] / rates[from]);
+
+      const symbolMap = {
+        USD: 'USD ($)',
+        SAR: 'SAR (ر.س)',
+        EGP: 'EGP (ج.م)',
+        KWD: 'KWD (د.ك)',
+        QAR: 'QAR (ر.ق)',
+        CNY: 'CNY (¥)'
+      };
+
+      document.getElementById('currencyResult').textContent = `${val.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} ${symbolMap[to] || to}`;
+    }
+
+    // Link Select and calculator select sync
+    document.getElementById('calcAsset').addEventListener('change', (e) => {
+      selectAsset(e.target.value);
+    });
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      initChart();
+      updateCalc();
+      convertCurrency();
+    });
+  </script>
+</body>
+</html>
