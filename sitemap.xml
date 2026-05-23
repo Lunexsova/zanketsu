@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Pages -->
+  <url>
+    <loc>https://zanketsu.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/index-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Affiliate Marketing Program Pages -->
+  <url>
+    <loc>https://zanketsu.com/marketing.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/marketing-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/marketing.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/marketing-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/marketing-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/marketing.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://zanketsu.com/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/legal-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/legal.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/legal-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/legal-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/legal.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Blog Index Pages -->
+  <url>
+    <loc>https://zanketsu.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article 1: Clinic Management -->
+  <url>
+    <loc>https://zanketsu.com/blog/eyadat-nizam-idara-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/clinic-management-system-danger-signs-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/clinic-management-system-danger-signs-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/clinic-management-system-danger-signs-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/eyadat-nizam-idara-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 2: Why Beauty Clinics Fail -->
+  <url>
+    <loc>https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/why-beauty-clinics-fail-first-year-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/why-beauty-clinics-fail-first-year-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/why-beauty-clinics-fail-first-year-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/markaz-tajmeel-khasara-sana-awla-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 3: Gym Digital Transformation -->
+  <url>
+    <loc>https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/gym-fitness-digital-brand-transformation-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/gym-fitness-digital-brand-transformation-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/gym-fitness-digital-brand-transformation-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/gym-liaqa-marka-raqamia-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 4: Salon & Spa Industry Trends -->
+  <url>
+    <loc>https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/salon-spa-industry-trends-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/salon-spa-industry-trends-2026-2027.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/salon-spa-industry-trends-2026-2027.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/salon-spa-attjahat-2026-2027.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 5: SaaS vs Desktop Software -->
+  <url>
+    <loc>https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/saas-vs-desktop-software-business-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/saas-vs-desktop-software-business-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/saas-vs-desktop-software-business-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/saas-vs-maktabi-baka-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article 6: Passive Income Guide -->
+  <url>
+    <loc>https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/passive-income-affiliate-marketing-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/blog/EN/passive-income-affiliate-marketing-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/blog/EN/passive-income-affiliate-marketing-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/blog/dakhel-salbi-affiliate-3000-2026.html"/>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+  <!-- Tools Hub Pages -->
+  <url>
+    <loc>https://zanketsu.com/system/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Individual Tool Pages (AR + EN pairs) -->
+
+  <!-- Tool: Invoice -->
+  <url>
+    <loc>https://zanketsu.com/system/invoice/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/invoice/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/invoice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/invoice/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/invoice/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/invoice/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/invoice/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/invoice/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Menu -->
+  <url>
+    <loc>https://zanketsu.com/system/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/menu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/menu/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/menu/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/menu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/menu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/menu/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Scheduler -->
+  <url>
+    <loc>https://zanketsu.com/system/scheduler/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/scheduler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/scheduler/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/scheduler/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/scheduler/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/scheduler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/scheduler/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/scheduler/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Consent -->
+  <url>
+    <loc>https://zanketsu.com/system/consent/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/consent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/consent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/consent/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/consent/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/consent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/consent/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/consent/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Barber -->
+  <url>
+    <loc>https://zanketsu.com/system/barber/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/barber/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/barber/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/barber/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/barber/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/barber/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/barber/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/barber/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Ocean -->
+  <url>
+    <loc>https://zanketsu.com/system/ocean/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/ocean/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/ocean/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/ocean/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/ocean/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/ocean/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/ocean/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/ocean/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Nordic -->
+  <url>
+    <loc>https://zanketsu.com/system/nordic/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/nordic/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/nordic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/nordic/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/nordic/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/nordic/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/nordic/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/nordic/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Sunset -->
+  <url>
+    <loc>https://zanketsu.com/system/sunset/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/sunset/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/sunset/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/sunset/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/sunset/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Mono -->
+  <url>
+    <loc>https://zanketsu.com/system/mono/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/mono/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/mono/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/mono/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/mono/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/mono/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/mono/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/mono/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Ltv -->
+  <url>
+    <loc>https://zanketsu.com/system/ltv/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/ltv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/ltv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/ltv/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/ltv/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/ltv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/ltv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/ltv/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Lease -->
+  <url>
+    <loc>https://zanketsu.com/system/lease/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/lease/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/lease/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/lease/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/lease/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/lease/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/lease/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/lease/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Trading -->
+  <url>
+    <loc>https://zanketsu.com/system/trading/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/trading/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/trading/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/trading/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/trading/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/trading/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/trading/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/trading/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Pricing -->
+  <url>
+    <loc>https://zanketsu.com/system/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/pricing/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/pricing/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Roas -->
+  <url>
+    <loc>https://zanketsu.com/system/roas/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/roas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/roas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/roas/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/roas/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/roas/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/roas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/roas/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Nda -->
+  <url>
+    <loc>https://zanketsu.com/system/nda/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/nda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/nda/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/nda/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/nda/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/nda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/nda/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/nda/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Shift Planner -->
+  <url>
+    <loc>https://zanketsu.com/system/shift-planner/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/shift-planner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/shift-planner/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/shift-planner/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/shift-planner/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/shift-planner/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/shift-planner/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/shift-planner/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Commission -->
+  <url>
+    <loc>https://zanketsu.com/system/commission/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/commission/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/commission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/commission/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/commission/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/commission/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/commission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/commission/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Qr Generator -->
+  <url>
+    <loc>https://zanketsu.com/system/qr-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/qr-generator/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/qr-generator/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/qr-generator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/qr-generator/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Breakeven -->
+  <url>
+    <loc>https://zanketsu.com/system/breakeven/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/breakeven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/breakeven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/breakeven/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/breakeven/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/breakeven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/breakeven/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/breakeven/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Loyalty -->
+  <url>
+    <loc>https://zanketsu.com/system/loyalty/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/loyalty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/loyalty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/loyalty/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/loyalty/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/loyalty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/loyalty/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/loyalty/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Nps -->
+  <url>
+    <loc>https://zanketsu.com/system/nps/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/nps/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/nps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/nps/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/nps/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/nps/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/nps/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/nps/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Stock -->
+  <url>
+    <loc>https://zanketsu.com/system/stock/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/stock/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/stock/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/stock/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/stock/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/stock/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/stock/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/stock/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Coupon -->
+  <url>
+    <loc>https://zanketsu.com/system/coupon/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/coupon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/coupon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/coupon/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/coupon/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/coupon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/coupon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/coupon/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Zakat -->
+  <url>
+    <loc>https://zanketsu.com/system/zakat/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/zakat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/zakat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/zakat/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/zakat/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/zakat/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/zakat/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/zakat/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Kanban -->
+  <url>
+    <loc>https://zanketsu.com/system/kanban/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/kanban/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/kanban/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/kanban/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/kanban/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/kanban/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/kanban/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/kanban/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Brand Identity -->
+  <url>
+    <loc>https://zanketsu.com/system/brand-identity/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/brand-identity/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/brand-identity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/brand-identity/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/brand-identity/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/brand-identity/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/brand-identity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/brand-identity/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Forecaster -->
+  <url>
+    <loc>https://zanketsu.com/system/forecaster/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/forecaster/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/forecaster/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/forecaster/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/forecaster/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/forecaster/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/forecaster/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/forecaster/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Tool: Image Converter -->
+  <url>
+    <loc>https://zanketsu.com/system/image-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/image-converter/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://zanketsu.com/system/EN/image-converter/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/image-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/image-converter/"/>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>
