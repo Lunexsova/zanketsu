@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free VAT & Zakat Calculator for Business — Zanketsu</title>
+  <link rel="canonical" href="https://zanketsu.com/system/EN/zakat/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/zakat/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/zakat/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/zakat/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/zakat/">
+  <meta property="og:title" content="Free VAT & Zakat Calculator for Business — Zanketsu">
+  <meta property="og:description" content="Accurately calculate Value Added Tax (VAT) and Islamic Zakat for commercial businesses and trading companies. Essential financial compliance tool. Free by Zanketsu.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Accurately calculate Value Added Tax (VAT) and Islamic Zakat for commercial businesses and trading companies. Essential financial compliance tool. Free by Zanketsu.">
+  <meta name="keywords" content="zanketsu, zanket, zanketu, zank, zan, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, VAT calculator, zakat calculator, business tax, Islamic finance, commercial zakat, Saudi VAT">
+  <meta name="author" content="Zanketsu ">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="zakat.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zanketsu VAT & Zakat Calculator",
+    "url": "https://zanketsu.com/system/EN/zakat/",
+    "description": "Calculate VAT and business Zakat accurately for commercial enterprises and trading businesses.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zanketsu",
+    "alternateName": ["zanket", "zanketu", "zank", "zan"],
+      "url": "https://zanketsu.com"
+    }
+  }
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="List"><i class="ph-bold ph-list"></i></button>
+  </nav>
+
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> Coming in 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Input Form -->
+    <main class="calculator-card">
+      <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Back to Dashboard</a>
+      
+      <div class="form-group">
+        <label class="form-label" for="currencySelect">Account currency:</label>
+        <input type="text" id="currencySelect" name="" class="form-control" placeholder="SAR" style="background: #111115; border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 0.4rem; border-radius: 4px; outline: none; width: 100%;">
+      </div>
+
+      <!-- Section 1: Zakat Inputs -->
+      <h2 class="section-title">
+        <i class="ph-duotone ph-scales"></i>
+        Inputs to the commercial zakat base
+      </h2>
+      <div class="form-group">
+        <label class="form-label" for="cash">Available cash (cash + bank accounts).):</label>
+        <input class="form-control" id="cash" min="0" placeholder="85000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="inventory">The value of goods intended for sale at the current market price:</label>
+        <input class="form-control" id="inventory" min="0" placeholder="45000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="receivables">Good debts to others (hopeful repayment).):</label>
+        <input class="form-control" id="receivables" min="0" placeholder="12000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="liabilities">The obligations and debts you owe to others immediately:</label>
+        <input class="form-control" id="liabilities" min="0" placeholder="15000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="nisabLimit">The current quorum value for gold is approximately 85 grams of 21/24 karat):</label>
+        <input class="form-control" id="nisabLimit" min="0" placeholder="23500" type="number"/>
+      </div>
+
+      <!-- Section 2: VAT Inputs -->
+      <h2 class="section-title" style="margin-top: 2rem;">
+        <i class="ph-duotone ph-receipt"></i>
+        VAT inputs (VAT)
+      </h2>
+      <div class="form-group">
+        <label class="form-label" for="quarterlyRevenues">Revenues and sales for the total taxable period (SAR):</label>
+        <input class="form-control" id="quarterlyRevenues" min="0" placeholder="150000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="quarterlyExpenses">Taxable period expenses and purchases (SAR)):</label>
+        <input class="form-control" id="quarterlyExpenses" min="0" placeholder="40000" type="number"/>
+      </div>
+    </main>
+
+    <!-- Output display -->
+    <aside class="results-card">
+      <h2 class="section-title section-title-gold">
+        <i class="ph-duotone ph-clipboard-text"></i>
+        Financial report for zakat and taxes
+      </h2>
+
+      <div class="results-grid">
+        <!-- Zakat Pool -->
+        <div class="result-box">
+          <span class="result-title">Total calculated zakat base:</span>
+          <span class="result-value" id="zakatPoolVal">0.00 SAR</span>
+        </div>
+
+        <!-- Nisab met status -->
+        <div class="result-box">
+          <span class="result-title">Reaching the legal quorum:</span>
+          <span class="result-value" id="nisabStatusVal">Yes ✅</span>
+        </div>
+
+        <!-- Output VAT 15% -->
+        <div class="result-box">
+          <span class="result-title">Sales tax collected (15%):</span>
+          <span class="result-value" id="vatOutputVal" style="color: #ef4444;">0.00 SAR</span>
+        </div>
+
+        <!-- Input VAT 15% -->
+        <div class="result-box">
+          <span class="result-title">Input tax refund (15%):</span>
+          <span class="result-value" id="vatInputVal" style="color: #10b981;">0.00 SAR</span>
+        </div>
+
+        <!-- Net VAT payment -->
+        <div class="result-box result-box-highlight" style="grid-column: span 1;">
+          <span class="result-title" style="color: var(--gold);">Net VAT for customs and zakat:</span>
+          <span class="result-value result-value-gold" id="netVatDueVal" style="font-size: 1.3rem;">0.00 SAR</span>
+        </div>
+
+        <!-- Zakat Due Highlight -->
+        <div class="result-box result-box-highlight" style="grid-column: span 1; border-color: #10b981; background: rgba(16, 185, 129, 0.04);">
+          <span class="result-title" style="color: #10b981;">The value of the legally obligatory zakat (2.5%):</span>
+          <span class="result-value" id="zakatDueVal" style="color: #10b981; font-size: 1.3rem;">0.00 SAR</span>
+        </div>
+      </div>
+
+      <div class="export-row">
+        <button onclick="window.print();" class="btn-secondary">
+          <i class="ph-bold ph-printer"></i> Print a statement of zakat and tax obligations
+        </button>
+      </div>
+      
+      <div class="watermark-print">
+        Created and printed by zanketsu.com
+      </div>
+    </aside>
+  </div>
+
+  <!-- Script Block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cashInput = document.getElementById('cash');
+      const invInput = document.getElementById('inventory');
+      const recInput = document.getElementById('receivables');
+      const liabInput = document.getElementById('liabilities');
+      const nisabInput = document.getElementById('nisabLimit');
+
+      const revInput = document.getElementById('quarterlyRevenues');
+      const expInput = document.getElementById('quarterlyExpenses');
+      const currencySelect = document.getElementById('currencySelect');
+
+      function updateCalculations() {
+        const cash = parseFloat(cashInput.value) || 0;
+        const inventory = parseFloat(invInput.value) || 0;
+        const receivables = parseFloat(recInput.value) || 0;
+        const liabilities = parseFloat(liabInput.value) || 0;
+        const nisab = parseFloat(nisabInput.value) || 0;
+
+        const revenues = parseFloat(revInput.value) || 0;
+        const expenses = parseFloat(expInput.value) || 0;
+        const currency = currencySelect.value;
+
+        // 1. Zakat Calculations
+        const zakatPool = cash + inventory + receivables - liabilities;
+        const nisabMet = zakatPool >= nisab;
+        const zakatDue = nisabMet ? zakatPool * 0.025 : 0;
+
+        // Update Zakat UI
+        document.getElementById('zakatPoolVal').textContent = `${zakatPool.toLocaleString()} ${currency}`;
+        document.getElementById('nisabStatusVal').innerHTML = nisabMet 
+          ? '<span style="color: #10b981;">Yes ✅ (The quorum was reached)</span>' 
+          : '<span style="color: #ef4444;">no ❌ (The quorum was not reached)</span>';
+        document.getElementById('zakatDueVal').textContent = `${zakatDue.toLocaleString()} ${currency}`;
+
+        // 2. VAT Calculations
+        const vatOutput = revenues * 0.15;
+        const vatInputVal = expenses * 0.15;
+        const netVatDue = vatOutput - vatInputVal;
+
+        // Update VAT UI
+        document.getElementById('vatOutputVal').textContent = `+${vatOutput.toLocaleString()} ${currency}`;
+        document.getElementById('vatInputVal').textContent = `-${vatInputVal.toLocaleString()} ${currency}`;
+        document.getElementById('netVatDueVal').textContent = `${netVatDue.toLocaleString()} ${currency}`;
+      }
+
+      // Bind listeners
+      [cashInput, invInput, recInput, liabInput, nisabInput, revInput, expInput].forEach(elem => {
+        elem.addEventListener('input', updateCalculations);
+        elem.addEventListener('change', updateCalculations);
+      });
+      currencySelect.addEventListener('change', updateCalculations);
+
+      // Initial calculations
+      updateCalculations();
+    });
+  </script>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer" style="margin-top: 5rem;">
+    <a href="../../../index-en.html" class="zank-footer-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> Tools</a>
+      <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+      <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+      <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+    </div>
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>All rights reserved</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>

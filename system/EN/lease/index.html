@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Lease & Real Estate Contract Maker — Zanketsu</title>
+  <link rel="canonical" href="https://zanketsu.com/system/EN/lease/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/lease/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/lease/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/lease/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/lease/">
+  <meta property="og:title" content="Free Lease & Real Estate Contract Maker — Zanketsu">
+  <meta property="og:description" content="Design professional residential and commercial lease contracts, print-ready for signature. NDA and real estate agreement templates for property managers and landlords. Free by Zanketsu.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Design professional residential and commercial lease contracts, print-ready for signature. NDA and real estate agreement templates for property managers and landlords. Free by Zanketsu.">
+  <meta name="keywords" content="zanketsu, zanket, zanketu, zank, zan, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, lease contract maker, real estate agreement, rental contract template, NDA generator">
+  <meta name="author" content="Zanketsu ">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="lease.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zanketsu Lease & Real Estate Contract Maker",
+    "url": "https://zanketsu.com/system/EN/lease/",
+    "description": "Create professional residential and commercial lease contracts ready for direct signing instantly.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zanketsu",
+    "alternateName": ["zanket", "zanketu", "zank", "zan"],
+      "url": "https://zanketsu.com"
+    }
+  }
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="List"><i class="ph-bold ph-list"></i></button>
+  </nav>
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge">
+          <i class="ph-duotone ph-clock-countdown"></i>
+          Coming in 2027
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <a href="../index.html" class="header-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="110" height="30">
+      <span class="header-title">Real estate and lease contract maker 🏢</span>
+    </a>
+    <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Dashboard</a>
+  </header>
+
+  <!-- App Container -->
+  <div class="app-container">
+    
+    <!-- Controls Sidebar -->
+    <aside class="controls-panel">
+      <h2 class="panel-title">
+        <i class="ph-duotone ph-file-text"></i>
+        Preparing contract data
+      </h2>
+
+      <!-- Landlord Info -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-user-circle-plus"></i>
+          Data of the lessor (owner of the property).)
+        </h3>
+        <div class="form-group">
+          <label for="landlordName">The full name of the lessor:</label>
+          <input class="form-control" id="landlordName" placeholder="Abdullah bin Ahmed Al-Rasheed" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="landlordID">ID/record number:</label>
+          <input class="form-control" id="landlordID" placeholder="1092837465" type="text"/>
+        </div>
+      </div>
+
+      <!-- Tenant Info -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-user-circle"></i>
+          Tenant data
+        </h3>
+        <div class="form-group">
+          <label for="tenantName">Tenant's full name:</label>
+          <input class="form-control" id="tenantName" placeholder="Muhammad Hassan Al-Shammari" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="tenantID">ID/residency number:</label>
+          <input class="form-control" id="tenantID" placeholder="2304958671" type="text"/>
+        </div>
+      </div>
+
+      <!-- Property Info -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-house"></i>
+          Rented property data
+        </h3>
+        <div class="form-group">
+          <label for="propertyType">Property type:</label>
+          <input class="form-control" id="propertyType" placeholder="Residential apartment (second floor - No 5)" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="propertyAddress">Title and description:</label>
+          <input class="form-control" id="propertyAddress" placeholder="Al-Yasmeen District, King Abdul Aziz Road, Riyadh" type="text"/>
+        </div>
+      </div>
+
+      <!-- Lease Terms -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-calendar"></i>
+          Contractual and financial terms
+        </h3>
+        <div class="form-group">
+          <label for="leaseDuration">Contract duration:</label>
+          <input class="form-control" id="leaseDuration" placeholder="One year (twelve months).)" type="text"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="startDate">Start date:</label>
+            <input class="form-control" id="startDate" placeholder="2026-06-01" type="text"/>
+          </div>
+          <div class="form-group">
+            <label for="endDate">End date:</label>
+            <input class="form-control" id="endDate" placeholder="2027-05-31" type="text"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rentAmount">Annual rental value:</label>
+          <input class="form-control" id="rentAmount" placeholder="36,000 Saudi riyal" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="paymentMethod">payment method:</label>
+          <input class="form-control" id="paymentMethod" placeholder="Quarterly payments (every 3 months) amounting to 9,000 riyals)" type="text"/>
+        </div>
+      </div>
+
+      <!-- Additional Terms -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-info"></i>
+          Additional terms and conditions
+        </h3>
+        <div class="form-group">
+          <label for="additionalTerms">Additional items:</label>
+          <textarea id="additionalTerms" class="form-control" rows="4" style="resize:vertical;">- The tenant is obligated to pay electricity and water bills throughout the term of the contract.
+- The tenant pays an amount of 2,000 Saudi riyals as a refundable deposit upon delivery of the property in its original condition.
+The tenant does not have the right to assign the rent to others or sublease without the landlord’s written approval.</textarea>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Preview Panel -->
+    <main class="preview-panel">
+      <div class="actions-bar">
+        <button class="action-btn action-btn-primary" onclick="window.print();">
+          <i class="ph-bold ph-printer"></i>
+          Print and export the contract
+        </button>
+      </div>
+
+      <!-- Contract A4 Document -->
+      <div class="contract-document" id="contractDoc">
+        <div class="doc-header">
+          <div class="doc-logo">ZANKETSU REAL ESTATE</div>
+          <h1 class="doc-title">A unified real estate lease contract</h1>
+          <div class="doc-meta">This model was created and documented by Zankatsu Business Tools</div>
+        </div>
+
+        <div class="doc-section">
+          <p>
+            On that day and date, an agreement and contract was made between everyone:
+          </p>
+          <p style="margin-top: 0.6rem;">
+            <strong>The first party (the lessor):</strong> Mrs <span class="field-highlight" id="p-landlordName">Abdullah bin Ahmed Al-Rasheed</span>, 
+            According to the national ID/record no: <span class="field-highlight" id="p-landlordID">1092837465</span>.
+          </p>
+          <p style="margin-top: 0.4rem;">
+            <strong>The second party (the tenant):</strong> Mrs <span class="field-highlight" id="p-tenantName">Muhammad Hassan Al-Shammari</span>, 
+            According to the national ID/residency no: <span class="field-highlight" id="p-tenantID">2304958671</span>.
+          </p>
+        </div>
+
+        <div class="doc-section">
+          <h3 class="doc-section-title">First: Description of the leased property</h3>
+          <p>
+            What is the wage of the first party to the second party? <span class="field-highlight" id="p-propertyType">Residential apartment (second floor - No 5)</span> 
+            Located at the following address: <span class="field-highlight" id="p-propertyAddress">Al-Yasmeen District, King Abdul Aziz Road, Riyadh</span>, 
+            For the purpose of agreed use.
+          </p>
+        </div>
+
+        <div class="doc-section">
+          <h3 class="doc-section-title">Second: Contract duration and financial condition</h3>
+          <p>
+            The agreed upon rental period begins <span class="field-highlight" id="p-leaseDuration">One year (twelve months).)</span> 
+            As of date <span class="field-highlight" id="p-startDate">2026-06-01</span> 
+            Until the contract expiry date <span class="field-highlight" id="p-endDate">2027-05-31</span>.
+          </p>
+          <p style="margin-top: 0.6rem;">
+            The total annual rental value agreed upon is <span class="field-highlight" id="p-rentAmount">36,000 Saudi riyal</span>, 
+            It is paid as follows: <span class="field-highlight" id="p-paymentMethod">Quarterly payments (every 3 months) amounting to 9,000 riyals)</span>.
+          </p>
+        </div>
+
+        <div class="doc-section">
+          <h3 class="doc-section-title">Third: Additional terms and conditions</h3>
+          <div style="white-space: pre-wrap;" id="p-additionalTerms">- The tenant is obligated to pay electricity and water bills throughout the term of the contract.
+- The tenant pays an amount of 2,000 Saudi riyals as a refundable deposit upon delivery of the property in its original condition.
+The tenant does not have the right to assign the rent to others or sublease without the landlord’s written approval.</div>
+        </div>
+
+        <div class="doc-section" style="margin-top: 2rem;">
+          <p style="font-size: 0.85rem; color: #444; line-height: 1.6;">
+            By the signatures below, both parties acknowledge their full agreement and acceptance of all Terms The provisions contained in this contract and their full compliance with them.
+          </p>
+        </div>
+
+        <!-- Signatures -->
+        <div class="signatures-box">
+          <div class="signature-line">
+            <strong>Signature of the first party (the lessor).)</strong>
+            <div style="height: 50px;"></div>
+          </div>
+          <div class="signature-line">
+            <strong>Signature of the second party (the tenant).)</strong>
+            <div style="height: 50px;"></div>
+          </div>
+        </div>
+
+        <!-- Powered by Zanketsu Watermark -->
+        <div class="print-watermark">
+          <i class="ph-fill ph-check-square"></i>
+          Created and printed by zanketsu.com
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Sync Logic Javascript -->
+  <script>
+    (function() {
+      // Elements
+      const inputs = {
+        landlordName: document.getElementById('landlordName'),
+        landlordID: document.getElementById('landlordID'),
+        tenantName: document.getElementById('tenantName'),
+        tenantID: document.getElementById('tenantID'),
+        propertyType: document.getElementById('propertyType'),
+        propertyAddress: document.getElementById('propertyAddress'),
+        leaseDuration: document.getElementById('leaseDuration'),
+        startDate: document.getElementById('startDate'),
+        endDate: document.getElementById('endDate'),
+        rentAmount: document.getElementById('rentAmount'),
+        paymentMethod: document.getElementById('paymentMethod'),
+        additionalTerms: document.getElementById('additionalTerms')
+      };
+
+      const previews = {
+        landlordName: document.getElementById('p-landlordName'),
+        landlordID: document.getElementById('p-landlordID'),
+        tenantName: document.getElementById('p-tenantName'),
+        tenantID: document.getElementById('p-tenantID'),
+        propertyType: document.getElementById('p-propertyType'),
+        propertyAddress: document.getElementById('p-propertyAddress'),
+        leaseDuration: document.getElementById('p-leaseDuration'),
+        startDate: document.getElementById('p-startDate'),
+        endDate: document.getElementById('p-endDate'),
+        rentAmount: document.getElementById('p-rentAmount'),
+        paymentMethod: document.getElementById('p-paymentMethod'),
+        additionalTerms: document.getElementById('p-additionalTerms')
+      };
+
+      // Event Listeners
+      Object.keys(inputs).forEach(key => {
+        if (inputs[key] && previews[key]) {
+          inputs[key].addEventListener('input', (e) => {
+            previews[key].textContent = e.target.value;
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

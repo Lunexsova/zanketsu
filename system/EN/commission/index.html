@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Employee Commission Calculator — Zanketsu</title>
+  <link rel="canonical" href="https://zanketsu.com/system/EN/commission/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/commission/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/commission/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/commission/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/commission/">
+  <meta property="og:title" content="Free Employee Commission Calculator — Zanketsu">
+  <meta property="og:description" content="Calculate staff commissions for barbers, therapists, and sales teams based on service revenue and product sales. Support multiple commission structures. Free tool by Zanketsu.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Calculate staff commissions for barbers, therapists, and sales teams based on service revenue and product sales. Support multiple commission structures. Free tool by Zanketsu.">
+  <meta name="keywords" content="zanketsu, zanket, zanketu, zank, zan, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, commission calculator, staff commission, barber commission, sales commission, employee incentives">
+  <meta name="author" content="Zanketsu ">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="commission.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zanketsu Employee Commission Calculator",
+    "url": "https://zanketsu.com/system/EN/commission/",
+    "description": "Calculate staff commissions based on service revenue and product sales with flexible commission structures.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zanketsu",
+    "alternateName": ["zanket", "zanketu", "zank", "zan"],
+      "url": "https://zanketsu.com"
+    }
+  }
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="List"><i class="ph-bold ph-list"></i></button>
+  </nav>
+
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> Coming in 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Input Form -->
+    <main class="calculator-card">
+      <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Back to Dashboard</a>
+      
+      <div class="form-group">
+        <label class="form-label" for="currencySelect">Account currency:</label>
+        <input type="text" id="currencySelect" name="" class="form-control" placeholder="SAR" style="background: #111115; border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 0.4rem; border-radius: 4px; outline: none; width: 100%;">
+      </div>
+
+      <h2 class="section-title">
+        <i class="ph-duotone ph-calculator"></i>
+        Employee input and percentages
+      </h2>
+
+      <!-- Name & Base Salary -->
+      <div class="form-group">
+        <label class="form-label" for="empName">Employee name:</label>
+        <input type="text" id="empName" class="form-control" placeholder="Enter the employee's name...">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="baseSalary" id="baseSalaryLabel">Fixed basic salary:</label>
+        <input class="form-control" id="baseSalary" min="0" placeholder="3000" type="number"/>
+      </div>
+
+      <!-- Services Sales & Comm -->
+      <div class="form-group">
+        <label class="form-label" for="serviceSales" id="serviceSalesLabel">Service sales:</label>
+        <input class="form-control" id="serviceSales" min="0" placeholder="10000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="serviceRate">Service commission percentage (%):</label>
+        <input class="form-control" id="serviceRate" max="100" min="0" placeholder="10" type="number"/>
+      </div>
+
+      <!-- Product Sales & Comm -->
+      <div class="form-group">
+        <label class="form-label" for="productSales" id="productSalesLabel">Product sales:</label>
+        <input class="form-control" id="productSales" min="0" placeholder="2000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="productRate">Product commission percentage (%):</label>
+        <input class="form-control" id="productRate" max="100" min="0" placeholder="5" type="number"/>
+      </div>
+
+      <!-- Target & Bonus -->
+      <div class="form-group">
+        <label class="form-label" for="targetGoal" id="targetGoalLabel">Total sales target:</label>
+        <input class="form-control" id="targetGoal" min="0" placeholder="12000" type="number"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="targetBonus" id="targetBonusLabel">Bonus for achieving the sales target:</label>
+        <input class="form-control" id="targetBonus" min="0" placeholder="500" type="number"/>
+      </div>
+
+      <button id="addRosterBtn" class="btn-primary">
+        <i class="ph-bold ph-plus-circle"></i> Add an employee to the financial report
+      </button>
+    </main>
+
+    <!-- Output Table & totals -->
+    <aside class="results-card">
+      <h2 class="section-title section-title-green">
+        <i class="ph-duotone ph-table"></i>
+        Detailed employee commission report
+      </h2>
+
+      <div class="table-container">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Basic</th>
+              <th>Services commission</th>
+              <th>Products commission</th>
+              <th>Bonus</th>
+              <th>Net</th>
+              <th>procedure</th>
+            </tr>
+          </thead>
+          <tbody id="rosterTableBody">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Totals Panel -->
+      <div class="totals-panel">
+        <div class="totals-label">
+          <i class="ph-duotone ph-wallet"></i>
+          Total salaries and commissions required:
+        </div>
+        <div class="totals-value" id="rosterTotalVal">0.00 SAR</div>
+      </div>
+
+      <!-- Controls -->
+      <div class="export-row">
+        <button id="clearRosterBtn" class="btn-secondary" style="border-color: rgba(239, 68, 68, 0.3); color: #ef4444;">
+          <i class="ph-bold ph-trash"></i> Data filtering
+        </button>
+        <button onclick="window.print();" class="btn-secondary">
+          <i class="ph-bold ph-printer"></i> Print payroll
+        </button>
+      </div>
+      
+      <div class="watermark-print">
+        Created and printed by zanketsu.com
+      </div>
+    </aside>
+  </div>
+
+  <!-- Script Block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Roster state
+      let roster = [
+        { id: '1', name: 'Ahmed Al-Harbi', base: 3500, servSales: 15000, servRate: 10, prodSales: 3000, prodRate: 5, target: 15000, bonus: 500 },
+        { id: '2', name: 'Sarah Al-Otaibi', base: 4000, servSales: 20000, servRate: 12, prodSales: 5000, prodRate: 5, target: 22000, bonus: 700 },
+        { id: '3', name: 'Khaled Al-Saqqaf', base: 2800, servSales: 8000, servRate: 8, prodSales: 1000, prodRate: 3, target: 10000, bonus: 300 }
+      ];
+
+      const empNameInput = document.getElementById('empName');
+      const baseSalaryInput = document.getElementById('baseSalary');
+      const serviceSalesInput = document.getElementById('serviceSales');
+      const serviceRateInput = document.getElementById('serviceRate');
+      const productSalesInput = document.getElementById('productSales');
+      const productRateInput = document.getElementById('productRate');
+      const targetGoalInput = document.getElementById('targetGoal');
+      const targetBonusInput = document.getElementById('targetBonus');
+
+      const addRosterBtn = document.getElementById('addRosterBtn');
+      const clearRosterBtn = document.getElementById('clearRosterBtn');
+      const rosterTableBody = document.getElementById('rosterTableBody');
+      const rosterTotalVal = document.getElementById('rosterTotalVal');
+      const currencySelect = document.getElementById('currencySelect');
+
+      function renderRoster() {
+        const currency = currencySelect.value;
+        document.getElementById('baseSalaryLabel').textContent = `Fixed basic salary (${currency}):`;
+        document.getElementById('serviceSalesLabel').textContent = `Service sales (${currency}):`;
+        document.getElementById('productSalesLabel').textContent = `Product sales (${currency}):`;
+        document.getElementById('targetGoalLabel').textContent = `Total sales target (${currency}):`;
+        document.getElementById('targetBonusLabel').textContent = `Bonus for achieving the sales target (${currency}):`;
+
+        rosterTableBody.innerHTML = '';
+        let totalRosterCost = 0;
+
+        roster.forEach(emp => {
+          const servComm = (emp.servSales * emp.servRate) / 100;
+          const prodComm = (emp.prodSales * emp.prodRate) / 100;
+          const totalSales = emp.servSales + emp.prodSales;
+          const bonusPaid = totalSales >= emp.target ? emp.bonus : 0;
+          const netPayout = emp.base + servComm + prodComm + bonusPaid;
+
+          totalRosterCost += netPayout;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>${emp.name}</strong></td>
+            <td>${emp.base.toFixed(0)} ${currency}</td>
+            <td>${servComm.toFixed(0)} ${currency} (${emp.servRate}%)</td>
+            <td>${prodComm.toFixed(0)} ${currency} (${emp.prodRate}%)</td>
+            <td><span style="color: ${bonusPaid > 0 ? '#10b981' : '#a8a8b3'};">${bonusPaid > 0 ? '+' + bonusPaid + ' ' + currency : '0'}</span></td>
+            <td><strong style="color: var(--green);">${netPayout.toFixed(0)} ${currency}</strong></td>
+            <td>
+              <button class="delete-btn" data-id="${emp.id}"><i class="ph-bold ph-x-circle"></i></button>
+            </td>
+          `;
+          rosterTableBody.appendChild(tr);
+        });
+
+        rosterTotalVal.textContent = `${totalRosterCost.toFixed(2)} ${currency}`;
+
+        // Bind deletes
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            roster = roster.filter(e => e.id !== id);
+            renderRoster();
+          });
+        });
+      }
+
+      addRosterBtn.addEventListener('click', function() {
+        const name = empNameInput.value.trim();
+        const base = parseFloat(baseSalaryInput.value) || 0;
+        const servSales = parseFloat(serviceSalesInput.value) || 0;
+        const servRate = parseFloat(serviceRateInput.value) || 0;
+        const prodSales = parseFloat(productSalesInput.value) || 0;
+        const prodRate = parseFloat(productRateInput.value) || 0;
+        const target = parseFloat(targetGoalInput.value) || 0;
+        const bonus = parseFloat(targetBonusInput.value) || 0;
+
+        if (!name) {
+          alert("Please write the employee's name!");
+          return;
+        }
+
+        const newEmp = {
+          id: Date.now().toString(),
+          name: name,
+          base: base,
+          servSales: servSales,
+          servRate: servRate,
+          prodSales: prodSales,
+          prodRate: prodRate,
+          target: target,
+          bonus: bonus
+        };
+
+        roster.push(newEmp);
+
+        // Reset name input
+        empNameInput.value = '';
+
+        renderRoster();
+      });
+
+      clearRosterBtn.addEventListener('click', function() {
+        roster = [];
+        renderRoster();
+      });
+
+      currencySelect.addEventListener('change', renderRoster);
+
+      // Initial render
+      renderRoster();
+    });
+  </script>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer" style="margin-top: 5rem;">
+    <a href="../../../index-en.html" class="zank-footer-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> Tools</a>
+      <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+      <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+      <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+    </div>
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>All rights reserved</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>

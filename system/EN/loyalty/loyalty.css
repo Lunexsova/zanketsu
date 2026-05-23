@@ -1,0 +1,329 @@
+:root {
+    --void: #050508;
+    --obsidian: #0a0a10;
+    --ink: #12121a;
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.25);
+    --white: #fafafa;
+    --silver: #a8a8b3;
+    --border-color: rgba(212, 175, 55, 0.12);
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-ar);
+    background: var(--void);
+    color: var(--white);
+    min-height: 100vh;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app-container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(10, 10, 16, 0.5);
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+}
+
+.back-btn:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+.editor-card, .preview-card-wrap {
+    background: var(--obsidian);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.section-title-gold {
+    color: var(--gold);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--silver);
+    margin-bottom: 0.4rem;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.65rem 0.9rem;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+/* Card Design Preview */
+.loyalty-card {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1.6 / 1;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+/* Themes */
+.theme-cyberpunk {
+    background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.theme-crimson {
+    background: linear-gradient(135deg, #450a0a 0%, #1e0505 100%);
+    border-color: #ef4444;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+}
+
+.theme-deepsea {
+    background: linear-gradient(135deg, #0f172a 0%, #082f49 100%);
+    border-color: #0ea5e9;
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.25);
+}
+
+.theme-obsidian {
+    background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+    border-color: #3f3f46;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+.card-reward {
+    font-size: 0.85rem;
+    color: #fff;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+/* Stamps Grid */
+.stamps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stamp-spot {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.stamp-spot:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stamp-spot.stamped {
+    background: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    color: var(--gold);
+    animation: stampIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.theme-cyberpunk .stamp-spot.stamped { color: var(--gold); border-color: var(--gold); }
+.theme-crimson .stamp-spot.stamped { color: #ef4444; border-color: #ef4444; }
+.theme-deepsea .stamp-spot.stamped { color: #0ea5e9; border-color: #0ea5e9; }
+.theme-obsidian .stamp-spot.stamped { color: #fafafa; border-color: #fafafa; }
+
+@keyframes stampIn {
+    0% { transform: scale(3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.stamp-spot-last {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.65rem;
+    opacity: 0.6;
+    color: #fff;
+    margin-top: auto;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--void);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--void);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.export-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+@media print {
+    .zank-nav, .zank-footer, .back-btn, .editor-card, .export-row {
+        display: none !important;
+    }
+    .app-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+    }
+    .preview-card-wrap {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: transparent;
+    }
+    .loyalty-card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+    .card-title, .card-reward {
+        color: #000 !important;
+        background: #eee !important;
+    }
+    .stamp-spot {
+        border: 1px dashed #000;
+        color: #000;
+    }
+    .stamp-spot.stamped {
+        color: #000 !important;
+        border-color: #000 !important;
+    }
+    .watermark-print {
+        display: block !important;
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.8rem;
+        color: #777;
+        border-top: 1px dashed #ccc;
+        padding-top: 1rem;
+    }
+}
+
+.watermark-print {
+    display: none;
+}
