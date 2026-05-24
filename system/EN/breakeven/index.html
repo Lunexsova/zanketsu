@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Break-Even Calculator for Business — Zanketsu</title>
+  <link rel="canonical" href="https://zanketsu.com/system/EN/breakeven/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/breakeven/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/breakeven/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/breakeven/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/breakeven/">
+  <meta property="og:title" content="Free Break-Even Calculator for Business — Zanketsu">
+  <meta property="og:description" content="Know exactly how many sales or service sessions you need to cover costs and start profiting. Essential financial planning tool for salons, clinics, gyms, and any service business. Free by Zanketsu.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Know exactly how many sales or service sessions you need to cover costs and start profiting. Essential financial planning tool for salons, clinics, gyms, and any service business. Free by Zanketsu.">
+  <meta name="keywords" content="zanketsu, zanket, zanketu, zank, zan, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, break-even calculator, business break-even, profit calculator, financial planning, cost analysis">
+  <meta name="author" content="Zanketsu ">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="breakeven.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zanketsu Business Break-Even Calculator",
+    "url": "https://zanketsu.com/system/EN/breakeven/",
+    "description": "Calculate the exact sales volume needed to cover costs and start generating profit for your service business.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zanketsu",
+    "alternateName": ["zanket", "zanketu", "zank", "zan"],
+      "url": "https://zanketsu.com"
+    }
+  }
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="List"><i class="ph-bold ph-list"></i></button>
+  </nav>
+
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> Coming in 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Inputs Column -->
+    <main class="calculator-card">
+      <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Back to Dashboard</a>
+      
+      <div class="input-group">
+        <label class="input-label" for="currencySelect">Account currency:</label>
+        <input type="text" id="currencySelect" name="" class="form-control" placeholder="SAR" style="background: #111115; border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 0.4rem; border-radius: 4px; outline: none; width: 100%;">
+      </div>
+
+      <h2 class="section-title">
+        <i class="ph-duotone ph-gear"></i>
+        Costing and pricing inputs
+      </h2>
+
+      <!-- Monthly Fixed Costs -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Total fixed costs per month (salaries, rent, licenses).):</span>
+          <span class="input-value-badge" id="fixedVal">5,000 SAR</span>
+        </div>
+        <input type="range" id="fixedCosts" class="input-range" min="1000" max="100000" step="1000" value="5000">
+      </div>
+
+      <!-- Average Sale Price -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">The average selling price of the service/product to the customer:</span>
+          <span class="input-value-badge" id="priceVal">100 SAR</span>
+        </div>
+        <input type="range" id="salePrice" class="input-range" min="10" max="2000" step="10" value="100">
+      </div>
+
+      <!-- Variable Cost per Unit -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Variable cost per unit/service (materials, payment fees):</span>
+          <span class="input-value-badge" id="variableVal">20 SAR</span>
+        </div>
+        <input type="range" id="variableCosts" class="input-range" min="0" max="1000" step="5" value="20">
+      </div>
+    </main>
+
+    <!-- Results Column -->
+    <aside class="results-card">
+      <h2 class="section-title section-title-red">
+        <i class="ph-duotone ph-chart-line-down"></i>
+        Break-even point and target analysis
+      </h2>
+
+      <div class="results-grid">
+        <!-- Contribution Margin -->
+        <div class="result-box">
+          <span class="result-title">Contribution margin per unit:</span>
+          <span class="result-value" id="contribVal">0.00 SAR</span>
+        </div>
+
+        <!-- Margin Ratio -->
+        <div class="result-box">
+          <span class="result-title">Contribution margin ratio (%):</span>
+          <span class="result-value" id="ratioVal">0.00%</span>
+        </div>
+
+        <!-- Daily Break-Even Units -->
+        <div class="result-box">
+          <span class="result-title">Daily target to cover costs:</span>
+          <span class="result-value" id="dailyUnitsVal">0 lonliness</span>
+        </div>
+
+        <!-- Daily Break-Even Sales -->
+        <div class="result-box">
+          <span class="result-title">Daily break-even revenue:</span>
+          <span class="result-value" id="dailySalesVal">0.00 SAR</span>
+        </div>
+
+        <!-- Break-Even Revenue -->
+        <div class="result-box">
+          <span class="result-title">Monthly break-even sales value:</span>
+          <span class="result-value" id="beSalesVal">0.00 SAR</span>
+        </div>
+
+        <!-- Break-Even Units (Main highlight) -->
+        <div class="result-box result-box-highlight">
+          <span class="result-title" style="color: var(--red);">Amount of monthly break-even sales required:</span>
+          <span class="result-value result-value-red" id="beUnitsVal">0 Unit/service</span>
+        </div>
+      </div>
+
+      <!-- Visual Bar -->
+      <div class="chart-container">
+        <h4 style="font-size: 0.85rem; color: var(--silver); margin-bottom: 0.75rem;"><i class="ph-bold ph-chart-bar"></i> Cost structure versus selling price</h4>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span>Variable cost ratio of price</span>
+              <span id="varPctVal">0%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" id="varBar" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span>The percentage of profit margin covering constants</span>
+              <span id="marginPctVal">0%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" id="marginBar" style="width: 0%; background: #10b981;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="export-row">
+        <button onclick="window.print();" class="btn-secondary">
+          <i class="ph-bold ph-printer"></i> Print break-even report
+        </button>
+      </div>
+      
+      <div class="watermark-print">
+        Created and printed by zanketsu.com
+      </div>
+    </aside>
+  </div>
+
+  <!-- Script Block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fixedInput = document.getElementById('fixedCosts');
+      const priceInput = document.getElementById('salePrice');
+      const variableInput = document.getElementById('variableCosts');
+      const currencySelect = document.getElementById('currencySelect');
+
+      function updateCalculations() {
+        const fixed = parseFloat(fixedInput.value);
+        let price = parseFloat(priceInput.value);
+        const variable = parseFloat(variableInput.value);
+        const currency = currencySelect.value;
+
+        // Ensure price is greater than variable cost to prevent infinity
+        if (price <= variable) {
+          price = variable + 5;
+          priceInput.value = price;
+        }
+
+        // Update input badges
+        document.getElementById('fixedVal').textContent = `${fixed.toLocaleString()} ${currency}`;
+        document.getElementById('priceVal').textContent = `${price} ${currency}`;
+        document.getElementById('variableVal').textContent = `${variable} ${currency}`;
+
+        // Calculations
+        const contrib = price - variable;
+        const ratio = (contrib / price) * 100;
+        
+        const beUnits = Math.ceil(fixed / contrib);
+        const beSales = beUnits * price;
+
+        const dailyUnits = (beUnits / 30).toFixed(1);
+        const dailySales = beSales / 30;
+
+        // Update UI results
+        document.getElementById('contribVal').textContent = `${contrib.toFixed(2)} ${currency}`;
+        document.getElementById('ratioVal').textContent = `${ratio.toFixed(1)}%`;
+        document.getElementById('beUnitsVal').textContent = `${beUnits.toLocaleString()} Sales/services`;
+        document.getElementById('beSalesVal').textContent = `${beSales.toLocaleString()} ${currency}`;
+        document.getElementById('dailyUnitsVal').textContent = `${dailyUnits} lonliness`;
+        document.getElementById('dailySalesVal').textContent = `${dailySales.toFixed(2)} ${currency}`;
+
+        // Update Visual bar percentages
+        const varPct = (variable / price) * 100;
+        const marginPct = (contrib / price) * 100;
+
+        document.getElementById('varPctVal').textContent = `${varPct.toFixed(0)}%`;
+        document.getElementById('marginPctVal').textContent = `${marginPct.toFixed(0)}%`;
+
+        document.getElementById('varBar').style.width = `${varPct}%`;
+        document.getElementById('marginBar').style.width = `${marginPct}%`;
+      }
+
+      // Bind listeners
+      [fixedInput, priceInput, variableInput].forEach(input => {
+        input.addEventListener('input', updateCalculations);
+      });
+      currencySelect.addEventListener('change', updateCalculations);
+
+      // Initial trigger
+      updateCalculations();
+    });
+  </script>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer" style="margin-top: 5rem;">
+    <a href="../../../index-en.html" class="zank-footer-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> Tools</a>
+      <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+      <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+      <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+    </div>
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>All rights reserved</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Medical Consent Form — Zanketsu Business Tools 🏆</title>
+  <link rel="canonical" href="https://zanketsu.com/system/EN/consent/editor.html">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/consent/editor.html">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/consent/editor.html">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/consent/editor.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/consent/editor.html">
+  <meta property="og:title" content="Edit Medical Consent Form — Zanketsu Business Tools 🏆">
+  <meta property="og:description" content="Interactive editor to design, customize, and print medical consent forms. Free tool by Zanketsu for clinics and salons.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Interactive editor to design, customize, and print medical consent forms. Free tool by Zanketsu for clinics and salons.">
+  <meta name="keywords" content="zanketsu, zanket, zanketu, zank, zan, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, medical consent creator, informed consent editor, laser consent form, salon waiver">
+  <meta name="author" content="Zanketsu ">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="consent.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zanketsu Consent Form Editor",
+    "url": "https://zanketsu.com/system/EN/consent/editor.html",
+    "description": "Design and print custom patient informed consent forms instantly.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zanketsu",
+    "alternateName": ["zanket", "zanketu", "zank", "zan"],
+      "url": "https://zanketsu.com"
+    }
+  }
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Schedule</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Marketing</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Business Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="Menu"><i class="ph-bold ph-list"></i></button>
+  </nav>
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Schedule</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Marketing</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Business Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge">
+          <i class="ph-duotone ph-clock-countdown"></i>
+          Coming in 2027
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <a href="../index.html" class="header-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="110" height="30">
+      <span class="header-title">Medical Consent Form Maker 🏆</span>
+    </a>
+    <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Business Tools</a>
+  </header>
+
+  <!-- App Container -->
+  <div class="app-container">
+
+    <!-- Controls Sidebar -->
+    <aside class="controls-panel">
+      <h2 class="panel-title">
+        <i class="ph-duotone ph-sliders"></i>
+        Consent Form Settings
+      </h2>
+
+      <!-- Theme Selection -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-paint-brush"></i>
+          Choose Document Theme
+        </h3>
+        <div class="theme-grid">
+          <div class="theme-card active" data-skin="derma">
+            <div style="font-weight: 700;">Derma Clean</div>
+          </div>
+          <div class="theme-card" data-skin="classic">
+            <div style="font-weight: 700;">Classic White</div>
+          </div>
+          <div class="theme-card" data-skin="navy">
+            <div style="font-weight: 700;">Royal Navy</div>
+          </div>
+          <div class="theme-card" data-skin="gold">
+            <div style="font-weight: 700;">Zanketsu Gold</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinic & General Information -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-hospital"></i>
+          Clinic & Document Info
+        </h3>
+        <div class="form-group">
+          <label for="clinicName">Clinic / Center Name:</label>
+          <input class="form-control" id="clinicName" placeholder="DermaFlow Aesthetic Clinic Group" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="docTitle">Consent Title:</label>
+          <input class="form-control" id="docTitle" placeholder="Consent &amp; Acknowledgment for Laser Hair Removal Treatment" type="text"/>
+        </div>
+        <div class="form-group">
+          <label for="docText">Treatment Consent Text:</label>
+          <textarea id="docText" class="form-control" rows="6" style="resize: vertical; line-height: 1.5;">I, the undersigned, acknowledge that I have received a comprehensive explanation regarding the nature of the laser hair removal treatment, available alternatives, expected results, and potential side effects such as superficial mild burns or temporary skin discoloration.
+
+I also declare that all the medical and health information provided above is completely accurate and true, and that I have not withheld any information regarding my medical history or current medications. I hereby agree to proceed with the treatment sessions under my own responsibility.</textarea>
+        </div>
+      </div>
+
+      <!-- Fields Configuration -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-eye"></i>
+          Include Data Fields
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <label class="checkbox-group">
+            <input type="checkbox" id="showDOB" checked>
+            <span>Date of Birth & Age</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" id="showPhone" checked>
+            <span>Mobile Number</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" id="showEmergency" checked>
+            <span>Emergency Contact Person</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Patient Data Input Form -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-identification-card"></i>
+          Fill Patient Data (Optional for Print)
+        </h3>
+        <div class="form-group" style="margin-bottom: 0.6rem;">
+          <label for="patientName">Patient Full Name:</label>
+          <input type="text" id="patientName" class="form-control" placeholder="Enter patient name...">
+        </div>
+        <div class="form-group" style="margin-bottom: 0.6rem;">
+          <label for="patientID">ID / National No.:</label>
+          <input type="text" id="patientID" class="form-control" placeholder="Enter ID number...">
+        </div>
+        <div class="form-row-flex">
+          <div class="form-group" style="flex: 2;">
+            <label for="patientDOB">Date of Birth:</label>
+            <input type="date" id="patientDOB" class="form-control">
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label for="patientAge">Age:</label>
+            <input type="number" id="patientAge" class="form-control" placeholder="yrs" min="1" max="120">
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 0.6rem;">
+          <label for="patientPhone">Mobile Number:</label>
+          <input type="tel" id="patientPhone" class="form-control" placeholder="+1 555 000 0000" style="direction: ltr; text-align: left;">
+        </div>
+        <div class="form-row-flex">
+          <div class="form-group" style="flex: 1;">
+            <label for="emergencyName">Emergency Contact:</label>
+            <input type="text" id="emergencyName" class="form-control" placeholder="Full name...">
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label for="emergencyPhone">Emergency Phone:</label>
+            <input type="tel" id="emergencyPhone" class="form-control" placeholder="+1 555 000 0000" style="direction: ltr; text-align: left;">
+          </div>
+        </div>
+        <div class="form-row-flex">
+          <div class="form-group" style="flex: 1;">
+            <label for="doctorName">Doctor / Practitioner Name:</label>
+            <input type="text" id="doctorName" class="form-control" placeholder="Dr. Jane Smith...">
+          </div>
+          <div class="form-group" style="flex: 1;">
+            <label for="doctorSpecialty">Specialty:</label>
+            <input type="text" id="doctorSpecialty" class="form-control" placeholder="Dermatology &amp; Aesthetics...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical History Parameters -->
+      <div class="form-section">
+        <h3 class="form-section-title">
+          <i class="ph-duotone ph-activity"></i>
+          Medical History Checklist
+        </h3>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <label class="checkbox-group">
+            <input type="checkbox" class="condition-checkbox" data-label="Pregnancy or Breastfeeding" checked>
+            <span>Pregnancy or Breastfeeding</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" class="condition-checkbox" data-label="Active Skin Conditions or Eczema" checked>
+            <span>Active Skin Conditions</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" class="condition-checkbox" data-label="Light Sensitivity or Photo-sensitive Drugs" checked>
+            <span>Light Sensitivity</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" class="condition-checkbox" data-label="History of Cancer / Melanoma" checked>
+            <span>Cancer History</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" class="condition-checkbox" data-label="Use of Blood Thinners or Cortisone" checked>
+            <span>Blood Thinners / Cortisone</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" class="condition-checkbox" data-label="Implanted Medical Devices (Pacemaker)" checked>
+            <span>Implanted Medical Devices</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Zanketsu Promotional Banner -->
+      <div class="promo-banner">
+        <div class="promo-title">
+          <i class="ph-duotone ph-sparkles animate-pulse"></i>
+          Go 100% Paperless with Your Clinic
+        </div>
+        <p class="promo-text">
+          Paper signatures waste your receptionist's time and are easily lost. Zanketsu's clinic systems offer instant digital signing on tablets, storing records securely under the patient's cloud profile.
+        </p>
+        <a href="../../../index-en.html" target="_blank" class="promo-btn">
+          <i class="ph-bold ph-rocket-launch"></i>
+          Discover the Smart Clinic System 🚀
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Document Preview Panel -->
+    <main class="preview-panel">
+
+      <!-- Actions Row -->
+      <div class="actions-bar">
+        <button class="action-btn action-btn-primary" id="printBtn">
+          <i class="ph-bold ph-printer"></i>
+          Print Document / Save as PDF
+        </button>
+      </div>
+
+      <!-- The Document Sheet -->
+      <div class="document-paper skin-derma" id="documentPaper">
+        
+        <!-- Document Header -->
+        <div class="doc-header">
+          <div class="doc-clinic-name" id="prevClinicName">Clinic / Center Name</div>
+          <div class="doc-title" id="prevDocTitle">Medical Consent & Acknowledgment Form</div>
+        </div>
+
+        <!-- Section 1: Patient Details -->
+        <div class="doc-section">
+          <h4 class="doc-section-title">I. Patient Personal Information</h4>
+          <div class="doc-fields-grid">
+            <div class="doc-field-line">Patient Full Name: <strong id="prevPatientName">__________________________</strong></div>
+            <div class="doc-field-line">ID / National No.: <strong id="prevPatientID">_________________</strong></div>
+            <div id="prevDobRow" class="doc-field-line">Date of Birth: <strong id="prevPatientDOB">____/____/________</strong> &nbsp;&nbsp; Age: <strong id="prevPatientAge">____</strong> yrs</div>
+            <div id="prevPhoneRow" class="doc-field-line">Mobile: <strong id="prevPatientPhone" style="direction: ltr; display: inline-block;">__________________________________</strong></div>
+            <div id="prevEmergencyRow" class="doc-field-line full-width">Emergency Contact: <strong id="prevEmergencyName">________________</strong> &nbsp; Phone: <strong id="prevEmergencyPhone" style="direction: ltr; display: inline-block;">________________</strong></div>
+            <div id="prevDoctorRow" class="doc-field-line full-width">Doctor / Practitioner: <strong id="prevDoctorName">________________</strong> &nbsp;&nbsp; Specialty: <strong id="prevDoctorSpecialty">________________</strong></div>
+          </div>
+        </div>
+
+        <!-- Section 2: Medical Conditions Checklist -->
+        <div class="doc-section">
+          <h4 class="doc-section-title">II. Medical History Checklist</h4>
+          <p style="font-size: 0.85rem; color: #555; margin-bottom: 1rem;">Please check (✓) if you have any of the following in your medical history:</p>
+          <div class="doc-med-conditions" id="prevMedConditions">
+            <!-- Loaded dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- Section 3: Legal Consent Terms -->
+        <div class="doc-section">
+          <h4 class="doc-section-title">III. Client Acknowledgment & Consent</h4>
+          <div class="doc-text-block" id="prevDocText">
+            Consent text appears here...
+          </div>
+        </div>
+
+        <!-- Section 4: Signatures -->
+        <div class="doc-signatures">
+          <div class="signature-line">
+            Patient / Guardian Signature
+            <div style="margin-top: 1.5rem; font-size: 0.75rem; color: #999;">Date: ____ / ____ / ________</div>
+          </div>
+          <div class="signature-line">
+            Authorized Doctor / Practitioner Signature
+            <div style="margin-top: 1.5rem; font-size: 0.75rem; color: #999;">Date: ____ / ____ / ________</div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Script Block -->
+  <script src="consent.js" defer></script>
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer">
+    <a href="../../../index-en.html" class="zank-footer-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> Business Tools</a>
+      <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+      <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+      <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+    </div>
+    
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>All Rights Reserved</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>

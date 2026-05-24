@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="keywords" content="zanketsu, zanket, zanketu, zank, zan, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, service menu maker, design price list, catalog template">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design stunning service price menus and catalogs with beautiful templates. Print-ready and social media optimized. Free tool by Zanketsu.">
+  <title>Service Price Menu & Catalog Designer — Zanketsu</title>
+  <link rel="canonical" href="https://zanketsu.com/system/EN/menu/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/menu/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/menu/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/menu/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/menu/">
+  <meta property="og:title" content="Service Price Menu & Catalog Designer — Zanketsu">
+  <meta property="og:description" content="Design stunning service price menus and catalogs with beautiful templates. Print-ready and social media optimized. Free tool by Zanketsu.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+  <style>
+    :root {
+      --void: #050508;
+      --obsidian: #0a0a10;
+      --ink: #12121a;
+      --crimson: #dc2626;
+      --gold: #d4af37;
+      --silver: #a8a8b3;
+      --white: #f0f0f5;
+      --pink: #ff80b0;
+      --border-color: rgba(220, 38, 38, 0.15);
+      --font-ar: 'Cairo', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-ar);
+      background: var(--void);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.03) 0%, transparent 50%),
+               radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--silver);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(168, 168, 179, 0.2);
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .back-btn:hover {
+      color: var(--crimson);
+      border-color: var(--crimson);
+      background: rgba(220, 38, 38, 0.05);
+    }
+
+    .header {
+      margin-bottom: 3.5rem;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+      color: var(--silver);
+    }
+
+    /* Design Grid */
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .design-card {
+      background: var(--obsidian);
+      border: 1px solid rgba(168, 168, 179, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .design-card:hover {
+      border-color: var(--crimson);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(220, 38, 38, 0.15);
+    }
+
+    /* Mockup Previews */
+    .design-mockup {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #0f0f15;
+      border-radius: 4px;
+      border: 1px solid #dc2626;
+      padding: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      pointer-events: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Specific mockup styles */
+    .design-card[data-style="sakura"] .design-mockup {
+      background: #fff5f8;
+      border: 1px solid #ff80b0;
+    }
+    .design-card[data-style="gold"] .design-mockup {
+      background: #141410;
+      border: 1px solid #d4af37;
+    }
+    .design-card[data-style="ink"] .design-mockup {
+      background: #ffffff;
+      border: 1px solid #1a1a1a;
+    }
+    .design-card[data-style="emerald"] .design-mockup {
+      background: #042f2e;
+      border: 1px solid #d4af37;
+    }
+    .design-card[data-style="lavender"] .design-mockup {
+      background: #faf8ff;
+      border: 1px solid #c084fc;
+    }
+    .design-card[data-style="neon"] .design-mockup {
+      background: #090d16;
+      border: 1px solid #06b6d4;
+    }
+    .design-card[data-style="coffee"] .design-mockup {
+      background: #fdfbf7;
+      border: 1px solid #854d0e;
+    }
+    .design-card[data-style="cobalt"] .design-mockup {
+      background: #0f172a;
+      border: 1px solid #3b82f6;
+    }
+
+    /* Mockup Inner Details */
+    .mock-header {
+      text-align: center;
+      border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+      padding-bottom: 4px;
+    }
+    .design-card[data-style="sakura"] .mock-header { border-bottom-color: rgba(255,128,176,0.2); }
+    .design-card[data-style="gold"] .mock-header { border-bottom-color: rgba(212,175,55,0.2); }
+    .design-card[data-style="ink"] .mock-header { border-bottom-color: rgba(0,0,0,0.1); }
+    .design-card[data-style="emerald"] .mock-header { border-bottom-color: rgba(212,175,55,0.2); }
+    .design-card[data-style="lavender"] .mock-header { border-bottom-color: rgba(192,132,252,0.2); }
+    .design-card[data-style="neon"] .mock-header { border-bottom-color: rgba(6,182,212,0.2); }
+    .design-card[data-style="coffee"] .mock-header { border-bottom-color: rgba(133,77,14,0.2); }
+    .design-card[data-style="cobalt"] .mock-header { border-bottom-color: rgba(59,130,246,0.2); }
+
+    .mock-title {
+      width: 50%;
+      height: 6px;
+      background: #dc2626;
+      margin: 0 auto;
+      border-radius: 1px;
+    }
+    .design-card[data-style="sakura"] .mock-title { background: #d04b78; }
+    .design-card[data-style="gold"] .mock-title { background: #d4af37; }
+    .design-card[data-style="ink"] .mock-title { background: #1a1a1a; }
+    .design-card[data-style="emerald"] .mock-title { background: #d4af37; }
+    .design-card[data-style="lavender"] .mock-title { background: #7c3aed; }
+    .design-card[data-style="neon"] .mock-title { background: #ec4899; }
+    .design-card[data-style="coffee"] .mock-title { background: #78350f; }
+    .design-card[data-style="cobalt"] .mock-title { background: #3b82f6; }
+
+    .mock-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 0.8rem 0;
+      flex: 1;
+    }
+    
+    .mock-cat-title {
+      width: 30%;
+      height: 4px;
+      background: #d4af37;
+      border-radius: 1px;
+    }
+    .design-card[data-style="sakura"] .mock-cat-title { background: #d04b78; }
+    .design-card[data-style="gold"] .mock-cat-title { background: #d4af37; }
+    .design-card[data-style="ink"] .mock-cat-title { background: #1a1a1a; }
+    .design-card[data-style="emerald"] .mock-cat-title { background: #d4af37; }
+    .design-card[data-style="lavender"] .mock-cat-title { background: #7c3aed; }
+    .design-card[data-style="neon"] .mock-cat-title { background: #06b6d4; }
+    .design-card[data-style="coffee"] .mock-cat-title { background: #854d0e; }
+    .design-card[data-style="cobalt"] .mock-cat-title { background: #60a5fa; }
+
+    .mock-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mock-item-name {
+      width: 45%;
+      height: 3px;
+      background: #eee;
+      border-radius: 1px;
+    }
+    .design-card[data-style="samurai"] .mock-item-name { background: #a8a8b3; }
+    .design-card[data-style="sakura"] .mock-item-name { background: #8e6c7c; }
+    .design-card[data-style="gold"] .mock-item-name { background: #a5a593; }
+    .design-card[data-style="ink"] .mock-item-name { background: #666; }
+    .design-card[data-style="emerald"] .mock-item-name { background: #99f6e4; }
+    .design-card[data-style="lavender"] .mock-item-name { background: #3b226b; }
+    .design-card[data-style="neon"] .mock-item-name { background: #94a3b8; }
+    .design-card[data-style="coffee"] .mock-item-name { background: #78716c; }
+    .design-card[data-style="cobalt"] .mock-item-name { background: #94a3b8; }
+
+    .mock-item-price {
+      width: 15%;
+      height: 3px;
+      background: #dc2626;
+      border-radius: 1px;
+    }
+    .design-card[data-style="sakura"] .mock-item-price { background: #d04b78; }
+    .design-card[data-style="gold"] .mock-item-price { background: #d4af37; }
+    .design-card[data-style="ink"] .mock-item-price { background: #1a1a1a; }
+    .design-card[data-style="emerald"] .mock-item-price { background: #d4af37; }
+    .design-card[data-style="lavender"] .mock-item-price { background: #7c3aed; }
+    .design-card[data-style="neon"] .mock-item-price { background: #ec4899; }
+    .design-card[data-style="coffee"] .mock-item-price { background: #9a3412; }
+    .design-card[data-style="cobalt"] .mock-item-price { background: #3b82f6; }
+
+    .mock-footer {
+      border-top: 1px solid rgba(220,38,38,0.2);
+      padding-top: 4px;
+      text-align: center;
+    }
+    .design-card[data-style="sakura"] .mock-footer { border-color: rgba(255,128,176,0.2); }
+    .design-card[data-style="gold"] .mock-footer { border-color: rgba(212,175,55,0.2); }
+    .design-card[data-style="ink"] .mock-footer { border-color: rgba(0,0,0,0.1); }
+    .design-card[data-style="emerald"] .mock-footer { border-color: rgba(212,175,55,0.2); }
+    .design-card[data-style="lavender"] .mock-footer { border-color: rgba(192,132,252,0.2); }
+    .design-card[data-style="neon"] .mock-footer { border-color: rgba(6,182,212,0.2); }
+    .design-card[data-style="coffee"] .mock-footer { border-color: rgba(133,77,14,0.2); }
+    .design-card[data-style="cobalt"] .mock-footer { border-color: rgba(59,130,246,0.2); }
+
+    .mock-footer-line {
+      width: 30px;
+      height: 2px;
+      background: #555;
+      margin: 0 auto;
+    }
+
+    /* Card Label */
+    .design-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .design-desc {
+      font-size: 0.8rem;
+      color: var(--silver);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .design-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .back-btn {
+        position: static;
+        margin-bottom: 2rem;
+      }
+    }
+    @media (max-width: 576px) {
+      .design-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Zanketsu Service Price Menu & Catalog Designer",
+    "url": "https://zanketsu.com/system/EN/menu/",
+    "description": "Design beautiful service menus and catalogs for print and social media with professional templates.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zanketsu",
+    "alternateName": ["zanket", "zanketu", "zank", "zan"],
+      "url": "https://zanketsu.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="List"><i class="ph-bold ph-list"></i></button>
+  </nav>
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge">
+          <i class="ph-duotone ph-clock-countdown"></i>
+          Coming in 2027
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+
+  <a href="../index.html" class="back-btn">
+    <i class="ph-bold ph-arrow-left"></i>
+    Return to the tools panel
+  </a>
+
+  <div class="container">
+    
+    <div class="header">
+      <h1>Choose the appropriate service and pricing menu appearance</h1>
+      <p>Choose one of the artistic templates specifically designed to fit the identity of your service or commercial project</p>
+    </div>
+
+    <div class="design-grid">
+
+      <!-- Samurai Black -->
+      <a href="editor.html?theme=samurai" class="design-card" data-style="samurai">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Samurai Black</div>
+        <p class="design-desc">A dark, dark theme accented with fiery red for exciting lounges, clubs and brands.</p>
+      </a>
+
+      <!-- Sakura Pink -->
+      <a href="editor.html?theme=sakura" class="design-card" data-style="sakura">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Sakura Pink</div>
+        <p class="design-desc">Gentle soothing pink look intended for beauty salons, feminine care spas and makeup.</p>
+      </a>
+
+      <!-- Elegant Gold -->
+      <a href="editor.html?theme=gold" class="design-card" data-style="gold">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Elegant Gold</div>
+        <p class="design-desc">Luxury gold theme on carbon charcoal background for beauty centers and skin care clinics VIP.</p>
+      </a>
+
+      <!-- Minimal Ink -->
+      <a href="editor.html?theme=ink" class="design-card" data-style="ink">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Minimal Ink</div>
+        <p class="design-desc">Bright white design with ink black contrast, ideal for modern and minimalist centres.</p>
+      </a>
+
+      <!-- Emerald Imperial -->
+      <a href="editor.html?theme=emerald" class="design-card" data-style="emerald">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Emerald Imperial</div>
+        <p class="design-desc">Royal dark emerald design with gilded details enhances the elegance of luxury clinics and centers.</p>
+      </a>
+
+      <!-- Lavender Dream -->
+      <a href="editor.html?theme=lavender" class="design-card" data-style="lavender">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Lavender Dream</div>
+        <p class="design-desc">The lavender pastel look is very calming and perfect for luxury spas, relaxation and yoga.</p>
+      </a>
+
+      <!-- Tokyo Neon -->
+      <a href="editor.html?theme=neon" class="design-card" data-style="neon">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Tokyo Neon</div>
+        <p class="design-desc">Dark neon modern cyberpunk design for fans of techno style and innovative hair cutting salons.</p>
+      </a>
+
+      <!-- Coffee Cream -->
+      <a href="editor.html?theme=coffee" class="design-card" data-style="coffee">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Coffee Cream</div>
+        <p class="design-desc">Comfortable warm earthy tones inspired by coffee and cream, suitable for men's barbershops and quiet cafes.</p>
+      </a>
+
+      <!-- Royal Cobalt -->
+      <a href="editor.html?theme=cobalt" class="design-card" data-style="cobalt">
+        <div class="design-mockup">
+          <div class="mock-header">
+            <div class="mock-title"></div>
+          </div>
+          <div class="mock-lines">
+            <div class="mock-cat-title"></div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+            <div class="mock-item">
+              <div class="mock-item-name"></div>
+              <div class="mock-item-price"></div>
+            </div>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-footer-line"></div>
+          </div>
+        </div>
+        <div class="design-name">Royal Cobalt</div>
+        <p class="design-desc">Royal navy blue design with silver edges for luxury salons, beauty centers and fitness halls.</p>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer">
+    <a href="../../../index-en.html" class="zank-footer-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> Tools</a>
+      <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+      <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+      <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+    </div>
+    
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>All rights reserved</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>
