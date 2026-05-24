@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زانكتسو — منظم وجدول ورديات العمل 📅</title>
+  <link rel="canonical" href="https://zanketsu.com/system/shift-planner/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/shift-planner/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/shift-planner/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/shift-planner/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/shift-planner/">
+  <meta property="og:title" content="زانكتسو — منظم وجدول ورديات العمل 📅">
+  <meta property="og:description" content="أداة مجانية تفاعلية لتنظيم وجدولة ورديات عمل الموظفين، منع التعارض، واحتساب تكاليف التشغيل الأسبوعية.">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="أداة مجانية تفاعلية لتنظيم وجدولة ورديات عمل الموظفين، منع التعارض، واحتساب تكاليف التشغيل الأسبوعية.">
+  <meta name="keywords" content="زانكت, زانكتسو, زانكيتسو, زانك, زانكتو, DocSpot-X1, DermaFlow-X1, FlexHub-X1, Tsubaki-X1, منظم ورديات, جدول الموظفين, إدارة صالون, إدارة جيم">
+  <meta name="author" content="زانكتسو">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="shift-planner.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "زانكتسو — منظم وجدول ورديات العمل 📅",
+  "url": "https://zanketsu.com/system/shift-planner/index.html",
+  "description": "أداة مجانية تفاعلية لتنظيم وجدولة ورديات عمل الموظفين، منع التعارض، واحتساب تكاليف التشغيل الأسبوعية.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript. Requires HTML5.",
+  "inLanguage": "ar",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.00",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "زانكتسو",
+    "alternateName": ["زانكت", "زانكيتسو", "زانك", "زانكتو"],
+    "url": "https://zanketsu.com"
+  }
+}
+  </script>
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../index.html" class="zank-nav-logo">
+      <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+      <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+      <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+      <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+      <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+      <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+      <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+    </ul>
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="القائمة"><i class="ph-bold ph-list"></i></button>
+  </nav>
+
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../index.html"><img src="../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../index.html#vision"><i class="ph-duotone ph-eye"></i> الرؤية</a></li>
+        <li><a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a></li>
+        <li><a href="../../index.html#timeline"><i class="ph-duotone ph-calendar"></i> الجدول</a></li>
+        <li><a href="../../marketing.html"><i class="ph-duotone ph-coins"></i> التسويق</a></li>
+        <li><a href="../../blog/index.html"><i class="ph-duotone ph-book-open"></i> المدونة</a></li>
+        <li><a href="../../system/index.html" class="active"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a></li>
+        <li><a href="../../index.html#contact"><i class="ph-duotone ph-envelope"></i> تواصل</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> قادم في 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Sidebar: Manage Employees -->
+    <aside class="planner-sidebar">
+      <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> رجوع للوحة الأدوات</a>
+      
+      <div class="form-group">
+        <label class="form-label" for="currencySelect">عملة الحساب:</label>
+        <input type="text" id="currencySelect" name="" class="form-control" placeholder="ر.س" style="background: #111115; border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 0.4rem; border-radius: 4px; outline: none; width: 100%;">
+      </div>
+      
+      <h2 class="section-title">
+        <i class="ph-duotone ph-users-three"></i>
+        إدارة الموظفين والرواتب
+      </h2>
+
+      <div class="form-group">
+        <label class="form-label" for="empName">اسم الموظف / الأخصائي:</label>
+        <input type="text" id="empName" class="form-control" placeholder="مثال: أحمد، سارة...">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="empRate" id="empRateLabel">أجر الساعة:</label>
+        <input class="form-control" id="empRate" max="500" min="5" placeholder="30" type="number"/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="empColor">لون التعريف الخاص بالجدول:</label>
+        <input type="color" id="empColor" class="form-control" value="#f59e0b" style="padding:0.2rem; height:40px;">
+      </div>
+
+      <button id="addEmpBtn" class="btn-primary">
+        <i class="ph-bold ph-user-plus"></i> إضافة للقمسيون والجدول
+      </button>
+
+      <h3 style="font-size: 0.95rem; margin-top: 2rem; color: var(--silver); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">فريق العمل الحالي:</h3>
+      <div id="employeeList" class="employee-list">
+        <!-- Added employees will appear here -->
+      </div>
+    </aside>
+
+    <!-- Main Schedule Grid -->
+    <main class="planner-main">
+      <h2 class="section-title section-title-amber">
+        <i class="ph-duotone ph-calendar-check"></i>
+        جدول الورديات الأسبوعي (كليك للتعيين)
+      </h2>
+
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label class="form-label">الموظف النشط للتعيين حالياً:</label>
+        <select id="activeEmpSelect" class="form-control">
+          <option value="">-- اختر موظفاً ثم اضغط على وردية لتعيينه --</option>
+        </select>
+      </div>
+
+      <!-- 7-Day Grid -->
+      <div class="calendar-grid">
+        <!-- Saturday -->
+        <div class="day-column" data-day="Sat">
+          <div class="day-header">السبت</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+
+        <!-- Sunday -->
+        <div class="day-column" data-day="Sun">
+          <div class="day-header">الأحد</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+
+        <!-- Monday -->
+        <div class="day-column" data-day="Mon">
+          <div class="day-header">الاثنين</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+
+        <!-- Tuesday -->
+        <div class="day-column" data-day="Tue">
+          <div class="day-header">الثلاثاء</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+
+        <!-- Wednesday -->
+        <div class="day-column" data-day="Wed">
+          <div class="day-header">الأربعاء</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+
+        <!-- Thursday -->
+        <div class="day-column" data-day="Thu">
+          <div class="day-header">الخميس</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="day-column" data-day="Fri">
+          <div class="day-header">الجمعة</div>
+          <div class="shift-slot" data-shift="morning">
+            <div class="shift-slot-header">الصباحية (8-16)</div>
+            <div class="slot-content"></div>
+          </div>
+          <div class="shift-slot" data-shift="evening">
+            <div class="shift-slot-header">المسائية (16-24)</div>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cost Summary -->
+      <div class="cost-panel">
+        <div class="cost-label">
+          <i class="ph-duotone ph-chart-bar"></i>
+          تكلفة الوردية والعمالة المقدرة أسبوعياً:
+        </div>
+        <div class="cost-value" id="totalCostVal">0.00 ر.س</div>
+      </div>
+
+      <!-- Control Buttons -->
+      <div class="export-row">
+        <button id="clearBtn" class="btn-secondary" style="border-color: rgba(239, 68, 68, 0.3); color: #ef4444;">
+          <i class="ph-bold ph-trash"></i> مسح الجدول
+        </button>
+        <button onclick="window.print();" class="btn-secondary">
+          <i class="ph-bold ph-printer"></i> طباعة ومشاركة الجدول
+        </button>
+      </div>
+      
+      <div class="watermark-print">
+        تم الإنشاء والطباعة بواسطة zanketsu.com
+      </div>
+    </main>
+  </div>
+
+  <!-- Script Block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Roster state
+      let employees = [
+        { id: '1', name: 'أحمد الحربي (أخصائي)', rate: 45, color: '#f59e0b' },
+        { id: '2', name: 'سارة العتيبي (أخصائية)', rate: 40, color: '#ec4899' },
+        { id: '3', name: 'جون دو (حلاق)', rate: 30, color: '#3b82f6' }
+      ];
+
+      // Assigned shifts state: { "Sat-morning": "employeeId", ... }
+      let assignments = {};
+
+      const empNameInput = document.getElementById('empName');
+      const empRateInput = document.getElementById('empRate');
+      const empColorInput = document.getElementById('empColor');
+      const addEmpBtn = document.getElementById('addEmpBtn');
+      const employeeList = document.getElementById('employeeList');
+      const activeEmpSelect = document.getElementById('activeEmpSelect');
+      const totalCostVal = document.getElementById('totalCostVal');
+      const clearBtn = document.getElementById('clearBtn');
+      const currencySelect = document.getElementById('currencySelect');
+      const empRateLabel = document.getElementById('empRateLabel');
+
+      function renderEmployees() {
+        const currency = currencySelect.value;
+        empRateLabel.textContent = `أجر الساعة (${currency}):`;
+
+        // Clear UI lists
+        employeeList.innerHTML = '';
+        
+        // Retain placeholder in select
+        activeEmpSelect.innerHTML = '<option value="">-- اختر موظفاً ثم اضغط على وردية لتعيينه --</option>';
+
+        employees.forEach(emp => {
+          // Render sidebar list
+          const div = document.createElement('div');
+          div.className = 'employee-item';
+          div.innerHTML = `
+            <div class="employee-info">
+              <span class="employee-color-dot" style="background: ${emp.color};"></span>
+              <strong>${emp.name}</strong> 
+              <span style="color: var(--silver); margin-right: 0.5rem; font-size: 0.8rem;">(${emp.rate} ${currency}/ساعة)</span>
+            </div>
+            <button class="delete-btn" data-id="${emp.id}"><i class="ph-bold ph-trash"></i></button>
+          `;
+          employeeList.appendChild(div);
+
+          // Render dropdown options
+          const opt = document.createElement('option');
+          opt.value = emp.id;
+          opt.textContent = `${emp.name} (${emp.rate} ${currency}/ساعة)`;
+          activeEmpSelect.appendChild(opt);
+        });
+
+        // Attach delete listeners
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            employees = employees.filter(e => e.id !== id);
+            
+            // Clear assignments of deleted employee
+            for (let k in assignments) {
+              if (assignments[k] === id) {
+                delete assignments[k];
+              }
+            }
+
+            renderEmployees();
+            renderAssignments();
+          });
+        });
+      }
+
+      function renderAssignments() {
+        const currency = currencySelect.value;
+
+        // Reset all slots contents
+        document.querySelectorAll('.shift-slot').forEach(slot => {
+          const contentDiv = slot.querySelector('.slot-content');
+          contentDiv.innerHTML = '';
+        });
+
+        let totalCost = 0;
+
+        for (let key in assignments) {
+          const [day, shift] = key.split('-');
+          const empId = assignments[key];
+          const emp = employees.find(e => e.id === empId);
+
+          if (emp) {
+            const col = document.querySelector(`.day-column[data-day="${day}"]`);
+            if (col) {
+              const slot = col.querySelector(`.shift-slot[data-shift="${shift}"]`);
+              if (slot) {
+                const contentDiv = slot.querySelector('.slot-content');
+                contentDiv.innerHTML = `
+                  <div class="assigned-employee" style="background: ${emp.color}; color: #000;">
+                    <span>${emp.name.split(' ')[0]}</span>
+                    <button class="remove-assign-btn" data-key="${key}">&times;</button>
+                  </div>
+                `;
+                
+                // Labor Cost for 1 shift = 8 hours * rate
+                totalCost += emp.rate * 8;
+              }
+            }
+          }
+        }
+
+        // Update total cost text
+        totalCostVal.textContent = `${totalCost.toFixed(2)} ${currency}`;
+
+        // Attach remove assignments listener
+        document.querySelectorAll('.remove-assign-btn').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // prevent re-assigning click
+            const key = this.getAttribute('data-key');
+            delete assignments[key];
+            renderAssignments();
+          });
+        });
+      }
+
+      // Click slot to assign selected employee
+      document.querySelectorAll('.shift-slot').forEach(slot => {
+        slot.addEventListener('click', function() {
+          const empId = activeEmpSelect.value;
+          if (!empId) {
+            alert("الرجاء اختيار الموظف المراد تعيينه من القائمة أولاً!");
+            return;
+          }
+          const day = this.closest('.day-column').getAttribute('data-day');
+          const shift = this.getAttribute('data-shift');
+          const key = `${day}-${shift}`;
+
+          assignments[key] = empId;
+          renderAssignments();
+        });
+      });
+
+      // Add employee button click
+      addEmpBtn.addEventListener('click', function() {
+        const name = empNameInput.value.trim();
+        const rate = parseFloat(empRateInput.value);
+        const color = empColorInput.value;
+
+        if (!name) {
+          alert("الرجاء كتابة اسم الموظف!");
+          return;
+        }
+
+        const newEmp = {
+          id: Date.now().toString(),
+          name: name,
+          rate: rate,
+          color: color
+        };
+
+        employees.push(newEmp);
+        empNameInput.value = '';
+        
+        renderEmployees();
+      });
+
+      // Clear schedule button
+      clearBtn.addEventListener('click', function() {
+        assignments = {};
+        renderAssignments();
+      });
+
+      currencySelect.addEventListener('change', function() {
+        renderEmployees();
+        renderAssignments();
+      });
+
+      // Initial render
+      renderEmployees();
+      renderAssignments();
+    });
+  </script>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer" style="margin-top: 5rem;">
+    <a href="../../index.html" class="zank-footer-logo">
+      <img src="../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../index.html"><i class="ph-duotone ph-house"></i> الرئيسية</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> أدوات الأعمال</a>
+      <a href="../../index.html#systems"><i class="ph-duotone ph-cube"></i> الأنظمة</a>
+      <a href="../../legal.html#terms"><i class="ph-duotone ph-shield-check"></i> الشروط</a>
+      <a href="../../legal.html#privacy"><i class="ph-duotone ph-lock-key"></i> الخصوصية</a>
+    </div>
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>جميع الحقوق محفوظة</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>

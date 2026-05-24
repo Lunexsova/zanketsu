@@ -1,0 +1,270 @@
+:root {
+    --void: #050508;
+    --obsidian: #0a0a10;
+    --ink: #12121a;
+    --rose: #f43f5e;
+    --rose-glow: rgba(244, 63, 94, 0.25);
+    --white: #fafafa;
+    --silver: #a8a8b3;
+    --border-color: rgba(244, 63, 94, 0.12);
+    --font-ar: 'Cairo', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-ar);
+    background: var(--void);
+    color: var(--white);
+    min-height: 100vh;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(244, 63, 94, 0.04) 0%, transparent 60%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.app-container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .app-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(10, 10, 16, 0.5);
+    transition: all 0.3s;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+}
+
+.back-btn:hover {
+    color: var(--rose);
+    border-color: var(--rose);
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.25);
+}
+
+.editor-card, .preview-card-wrap {
+    background: var(--obsidian);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+.section-title-rose {
+    color: var(--rose);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--silver);
+    margin-bottom: 0.4rem;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.65rem 0.9rem;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--rose);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.1);
+}
+
+/* Coupon Ticket Visual */
+.coupon-ticket {
+    background: radial-gradient(circle at 0 50%, transparent 12px, var(--ink) 12px) 0 0 / 100% 100% no-repeat,
+                radial-gradient(circle at 100% 50%, transparent 12px, var(--ink) 12px) 0 0 / 100% 100% no-repeat;
+    border: 1px dashed rgba(244, 63, 94, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.coupon-ticket::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20%;
+    border-left: 1px dashed rgba(255,255,255,0.1);
+}
+
+.coupon-discount-badge {
+    font-family: var(--font-en);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--rose);
+    text-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+}
+
+.coupon-code-box {
+    display: inline-block;
+    align-self: center;
+    border: 2px dashed var(--rose);
+    background: rgba(244, 63, 94, 0.05);
+    color: var(--white);
+    font-family: var(--font-en);
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 0.5rem 1.5rem;
+    letter-spacing: 2px;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--rose);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--void);
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    @page { margin: 0; }
+    body { margin: 1.5cm !important; }
+
+    .coupon-ticket {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .coupon-discount-badge {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .coupon-code-box {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .zank-nav, .zank-footer, .back-btn, .editor-card, .btn-secondary {
+        display: none !important;
+    }
+    .app-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+    }
+    .preview-card-wrap {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: transparent;
+    }
+
+    .watermark-print {
+        display: block !important;
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.8rem;
+        color: #777;
+        border-top: 1px dashed #ccc;
+        padding-top: 1rem;
+    }
+}
+
+.watermark-print {
+    display: none;
+}
+
+select option {
+    background-color: #12121a;
+    color: #fafafa;
+}
+
+/* Fix select dropdown options styling on dark theme */
+select {
+    color: #fafafa !important;
+    background-color: #12121a !important;
+}
+select option {
+    background-color: #12121a !important;
+    color: #fafafa !important;
+}
