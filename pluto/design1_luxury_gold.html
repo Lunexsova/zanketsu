@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية أورا | المنصة التعليمية الفاخرة</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="منصة أورا التعليمية لتعليم التداول، التكنولوجيا، وإدارة الأعمال بأعلى معايير الاحترافية والجمال والابتكار.">
+    <meta name="keywords" content="تداول, عملات رقمية, برمجة, ذكاء اصطناعي, إدارة ثروات, منصة تعليمية">
+    
+    <!-- Google Fonts: Cairo & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS RESET & CUSTOM PROPERTIES */
+        :root {
+            --bg-primary: #08090d;
+            --bg-secondary: #12141c;
+            --bg-tertiary: #191c28;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa771c;
+            --gold-gradient: linear-gradient(135deg, #aa771c 0%, #f3e5ab 50%, #d4af37 100%);
+            --silver-primary: #e5e4e2;
+            --silver-dark: #8a9597;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --border-glow: rgba(212, 175, 55, 0.2);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-primary);
+        }
+
+        /* CONTAINERS */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 32px;
+            }
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 9, 13, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            transition: var(--transition-smooth);
+        }
+
+        header.scrolled {
+            background: rgba(8, 9, 13, 0.95);
+            padding: 10px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse-glow 2s infinite ease-in-out;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-gradient);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-light);
+        }
+
+        /* Default Header CTA: hidden on small screens to prevent overflow */
+        header .cta-btn {
+            display: none;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-gradient);
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            background: transparent;
+            color: var(--gold-light);
+            border-color: var(--gold-primary);
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+            border: none;
+            background: transparent;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* RESPONSIVE MEDIA QUERIES FOR HEADER */
+        @media (min-width: 480px) {
+            header .cta-btn {
+                display: inline-flex;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            .menu-toggle {
+                display: none;
+            }
+            .mobile-nav {
+                display: none;
+            }
+            header .cta-btn {
+                display: inline-flex;
+            }
+        }
+
+        /* MOBILE MENU DRAWER */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 320px;
+            height: 100vh;
+            background: var(--bg-secondary);
+            z-index: 999;
+            padding: 100px 30px 40px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-left: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-nav ul a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-nav ul a:hover {
+            color: var(--gold-primary);
+            padding-right: 8px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            padding: 150px 0 80px;
+            background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.12) 0%, transparent 60%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 6px 16px;
+            border-radius: 50px;
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-badge i {
+            color: var(--gold-primary);
+        }
+
+        .hero h1 {
+            font-size: clamp(24px, 6vw, 48px);
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--silver-primary);
+        }
+
+        /* LIVE TICKER */
+        .ticker-wrap {
+            background: rgba(18, 20, 28, 0.8);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-track {
+            display: flex;
+            gap: 40px;
+            animation: ticker 25s linear infinite;
+            width: max-content;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .ticker-name {
+            color: var(--text-primary);
+        }
+
+        .ticker-price {
+            color: var(--gold-light);
+        }
+
+        .ticker-change.up {
+            color: #10b981;
+        }
+
+        .ticker-change.down {
+            color: #ef4444;
+        }
+
+        /* STATS COUNTER */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(18, 20, 28, 0.6) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            transition: var(--transition-smooth);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(212, 175, 55, 0.05);
+        }
+
+        .stat-number {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            color: var(--gold-primary);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(20px, 4vw, 32px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #e2e2e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* EXPLORE COURSES (TABS & GRID) */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--gold-gradient);
+            color: #000;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Mobile Adjustments for very narrow screens */
+        @media (max-width: 320px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .course-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.05);
+        }
+
+        .course-card:hover::before {
+            opacity: 1;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(8, 9, 13, 0.8);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .course-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .course-meta span i {
+            color: var(--gold-primary);
+            margin-left: 4px;
+        }
+
+        .course-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .course-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .course-price {
+            font-size: 18px;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .course-enroll {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-primary);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .course-enroll i {
+            transition: var(--transition-smooth);
+        }
+
+        .course-card:hover .course-enroll i {
+            transform: translateX(-4px);
+            color: var(--gold-primary);
+        }
+
+        /* P&L CALCULATOR SECTION */
+        .calc-wrapper {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(25, 28, 40, 0.7) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 24px;
+            padding: 30px 20px;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .calc-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .calc-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .calc-input {
+            background: var(--bg-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-primary);
+            padding: 10px 14px;
+            font-size: 14px;
+            font-weight: 600;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .calc-input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+        }
+
+        .calc-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+            background-size: 20px;
+        }
+
+        .calc-radio-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .calc-radio {
+            flex: 1;
+            position: relative;
+        }
+
+        .calc-radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .calc-radio-label {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background: var(--bg-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .calc-radio input:checked + .calc-radio-label.buy {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .calc-radio input:checked + .calc-radio-label.sell {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        .calc-result-card {
+            background: rgba(8, 9, 13, 0.6);
+            border: 1px dashed rgba(212, 175, 55, 0.25);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-result-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .calc-result-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .calc-result-value.profit {
+            color: #10b981;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        }
+
+        .calc-result-value.loss {
+            color: #ef4444;
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+        }
+
+        .calc-result-roi {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        /* ROADMAP TIMELINE */
+        .roadmap-container {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 20px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold-dark) 0%, rgba(212, 175, 55, 0.1) 100%);
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-right: 50px;
+        }
+
+        .roadmap-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .roadmap-badge {
+            position: absolute;
+            top: 2px;
+            right: 8px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 2px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--gold-light);
+        }
+
+        .roadmap-content {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .roadmap-content:hover {
+            transform: translateX(-5px);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .roadmap-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .roadmap-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* CLIENTS CAROUSEL (TESTIMONIALS) */
+        .testimonial-slider {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 24px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(18, 20, 28, 0.4) 100%);
+            padding: 30px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 300%; /* For 3 slides */
+        }
+
+        .testimonial-slide {
+            width: 33.333%;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .testimonial-stars {
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            background-color: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        .testimonial-info {
+            text-align: right;
+        }
+
+        .testimonial-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .testimonial-role {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .slider-dot.active {
+            background: var(--gold-primary);
+            transform: scale(1.2);
+        }
+
+        /* FAQ ACCORDION */
+        .faq-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item.active {
+            border-color: rgba(212, 175, 55, 0.25);
+        }
+
+        .faq-header {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-header h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .faq-icon {
+            font-size: 12px;
+            color: var(--gold-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(8, 9, 13, 0.2);
+        }
+
+        .faq-content {
+            padding: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-logo {
+            margin-bottom: 5px;
+        }
+
+        .footer-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gold-light);
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--gold-primary);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+            padding-right: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition-smooth);
+        }
+
+        .social-btn:hover {
+            background: var(--gold-gradient);
+            color: #000;
+            transform: translateY(-3px);
+            border-color: transparent;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* KEYFRAMES */
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(50%);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3));
+            }
+            50% {
+                filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-crown logo-icon"></i>
+                <span class="logo-text">AURA</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active">الرئيسية</a></li>
+                <li><a href="#courses">المسارات التعليمية</a></li>
+                <li><a href="#calculator">حاسبة الاستثمار</a></li>
+                <li><a href="#roadmap">خارطة الطريق</a></li>
+                <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <a href="#courses" class="cta-btn">ابدأ التعلم الآن</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#" class="mobile-link">الرئيسية</a></li>
+            <li><a href="#courses" class="mobile-link">المسارات التعليمية</a></li>
+            <li><a href="#calculator" class="mobile-link">حاسبة الاستثمار</a></li>
+            <li><a href="#roadmap" class="mobile-link">خارطة الطريق</a></li>
+            <li><a href="#testimonials" class="mobile-link">آراء العملاء</a></li>
+            <li><a href="#faq" class="mobile-link">الأسئلة الشائعة</a></li>
+        </ul>
+        <a href="#courses" class="cta-btn mobile-link" style="width: 100%; text-align: center;">ابدأ التعلم الآن</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fa-solid fa-award"></i> أكاديمية النخبة الرقمية الأولى عالمياً
+            </div>
+            <h1>احترف التداول والتقنيات الحديثة بمعايير عالمية</h1>
+            <p>منصة متكاملة تجمع بين أسرار الأسواق المالية وصناعة المستقبل التكنولوجي. دروس تفاعلية، استراتيجيات حية، ومجتمع من الخبراء يرافقك خطوة بخطوة.</p>
+            <div class="hero-actions">
+                <a href="#courses" class="cta-btn" style="padding: 12px 30px; font-size: 15px;">اكتشف البرامج</a>
+                <a href="#calculator" class="secondary-btn" style="padding: 12px 30px; font-size: 15px;">محاكي الاستثمار</a>
+            </div>
+
+            <!-- STATS COUNTER -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">ألف طالب نشط</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">مدرب دولي معتمد</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% نسبة الرضا</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="120">0</div>
+                    <div class="stat-label">دورة متقدمة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE TICKER -->
+    <div class="ticker-wrap">
+        <div class="ticker-track" id="tickerTrack">
+            <!-- Dynamically populated ticker items -->
+        </div>
+    </div>
+
+    <!-- EXPLORE COURSES SECTION -->
+    <section id="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">البرامج الأكاديمية</span>
+                <h2 class="section-title">برامج تعليمية صُممت للتميز والريادة</h2>
+            </div>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="all">جميع التخصصات</button>
+                <button class="tab-btn" data-tab="trading">الأسواق والتداول</button>
+                <button class="tab-btn" data-tab="tech">البرمجة والذكاء الاصطناعي</button>
+                <button class="tab-btn" data-tab="business">الأعمال وإدارة الثروات</button>
+            </div>
+
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Course Cards generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- P&L CALCULATOR SECTION (ADDITIONAL INTERACTIVE CONTENT) -->
+    <section id="calculator" style="background: radial-gradient(circle at 10% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">أدوات تفاعلية</span>
+                <h2 class="section-title">محاكي الأرباح وإدارة المخاطر</h2>
+            </div>
+
+            <div class="calc-wrapper">
+                <div class="calc-grid">
+                    <div class="calc-group">
+                        <label for="calcAsset">الأصل المالي</label>
+                        <select id="calcAsset" class="calc-input calc-select">
+                            <option value="BTC" data-price="67000">البيتكوين (BTC) - $67,000</option>
+                            <option value="GOLD" data-price="2350">الذهب (GOLD) - $2,350</option>
+                            <option value="AAPL" data-price="190">سهم آبل (AAPL) - $190</option>
+                            <option value="EURUSD" data-price="1.08">اليورو مقابل الدولار - $1.08</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label for="calcInvestment">مبلغ الاستثمار ($)</label>
+                        <input type="number" id="calcInvestment" class="calc-input" value="1000" min="10">
+                    </div>
+                </div>
+
+                <div class="calc-grid">
+                    <div class="calc-group">
+                        <label for="calcLeverage">الرافعة المالية</label>
+                        <select id="calcLeverage" class="calc-input calc-select">
+                            <option value="1">بدون رافعة (1x)</option>
+                            <option value="5">منخفضة (5x)</option>
+                            <option value="10">متوسطة (10x)</option>
+                            <option value="50">مرتفعة (50x)</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label>نوع الصفقة</label>
+                        <div class="calc-radio-group">
+                            <label class="calc-radio">
+                                <input type="radio" name="calcDirection" value="buy" checked>
+                                <span class="calc-radio-label buy">شراء (Long)</span>
+                            </label>
+                            <label class="calc-radio">
+                                <input type="radio" name="calcDirection" value="sell">
+                                <span class="calc-radio-label sell">بيع (Short)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-grid" style="grid-template-columns: 1fr;">
+                    <div class="calc-group">
+                        <label for="calcMove">حركة السعر المتوقعة (%)</label>
+                        <input type="range" id="calcMove" min="0.1" max="10" step="0.1" value="2" style="accent-color: var(--gold-primary);">
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); margin-top: 5px;">
+                            <span>0.1%</span>
+                            <span id="calcMoveVal" style="color: var(--gold-primary); font-weight: 700;">2%</span>
+                            <span>10%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-result-card">
+                    <div class="calc-result-label">الربح / الخسارة المتوقعة</div>
+                    <div class="calc-result-value profit" id="calcResult">+$100.00</div>
+                    <div class="calc-result-roi" id="calcRoi">العائد على الاستثمار: +10.00%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROADMAP SECTION -->
+    <section id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">خارطة النجاح</span>
+                <h2 class="section-title">رحلتك من البداية إلى الاحتراف المطلق</h2>
+            </div>
+
+            <div class="roadmap-container">
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">1</div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">تأسيس المفاهيم الأساسية</h3>
+                        <p class="roadmap-desc">فهم أساسيات التداول، هيكلة الأسواق، ومبادئ التقنيات البرمجية والذكاء الاصطناعي من الصفر.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">2</div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">التدريب العملي والمحاكاة</h3>
+                        <p class="roadmap-desc">تطبيق المفاهيم على حسابات تجريبية تفاعلية وبناء مشاريع برمجية حقيقية تحت إشراف مدربين.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">3</div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">إدارة المخاطر والتحليلات المتقدمة</h3>
+                        <p class="roadmap-desc">التركيز على علم النفس الاستثماري، الإدارة المالية الصارمة، واستخدام الذكاء الاصطناعي في تحليل البيانات.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">4</div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">التخرج والانضمام لنادي النخبة</h3>
+                        <p class="roadmap-desc">الحصول على شهادة معتمدة موثقة عبر البلوكشين ودخول مجتمع التداول المغلق لإشارات السوق اليومية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" style="background: radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">قصص نجاح</span>
+                <h2 class="section-title">ماذا يقول أعضاء مجتمع أورا للنخبة</h2>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"بفضل الأكاديمية استطعت التحول من التداول العشوائي إلى التداول الخوارزمي المبرمج، وحققت عوائد لم أكن أحلم بها من قبل. أسلوب الشرح رائع ومحترف للغاية."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">ع</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">عبد الرحمن السبيعي</div>
+                                <div class="testimonial-role">متداول خوارزمي مستقل</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"المحتوى التقني غير عادي. دراسة الذكاء الاصطناعي وتطبيقه على تحليل البيانات المالية كان النقطة الفاصلة في مسيرتي المهنية الجديدة."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">م</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">مريم الهاشمي</div>
+                                <div class="testimonial-role">مهندسة بيانات ذكاء اصطناعي</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"المنصة أنيقة وسهلة الاستخدام وتدعم الهاتف بشكل ممتاز جداً. الحاسبة الاستثمارية والمحاكاة تساعدني يومياً في تخطيط استثماراتي."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">ف</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">فيصل الدوسري</div>
+                                <div class="testimonial-role">مستثمر في أسواق المال</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-dot active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="slider-dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="slider-dot" data-index="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">الدعم والإجابة</span>
+                <h2 class="section-title">الأسئلة الشائعة والمجابة</h2>
+            </div>
+
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>هل أحتاج لخبرة سابقة للتسجيل في المسارات؟</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-content">
+                            لا على الإطلاق. تبدأ برامجنا التعليمية من الأساسيات المطلقة وتأخذك تدريجياً وبشكل عملي مدروس نحو مستويات متقدمة تضاهي المحترفين.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>كيف أحصل على شهادات التخرج؟</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-content">
+                            بعد إتمامك لجميع مشاريع المسار العملي واجتياز الاختبار النهائي بنجاح، يتم توليد شهادة تخرج ذكية مسجلة على البلوكشين لتأكيد مصداقيتها عالمياً.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3>هل تدعم المنصة تخصصات بخلاف أسواق المال؟</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        <div class="faq-content">
+                            نعم بالتأكيد. تقدم الأكاديمية مسارات احترافية متكاملة في هندسة الذكاء الاصطناعي، البرمجة الخوارزمية، إدارة الأعمال الرقمية، ريادة الأعمال، وصناعة المحتوى الإبداعي.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fa-solid fa-crown logo-icon"></i>
+                        <span class="logo-text">AURA</span>
+                    </a>
+                    <p class="footer-desc">أكاديمية أورا التعليمية، رائدة التدريب المالي والتقني الاحترافي. نسعى لتمكين العقول الشابة في الشرق الأوسط لتحقيق السيادة المالية والابتكار التقني.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#courses">المسارات الأكاديمية</a></li>
+                        <li><a href="#calculator">الحاسبة الاستثمارية</a></li>
+                        <li><a href="#roadmap">خارطة الطريق</a></li>
+                        <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">تواصل معنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fa-solid fa-envelope" style="margin-left: 8px;"></i> support@aura-academy.com</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone" style="margin-left: 8px;"></i> +966 50 000 0000</a></li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-btn" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © 2026 لأكاديمية أورا التعليمية. صُمم بكل فخامة وإتقان.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // DATA DEFINITIONS
+        const coursesData = [
+            {
+                id: 1,
+                category: "trading",
+                title: "دبلوم التداول الشامل: من الأساسيات إلى الاحتراف",
+                desc: "تعلم التحليل الفني والكلاسيكي وإدارة المحافظ المالية في أسواق العملات والأسهم والذهب.",
+                badge: "الأكثر طلباً",
+                rating: 4.9,
+                students: "4.8K",
+                price: "$299",
+                image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 2,
+                category: "trading",
+                title: "التداول الخوارزمي وبناء البوتات الاستثمارية",
+                desc: "تعلم كيف تبرمج استراتيجياتك المالية الخاصة باستخدام لغة بايثون وربطها بمنصات التداول الآلي.",
+                badge: "متقدم",
+                rating: 4.8,
+                students: "1.2K",
+                price: "$499",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 3,
+                category: "tech",
+                title: "برمجة تطبيقات الويب الكاملة باستخدام React & Node.js",
+                desc: "بناء تطبيقات ويب قوية، آمنة، وسريعة الاستجابة من الصفر وحتى النشر على السيرفرات السحابية.",
+                badge: "مميز",
+                rating: 4.7,
+                students: "3.2K",
+                price: "$199",
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 4,
+                category: "tech",
+                title: "مهندس الذكاء الاصطناعي وتعلم الآلة التطبيقي",
+                desc: "تدريب عملي على بناء وتدريب شبكات الأعصاب الاصطناعية وتطبيقات تحليل البيانات المالية الكبرى.",
+                badge: "رائج",
+                rating: 4.9,
+                students: "2.1K",
+                price: "$349",
+                image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 5,
+                category: "business",
+                title: "إدارة الثروات الشخصية والتخطيط المالي للمستقبل",
+                desc: "استراتيجيات عملية لتقليص الديون، بناء صناديق الاستثمار، وإدارة الأصول العقارية والمالية بحكمة.",
+                badge: "أساسي",
+                rating: 4.6,
+                students: "5.5K",
+                price: "$99",
+                image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=400&q=80"
+            },
+            {
+                id: 6,
+                category: "business",
+                title: "الريادة وإطلاق المشاريع التقنية الناشئة",
+                desc: "من الفكرة المبدئية إلى الحصول على التمويل، فهم تسويق المنتجات وجذب المستخدمين الأوائل.",
+                badge: "إبداعي",
+                rating: 4.8,
+                students: "900",
+                price: "$249",
+                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
+            }
+        ];
+
+        const initialTickerData = [
+            { name: "BTC/USD", price: 67120.40, change: 2.45 },
+            { name: "GOLD", price: 2354.80, change: -0.65 },
+            { name: "ETH/USD", price: 3482.15, change: 4.12 },
+            { name: "AAPL", price: 189.98, change: 1.15 },
+            { name: "NVDA", price: 948.30, change: 5.76 },
+            { name: "EUR/USD", price: 1.0845, change: -0.12 },
+            { name: "OIL (Brent)", price: 82.40, change: 0.85 }
+        ];
+
+        // RENDER FUNCTIONS
+        function renderCourses(category = "all") {
+            const grid = document.getElementById("coursesGrid");
+            grid.innerHTML = "";
+            
+            const filtered = category === "all" 
+                ? coursesData 
+                : coursesData.filter(c => c.category === category);
+                
+            filtered.forEach(course => {
+                const card = document.createElement("div");
+                card.className = "course-card";
+                card.innerHTML = `
+                    <div class="course-image" style="background-image: url('${course.image}')">
+                        <span class="course-badge">${course.badge}</span>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span><i class="fa-solid fa-star"></i> ${course.rating}</span>
+                            <span><i class="fa-solid fa-users"></i> ${course.students} طالب</span>
+                        </div>
+                        <h3 class="course-title">${course.title}</h3>
+                        <p class="course-desc">${course.desc}</p>
+                        <div class="course-footer">
+                            <span class="course-price">${course.price}</span>
+                            <button class="course-enroll">
+                                التفاصيل والتسجيل <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function initTicker() {
+            const track = document.getElementById("tickerTrack");
+            // Double the list to loop infinitely without white space
+            const doubleList = [...initialTickerData, ...initialTickerData, ...initialTickerData];
+            track.innerHTML = doubleList.map(item => {
+                const isUp = item.change >= 0;
+                return `
+                    <div class="ticker-item">
+                        <span class="ticker-name">${item.name}</span>
+                        <span class="ticker-price">$${item.price.toLocaleString(undefined, {minimumFractionDigits: 2})}</span>
+                        <span class="ticker-change ${isUp ? 'up' : 'down'}">
+                            <i class="fa-solid ${isUp ? 'fa-caret-up' : 'fa-caret-down'}"></i>
+                            ${Math.abs(item.change)}%
+                        </span>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // STATS ANIMATION
+        function initStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = +entry.target.getAttribute('data-target');
+                        let count = 0;
+                        const increment = target / 40; // speed
+                        const updateCount = () => {
+                            if (count < target) {
+                                count += increment;
+                                entry.target.innerText = Math.ceil(count) + (target === 98 ? "%" : "+");
+                                setTimeout(updateCount, 25);
+                            } else {
+                                entry.target.innerText = target + (target === 98 ? "%" : "+");
+                            }
+                        };
+                        updateCount();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => observer.observe(stat));
+        }
+
+        // P&L CALCULATOR LOGIC
+        const calcAsset = document.getElementById("calcAsset");
+        const calcInvestment = document.getElementById("calcInvestment");
+        const calcLeverage = document.getElementById("calcLeverage");
+        const calcMove = document.getElementById("calcMove");
+        const calcMoveVal = document.getElementById("calcMoveVal");
+        const calcResult = document.getElementById("calcResult");
+        const calcRoi = document.getElementById("calcRoi");
+
+        function calculatePnL() {
+            const investment = parseFloat(calcInvestment.value) || 0;
+            const leverage = parseInt(calcLeverage.value) || 1;
+            const movePercentage = parseFloat(calcMove.value) || 0;
+            
+            const checkedDirection = document.querySelector('input[name="calcDirection"]:checked');
+            const direction = checkedDirection ? checkedDirection.value : 'buy';
+            
+            calcMoveVal.innerText = `${movePercentage.toFixed(1)}%`;
+            
+            const multiplier = direction === "buy" ? 1 : -1;
+            const percentageReturn = (movePercentage * leverage * multiplier);
+            const profitLoss = investment * (percentageReturn / 100);
+            
+            const isProfit = profitLoss >= 0;
+            
+            calcResult.className = `calc-result-value ${isProfit ? 'profit' : 'loss'}`;
+            calcResult.innerText = `${isProfit ? '+' : ''}$${profitLoss.toFixed(2)}`;
+            
+            calcRoi.className = `calc-result-roi`;
+            calcRoi.innerText = `العائد على الاستثمار: ${isProfit ? '+' : ''}${percentageReturn.toFixed(2)}%`;
+        }
+
+        [calcInvestment, calcLeverage, calcMove].forEach(el => {
+            el.addEventListener("input", calculatePnL);
+        });
+        calcAsset.addEventListener("change", calculatePnL);
+        document.querySelectorAll('input[name="calcDirection"]').forEach(el => {
+            el.addEventListener("change", calculatePnL);
+        });
+
+        // TABS HANDLER
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+                btn.classList.add('active');
+                renderCourses(btn.getAttribute('data-tab'));
+            });
+        });
+
+        // HEADER SCROLL EVENT
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // MOBILE NAVIGATION
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // TESTIMONIALS SLIDER
+        const track = document.getElementById("testimonialTrack");
+        const dots = document.querySelectorAll(".slider-dot");
+        let activeIndex = 0;
+
+        function updateSlider(index) {
+            activeIndex = index;
+            track.style.transform = `translateX(${index * 33.333}%)`; // RTL means positive offset
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle("active", idx === index);
+            });
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener("click", () => {
+                const index = parseInt(dot.getAttribute("data-index"));
+                updateSlider(index);
+            });
+        });
+
+        // Auto slide
+        setInterval(() => {
+            let nextIndex = activeIndex + 1;
+            if (nextIndex > 2) nextIndex = 0;
+            updateSlider(nextIndex);
+        }, 5000);
+
+        // FAQ ACCORDION
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-body').style.maxHeight = null;
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                    const body = item.querySelector('.faq-body');
+                    body.style.maxHeight = body.scrollHeight + "px";
+                }
+            });
+        });
+
+        // INITIALIZATION
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCourses();
+            initTicker();
+            initStats();
+            calculatePnL();
+        });
+    </script>
+</body>
+</html>
