@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكورسات المتخصصة | منصة بلوتو للتداول</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="اكتشف مسارات الكورسات التعليمية المتخصصة في التداول، أسواق المال، البرمجة، التسويق، وغيرها من المهارات المالية والتقنية.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Outfit:wght@300;400;600;800;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        :root {
+            /* Neon Cyberpunk Theme Colors */
+            --pluto-gold: #f59e0b;
+            --pluto-gold-dark: #b45309;
+            --pluto-gold-glow: rgba(245, 158, 11, 0.22);
+            --pluto-gold-border: rgba(245, 158, 11, 0.15);
+            
+            --neon-purple: #a855f7;
+            --neon-purple-glow: rgba(168, 85, 247, 0.25);
+            --neon-purple-border: rgba(168, 85, 247, 0.18);
+            
+            --neon-cyan: #06b6d4;
+            --neon-cyan-glow: rgba(6, 182, 212, 0.25);
+            
+            --neon-green: #10b981;
+            --neon-green-glow: rgba(16, 185, 129, 0.25);
+            
+            --neon-rose: #f43f5e;
+            --neon-rose-glow: rgba(244, 63, 94, 0.25);
+            
+            /* Dark Backgrounds */
+            --bg-void: #020106;
+            --bg-space: #06030e;
+            --bg-card: rgba(8, 4, 18, 0.7);
+            
+            /* UI Standards */
+            --white: #ffffff;
+            --white-muted: #94a3b8;
+            --border-glass: rgba(255, 255, 255, 0.05);
+            --border-glass-hover: rgba(245, 158, 11, 0.35);
+            
+            /* Typography */
+            --font-ar-heading: 'Tajawal', sans-serif;
+            --font-ar-body: 'Cairo', sans-serif;
+            --font-en: 'Outfit', sans-serif;
+            --font-digital: 'Share Tech Mono', monospace;
+            --font-logo: 'Orbitron', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-void);
+            color: var(--white);
+            font-family: var(--font-ar-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Ambient Cosmic Grid & Constellations (GPU Accelerated) */
+        .cyber-universe {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -5;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Ambient Nebula Blobs */
+        .cosmic-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.25;
+            will-change: transform;
+        }
+
+        .orb-gold {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--pluto-gold) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            animation: orbFloat1 20s infinite alternate ease-in-out;
+        }
+
+        .orb-purple {
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: orbFloat2 24s infinite alternate ease-in-out;
+        }
+
+        .orb-cyan {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+            top: 40%;
+            left: 20%;
+            animation: orbFloat3 18s infinite alternate ease-in-out;
+        }
+
+        @keyframes orbFloat1 {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(80px, 60px, 0) scale(1.15); }
+        }
+
+        @keyframes orbFloat2 {
+            0% { transform: translate3d(0, 0, 0) scale(1.1); }
+            100% { transform: translate3d(-70px, -50px, 0) scale(0.95); }
+        }
+
+        @keyframes orbFloat3 {
+            0% { transform: translate3d(0, 0, 0) scale(0.9); }
+            100% { transform: translate3d(60px, -60px, 0) scale(1.2); }
+        }
+
+        /* Twinkling Space dust */
+        .cyber-dust {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -4;
+        }
+
+        .dust-layer-1 {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 
+                150px 200px #fff, 400px 80px #fff, 850px 120px #fff, 980px 450px #fff, 
+                1150px 70px #fff, 1380px 300px #fff, 200px 650px #fff, 550px 750px #fff, 
+                1050px 800px #fff, 1400px 950px #fff, 300px 1050px #fff, 850px 1100px #fff;
+            animation: dustTwinkle 3s infinite alternate;
+        }
+
+        .dust-layer-2 {
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: 
+                250px 120px var(--pluto-gold), 600px 380px var(--pluto-gold), 920px 80px var(--pluto-gold),
+                1300px 180px var(--pluto-gold), 80px 720px var(--pluto-gold), 480px 850px var(--pluto-gold),
+                880px 600px var(--pluto-gold), 1200px 850px var(--pluto-gold), 350px 1150px var(--pluto-gold);
+            animation: dustTwinkle 5s infinite alternate-reverse;
+        }
+
+        @keyframes dustTwinkle {
+            0% { opacity: 0.25; transform: translate3d(0, 0, 0); }
+            100% { opacity: 1; transform: translate3d(-10px, 10px, 0); }
+        }
+
+        /* 3D Cyber Grid Floor */
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(rgba(245, 158, 11, 0.015) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, rgba(245, 158, 11, 0.015) 1.5px, transparent 1.5px);
+            background-size: 70px 70px;
+            z-index: -3;
+            pointer-events: none;
+            opacity: 0.9;
+            transform: perspective(500px) rotateX(65deg) translate3d(-25%, -35%, 0);
+            transform-origin: center top;
+            animation: gridMove 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(500px) rotateX(65deg) translate3d(-25%, -35%, 0); }
+            100% { transform: perspective(500px) rotateX(65deg) translate3d(-25%, calc(-35% + 70px), 0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-void); }
+        ::-webkit-scrollbar-thumb { background: var(--pluto-gold-dark); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--pluto-gold); }
+
+        /* Command Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 6%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(2, 1, 6, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 16px 6%;
+            background: rgba(2, 1, 6, 0.95);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .brand-logo-container {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--pluto-gold), var(--pluto-gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px var(--pluto-gold-glow);
+            position: relative;
+        }
+
+        .brand-logo-container i {
+            color: #000;
+            font-size: 22px;
+        }
+
+        .brand-name {
+            font-family: var(--font-logo);
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--white) 40%, var(--pluto-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--white-muted);
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--font-ar-heading);
+            transition: all 0.25s;
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pluto-gold);
+            transition: width 0.25s ease;
+            box-shadow: 0 0 8px var(--pluto-gold);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--white);
+        }
+
+        .nav-menu a:hover::after, .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Glass Cards */
+        .cyber-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cyber-card:hover {
+            border-color: var(--border-glass-hover);
+            box-shadow: 0 20px 50px rgba(245, 158, 11, 0.08);
+            transform: translateY(-4px);
+        }
+
+        /* Premium Buttons */
+        .cyber-btn-gold {
+            background: linear-gradient(135deg, var(--pluto-gold), #d97706);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-family: var(--font-ar-heading);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px var(--pluto-gold-glow);
+        }
+
+        .cyber-btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45);
+        }
+
+        .cyber-btn-outline {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-family: var(--font-ar-heading);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cyber-btn-outline:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--pluto-gold);
+            color: var(--pluto-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Page Banner Header */
+        .page-banner {
+            padding: 160px 6% 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cyber-badge {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            color: var(--pluto-gold);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: clamp(32px, 5vw, 54px);
+            font-family: var(--font-ar-heading);
+            font-weight: 900;
+            background: linear-gradient(to bottom, var(--white) 30%, #fcd34d 80%, var(--pluto-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: clamp(15px, 2vw, 18px);
+            color: var(--white-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Filters Section */
+        .filter-section {
+            padding: 0 6% 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .filters-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 8px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-tab {
+            background: none;
+            border: none;
+            color: var(--white-muted);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--font-ar-heading);
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+
+        .filter-tab.active, .filter-tab:hover {
+            background: var(--pluto-gold);
+            color: #000;
+            box-shadow: 0 4px 15px var(--pluto-gold-glow);
+        }
+
+        /* Courses Grid Layout */
+        .courses-section {
+            padding: 0 6% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .course-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .course-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .course-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .course-card:hover .course-thumbnail {
+            transform: scale(1.08);
+        }
+
+        .course-difficulty-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .badge-beginner { background: rgba(16, 185, 129, 0.15); border: 1px solid var(--neon-green); color: var(--neon-green); }
+        .badge-medium { background: rgba(6, 182, 212, 0.15); border: 1px solid var(--neon-cyan); color: var(--neon-cyan); }
+        .badge-advanced { background: rgba(168, 85, 247, 0.15); border: 1px solid var(--neon-purple); color: var(--neon-purple); }
+        .badge-expert { background: rgba(245, 158, 11, 0.15); border: 1px solid var(--pluto-gold); color: var(--pluto-gold); }
+
+        .course-details {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .course-title {
+            font-size: 19px;
+            font-weight: 800;
+            font-family: var(--font-ar-heading);
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .course-desc {
+            font-size: 13px;
+            color: var(--white-muted);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        /* Ecosystem / Platforms Section */
+        .ecosystem-section {
+            background: #04020a;
+            border-y: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 80px 6%;
+        }
+
+        .ecosystem-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .block-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            font-family: var(--font-ar-heading);
+            margin-bottom: 40px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .block-title i {
+            color: var(--pluto-gold);
+        }
+
+        .platforms-flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .platform-icon-card {
+            width: 250px;
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .platform-logo-img {
+            height: 55px;
+            max-width: 80%;
+            object-fit: contain;
+            filter: grayscale(1) brightness(0.85);
+            transition: all 0.3s;
+        }
+
+        .platform-icon-card:hover .platform-logo-img {
+            filter: grayscale(0) brightness(1);
+        }
+
+        .platform-icon-card h4 {
+            font-size: 15px;
+            font-weight: 800;
+            font-family: var(--font-logo);
+            color: var(--white-muted);
+            transition: color 0.3s;
+        }
+
+        .platform-icon-card:hover h4 {
+            color: var(--pluto-gold);
+        }
+
+        /* Sponsors/Advertisements Segment */
+        .ads-section {
+            padding: 80px 6%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .ads-slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .ad-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 80px;
+            z-index: 1;
+        }
+
+        .ad-slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ad-image-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.15;
+            filter: blur(4px);
+        }
+
+        .ad-gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(8, 4, 18, 0.95) 0%, rgba(2, 1, 6, 0.7) 100%);
+            z-index: -1;
+        }
+
+        .ad-slide-text {
+            max-width: 50%;
+        }
+
+        .ad-tag-label {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--pluto-gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .ad-slide-title {
+            font-size: clamp(22px, 3.5vw, 36px);
+            font-family: var(--font-ar-heading);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .ad-slide-desc {
+            font-size: 15px;
+            color: var(--white-muted);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .ad-visual-showcase {
+            width: 38%;
+            aspect-ratio: 16/10;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ad-showcase-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Slideshow controls */
+        .slideshow-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slideshow-indicator {
+            width: 30px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slideshow-indicator.active {
+            background: var(--pluto-gold);
+            width: 50px;
+        }
+
+        .slideshow-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.25s;
+        }
+
+        .slideshow-arrow:hover {
+            background: var(--pluto-gold);
+            color: #000;
+            border-color: var(--pluto-gold);
+        }
+
+        .arrow-prev { right: 20px; }
+        .arrow-next { left: 20px; }
+
+        /* Footer System Layout */
+        footer {
+            background: #030207;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 80px 6% 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-universe-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-brand-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--pluto-gold), var(--pluto-gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .footer-hub-desc {
+            color: var(--white-muted);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 320px;
+        }
+
+        .footer-social-matrix {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-matrix-node {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-muted);
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .social-matrix-node:hover {
+            background: var(--pluto-gold);
+            color: #000;
+            border-color: var(--pluto-gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-col h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-family: var(--font-ar-heading);
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links-list a {
+            text-decoration: none;
+            color: var(--white-muted);
+            font-size: 13px;
+            transition: color 0.25s;
+        }
+
+        .footer-links-list a:hover {
+            color: var(--pluto-gold);
+        }
+
+        .newsletter-panel p {
+            font-size: 13px;
+            color: var(--white-muted);
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form-cyber {
+            display: flex;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .newsletter-input-cyber {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 12px 16px;
+            color: #fff;
+            font-family: var(--font-ar-body);
+            font-size: 13px;
+        }
+
+        .newsletter-btn-cyber {
+            background: var(--pluto-gold);
+            color: #000;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+
+        .newsletter-btn-cyber:hover {
+            background: #fff;
+        }
+
+        .footer-bottom-row {
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--white-muted);
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1200px) {
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .ad-slide {
+                flex-direction: column;
+                padding: 40px;
+                text-align: center;
+                justify-content: center;
+                gap: 20px;
+            }
+            .ad-slide-text {
+                max-width: 100%;
+            }
+            .ad-visual-showcase {
+                width: 70%;
+                margin: 0 auto;
+            }
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-universe-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 77px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 77px);
+                background: rgba(2, 1, 6, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 40px;
+                gap: 30px;
+                transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                z-index: 999;
+                text-align: center;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .footer-universe-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Cosmic Ambient Background -->
+    <div class="cyber-universe">
+        <div class="cosmic-orb orb-gold"></div>
+        <div class="cosmic-orb orb-purple"></div>
+        <div class="cosmic-orb orb-cyan"></div>
+        <div class="cyber-dust dust-layer-1"></div>
+        <div class="cyber-dust dust-layer-2"></div>
+        <div class="cyber-grid"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header">
+        <a href="me.html" class="brand">
+            <div class="brand-logo-container">
+                <i class="ph-bold ph-planet"></i>
+            </div>
+            <span class="brand-name">PLUTO</span>
+        </a>
+        
+        <ul class="nav-menu" id="nav-links">
+            <li><a href="me.html">الرئيسية</a></li>
+            <li><a href="profile.html">الملف الشخصي</a></li>
+            <li><a href="courses.html" class="active">الكورسات</a></li>
+            <li><a href="withdrawals.html">السحوبات</a></li>
+            <li><a href="prizes.html">الجوائز</a></li>
+            <li><a href="heroes.html">ساحة الأبطال</a></li>
+            <li><a href="news.html">الأخبار</a></li>
+            <li><a href="subscribe.html">بوابة الدفع</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="subscribe.html" class="cyber-btn-gold" style="padding: 10px 22px; font-size: 14px; border-radius: 10px;">
+                <i class="ph-bold ph-user-plus"></i> ابدأ الآن
+            </a>
+            <button class="nav-toggle" id="menu-toggle"><i class="ph-bold ph-list"></i></button>
+        </div>
+    </header>
+
+    <!-- Page Banner Header -->
+    <section class="page-banner">
+        <div class="cyber-badge">
+            البوابات التعليمية والتقنية
+        </div>
+        <h1 class="page-title">كورساتنا المتخصصة</h1>
+        <p class="page-subtitle">اكتشف باقة متميزة من المسارات الدراسية والمهنية المطورة بأيدي خبراء وأكاديميين عالميين لمساعدتك على التفوق.</p>
+    </section>
+
+    <!-- Filters container tabs -->
+    <section class="filter-section">
+        <div class="filters-container">
+            <button class="filter-tab active" data-filter="all">الكل</button>
+            <button class="filter-tab" data-filter="beginner">المبتدئين</button>
+            <button class="filter-tab" data-filter="medium">المتوسطين</button>
+            <button class="filter-tab" data-filter="advanced">المتقدمين</button>
+            <button class="filter-tab" data-filter="expert">الخبراء</button>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="courses-section">
+        <div class="courses-grid" id="courses-grid-element">
+            
+            <!-- Card 1: Financial Markets -->
+            <div class="cyber-card course-card" data-category="expert">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/course7.webp" alt="الأسواق المالية" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-expert">الخبراء</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">الأسواق المالية</h3>
+                    <p class="course-desc">تعلم مبادئ وقوانين التداول والاستثمار في الأسواق العالمية (الفوركس والأسهم والسلع)، مع فهم آليات حركة السيولة والتحليل الفني.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Programming -->
+            <div class="cyber-card course-card" data-category="medium">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/course4x.webp" alt="البرمجة" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-medium">متوسط</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">البرمجة وتطوير البرمجيات</h3>
+                    <p class="course-desc">تعلم اللغات الأساسية البرمجية وتطوير المواقع وتطبيقات الويب باستخدام تقنيات ومنهجيات حديثة مرنة ومطلوبة.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Digital Marketing -->
+            <div class="cyber-card course-card" data-category="beginner">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/marketing4.webp" alt="التسويق الإلكتروني" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-beginner">مبتدئ</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">التسويق الإلكتروني</h3>
+                    <p class="course-desc">احتراف صياغة وإدارة الحملات الإعلانية وتحسين محركات البحث SEO، وجذب الجماهير المستهدفة لزيادة المبيعات والانتشار.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 4: AI -->
+            <div class="cyber-card course-card" data-category="advanced">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/ai1.webp" alt="الذكاء الاصطناعي" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-advanced">متقدم</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">الذكاء الاصطناعي</h3>
+                    <p class="course-desc">دراسة نماذج تعلم الآلة وكتابة الخوارزميات الذكية واستخدام أدوات الذكاء الاصطناعي التوليدي في حل المشكلات التقنية الصعبة.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 5: Accounting -->
+            <div class="cyber-card course-card" data-category="beginner">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/accounting3.webp" alt="المحاسبة" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-beginner">مبتدئ</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">المحاسبة المالية</h3>
+                    <p class="course-desc">فهم أساسيات القيود والموازنات الدفترية والتقارير والمراجعة المالية للمؤسسات والأفراد لضمان دقة الرقابة المالية.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 6: Graphic Design -->
+            <div class="cyber-card course-card" data-category="medium">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/course3.webp" alt="الجرافيك ديزاين" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-medium">متوسط</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">الجرافيك ديزاين</h3>
+                    <p class="course-desc">أتقن برامج التصميم الرائدة Photoshop و Illustrator وتصميم الهويات البصرية والشعارات الإبداعية بأساليب بصرية متطورة.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 7: Entrepreneurship -->
+            <div class="cyber-card course-card" data-category="advanced">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/entrepreneurship1.webp" alt="ريادة الأعمال" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-advanced">متقدم</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">ريادة الأعمال وإدارة المشاريع</h3>
+                    <p class="course-desc">كيفية التخطيط وإطلاق المشاريع التجارية الناشئة ودراسة الجدوى الاقتصادية وجذب الاستثمارات وبناء استراتيجيات النمو.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 8: Psychology -->
+            <div class="cyber-card course-card" data-category="beginner">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/psychology4.webp" alt="التحليل النفسي" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-beginner">مبتدئ</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">التحليل النفسي والتطوير الذاتي</h3>
+                    <p class="course-desc">تحسين الإنتاجية الفردية وبناء مهارات الثقة والانضباط وفهم آليات تفكير وعواطف المتداول وسلوكيات اتخاذ القرار.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 9: Video Editing -->
+            <div class="cyber-card course-card" data-category="medium">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/video.webp" alt="المونتاج" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-medium">متوسط</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">المونتاج وصناعة الفيديو</h3>
+                    <p class="course-desc">دراسة وتحرير الفيديو وصناعة المؤثرات الصوتية والبصرية باستخدام Adobe Premiere و After Effects بجودة سينمائية ممتازة.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 10: Ecommerce -->
+            <div class="cyber-card course-card" data-category="advanced">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/course5.webp" alt="التجارة الإلكترونية" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-advanced">متقدم</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">التجارة الإلكترونية</h3>
+                    <p class="course-desc">بناء وإدارة المتاجر الرقمية واحتراف تقنيات الشحن ودروبشيبينغ والدفع الإلكتروني لتعظيم معدلات البيع والأرباح.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 11: Soft Skills -->
+            <div class="cyber-card course-card" data-category="beginner">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/course4.webp" alt="تطوير المهارات الشخصية" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-beginner">مبتدئ</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">تطوير المهارات الشخصية</h3>
+                    <p class="course-desc">تنمية مهارات التفاوض، العمل الجماعي، حل النزاعات، الإلقاء الجذاب، وإدارة الوقت والمهام وضغوطات العمل.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+            <!-- Card 12: Content Creation -->
+            <div class="cyber-card course-card" data-category="medium">
+                <div class="course-img-wrapper">
+                    <img src="/pluto/images/course/course5c.webp" alt="صناعة المحتوى" class="course-thumbnail">
+                    <span class="course-difficulty-badge badge-medium">متوسط</span>
+                </div>
+                <div class="course-details">
+                    <h3 class="course-title">صناعة المحتوى والتأثير الرقمي</h3>
+                    <p class="course-desc">كيفية صياغة سيناريوهات المحتوى، والتسجيل، والنشر الفعال وبناء علامة تجارية شخصية قوية على منصات التواصل الاجتماعي.</p>
+                    <a href="subscribe.html" class="cyber-btn-gold" style="width: 100%; justify-content: center;"><i class="ph-bold ph-book-open"></i> استكشاف الكورس</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section class="ecosystem-section">
+        <div class="ecosystem-container">
+            
+            <!-- Platforms Sub-section 1 -->
+            <h3 class="block-title"><i class="ph-bold ph-chart-bar"></i> منصات أسواق المال والتحليل</h3>
+            <div class="platforms-flex-row">
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/images-2-removebg-preview-1.png" alt="MetaTrader 5" class="platform-logo-img">
+                    <h4>MetaTrader 5</h4>
+                </div>
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/images-3-removebg-preview.png" alt="Binance" class="platform-logo-img">
+                    <h4>Binance</h4>
+                </div>
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/TredingView.png" alt="TradingView" class="platform-logo-img">
+                    <h4>TradingView</h4>
+                </div>
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/cm.png" alt="IC Markets" class="platform-logo-img">
+                    <h4>IC Markets</h4>
+                </div>
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/royal.png" alt="One Royal" class="platform-logo-img">
+                    <h4>One Royal</h4>
+                </div>
+            </div>
+
+            <!-- Platforms Sub-section 2 -->
+            <h3 class="block-title"><i class="ph-bold ph-credit-card"></i> منصات الإيداع والسحب الرقمية</h3>
+            <div class="platforms-flex-row">
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/images-3-removebg-preview.png" alt="Binance Pay" class="platform-logo-img">
+                    <h4>Binance Pay</h4>
+                </div>
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/images-1-removebg-preview.png" alt="MetaMask" class="platform-logo-img">
+                    <h4>MetaMask</h4>
+                </div>
+                <div class="cyber-card platform-icon-card">
+                    <img src="/pluto/images/platforms/images-2-removebg-preview.png" alt="Trust Wallet" class="platform-logo-img">
+                    <h4>Trust Wallet</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sponsored Advertisements section -->
+    <section class="ads-section">
+        <h3 class="block-title" style="margin-bottom: 30px;"><i class="ph-bold ph-megaphone"></i> إعلانات وعروض الشركاء</h3>
+        
+        <div class="cyber-card ads-slideshow-container">
+            
+            <!-- Slide 1 -->
+            <div class="ad-slide active">
+                <img src="/pluto/images/ads/company1.webp" class="ad-image-bg">
+                <div class="ad-gradient-overlay"></div>
+                <div class="ad-slide-text">
+                    <span class="ad-tag-label">شريك بلاتيني</span>
+                    <h2 class="ad-slide-title">شركة التكنولوجيا المتطورة</h2>
+                    <p class="ad-slide-desc">مورد الحلول السحابية وشاشات التداول المباشرة للشركات والأفراد لتتبع تغيرات الصفقات اللحظية بدقة متناهية وسرعة فائقة.</p>
+                    <a href="https://google.com" target="_blank" class="cyber-btn-gold"><i class="ph-bold ph-arrow-square-out"></i> زيارة الموقع الإلكتروني</a>
+                </div>
+                <div class="ad-visual-showcase">
+                    <img src="/pluto/images/ads/company1.webp" alt="شركة التكنولوجيا المتطورة" class="ad-showcase-img">
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="ad-slide">
+                <img src="/pluto/images/ads/company2.webp" class="ad-image-bg">
+                <div class="ad-gradient-overlay"></div>
+                <div class="ad-slide-text">
+                    <span class="ad-tag-label">شريك تعليمي</span>
+                    <h2 class="ad-slide-title">أكاديمية المستقبل للتعليم الإلكتروني</h2>
+                    <p class="ad-slide-desc">توفير مناهج واختبارات معتمدة دولياً في العلوم الاقتصادية والتقنية لتمكين المتدربين من نيل شهادات ذات اعتراف مهني.</p>
+                    <a href="https://google.com" target="_blank" class="cyber-btn-gold"><i class="ph-bold ph-arrow-square-out"></i> زيارة الأكاديمية</a>
+                </div>
+                <div class="ad-visual-showcase">
+                    <img src="/pluto/images/ads/company2.webp" alt="أكاديمية المستقبل" class="ad-showcase-img">
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="ad-slide">
+                <img src="/pluto/images/ads/company3.webp" class="ad-image-bg">
+                <div class="ad-gradient-overlay"></div>
+                <div class="ad-slide-text">
+                    <span class="ad-tag-label">شريك تسويقي</span>
+                    <h2 class="ad-slide-title">شركة التسويق الرقمي العربية</h2>
+                    <p class="ad-slide-desc">تنفيذ الحملات الإشهارية وصناعة الوعي بالعلامة التجارية وبناء الهويات البصرية للشركات الناشئة لضمان الريادة السوقية.</p>
+                    <a href="https://google.com" target="_blank" class="cyber-btn-gold"><i class="ph-bold ph-arrow-square-out"></i> تواصل مع المستشار</a>
+                </div>
+                <div class="ad-visual-showcase">
+                    <img src="/pluto/images/ads/company3.webp" alt="التسويق العربي" class="ad-showcase-img">
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <button class="slideshow-arrow arrow-prev" id="prev-ad"><i class="ph-bold ph-caret-right"></i></button>
+            <button class="slideshow-arrow arrow-next" id="next-ad"><i class="ph-bold ph-caret-left"></i></button>
+
+            <div class="slideshow-nav" id="indicators-row">
+                <button class="slideshow-indicator active" data-index="0"></button>
+                <button class="slideshow-indicator" data-index="1"></button>
+                <button class="slideshow-indicator" data-index="2"></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-universe-grid">
+            <div class="footer-brand-hub">
+                <div class="footer-brand-logo-row">
+                    <div class="footer-brand-logo">
+                        <i class="ph-bold ph-planet"></i>
+                    </div>
+                    <span class="brand-name">PLUTO</span>
+                </div>
+                <p class="footer-hub-desc">
+                    المنصة المتكاملة الرائدة في تقديم الحلول التحليلية الفنية والتدريبات الأكاديمية والسيولة لمتداولي أسواق المال العالمية.
+                </p>
+                <div class="footer-social-matrix">
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>المناهج والأدوات</h4>
+                <ul class="footer-links-list">
+                    <li><a href="me.html">لوحة البيانات</a></li>
+                    <li><a href="courses.html">مسار الكورسات</a></li>
+                    <li><a href="prizes.html">برنامج الشراكة</a></li>
+                    <li><a href="subscribe.html">باقات العضوية</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>الدعم والمؤسسة</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="#">سياسة الأمان والخصوصية</a></li>
+                    <li><a href="#">شروط الخدمة والأحكام</a></li>
+                    <li><a href="contact.html">مركز الدعم والمساعدة</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-panel">
+                <h4>تحديثات السيولة والمؤشرات</h4>
+                <p>اشترك لتلقي أهم تقارير غرف التحليل والصفقات الحية مباشرة.</p>
+                <div class="newsletter-form-cyber">
+                    <input type="email" class="newsletter-input-cyber" placeholder="عنوان البريد الإلكتروني">
+                    <button class="newsletter-btn-cyber"><i class="ph-bold ph-paper-plane-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-row">
+            <p>جميع الحقوق محفوظة &copy; 2026 منظومة بلوتو للتداول.</p>
+            <p style="font-family: var(--font-logo); opacity: 0.6; letter-spacing: 1px;">PLUTO QUANT TERMINAL v2.4</p>
+        </div>
+    </footer>
+
+    <!-- Interactive script controllers -->
+    <script>
+        // Sticky Header scroll styling
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Toggle mobile navigation
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.className = 'ph-bold ph-x';
+            } else {
+                icon.className = 'ph-bold ph-list';
+            }
+        });
+
+        // Interactive Filer Grid
+        const filterButtons = document.querySelectorAll('.filter-tab');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                courseCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'flex';
+                        // Add fade animation
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transition = 'opacity 0.4s';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Slideshow advertisements logic
+        const slides = document.querySelectorAll('.ad-slide');
+        const indicators = document.querySelectorAll('.slideshow-indicator');
+        const prevBtn = document.getElementById('prev-ad');
+        const nextBtn = document.getElementById('next-ad');
+
+        let currentSlideIndex = 0;
+        let slideTimer;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+
+            currentSlideIndex = (index + slides.length) % slides.length;
+            slides[currentSlideIndex].classList.add('active');
+            indicators[currentSlideIndex].classList.add('active');
+        }
+
+        function startTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(() => {
+                showSlide(currentSlideIndex + 1);
+            }, 6000);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentSlideIndex - 1);
+            startTimer();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentSlideIndex + 1);
+            startTimer();
+        });
+
+        indicators.forEach(ind => {
+            ind.addEventListener('click', () => {
+                const idx = parseInt(ind.getAttribute('data-index'));
+                showSlide(idx);
+                startTimer();
+            });
+        });
+
+        // Start slide rotation timer on load
+        startTimer();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الدفع والاشتراك | منصة بلوتو للتداول</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="تفعيل العضوية وتأكيد الاشتراك في باقات منصة بلوتو. استخدم بوابات الدفع الإلكترونية السريعة والآمنة وأرسل إيصال التأكيد للدعم الفني.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Outfit:wght@300;400;600;800;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        :root {
+            /* Neon Cyberpunk Theme Colors */
+            --pluto-gold: #f59e0b;
+            --pluto-gold-dark: #b45309;
+            --pluto-gold-glow: rgba(245, 158, 11, 0.22);
+            --pluto-gold-border: rgba(245, 158, 11, 0.15);
+            
+            --neon-purple: #a855f7;
+            --neon-purple-glow: rgba(168, 85, 247, 0.25);
+            --neon-purple-border: rgba(168, 85, 247, 0.18);
+            
+            --neon-cyan: #06b6d4;
+            --neon-cyan-glow: rgba(6, 182, 212, 0.25);
+            
+            --neon-green: #10b981;
+            --neon-green-glow: rgba(16, 185, 129, 0.25);
+            
+            --neon-rose: #f43f5e;
+            --neon-rose-glow: rgba(244, 63, 94, 0.25);
+            
+            /* Dark Backgrounds */
+            --bg-void: #020106;
+            --bg-space: #06030e;
+            --bg-card: rgba(8, 4, 18, 0.7);
+            
+            /* UI Standards */
+            --white: #ffffff;
+            --white-muted: #94a3b8;
+            --border-glass: rgba(255, 255, 255, 0.05);
+            --border-glass-hover: rgba(245, 158, 11, 0.35);
+            
+            /* Typography */
+            --font-ar-heading: 'Tajawal', sans-serif;
+            --font-ar-body: 'Cairo', sans-serif;
+            --font-en: 'Outfit', sans-serif;
+            --font-digital: 'Share Tech Mono', monospace;
+            --font-logo: 'Orbitron', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-void);
+            color: var(--white);
+            font-family: var(--font-ar-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Ambient Cosmic Grid & Constellations (GPU Accelerated) */
+        .cyber-universe {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -5;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Ambient Nebula Blobs */
+        .cosmic-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.25;
+            will-change: transform;
+        }
+
+        .orb-gold {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--pluto-gold) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            animation: orbFloat1 20s infinite alternate ease-in-out;
+        }
+
+        .orb-purple {
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, var(--neon-purple) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: orbFloat2 24s infinite alternate ease-in-out;
+        }
+
+        .orb-cyan {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+            top: 40%;
+            left: 20%;
+            animation: orbFloat3 18s infinite alternate ease-in-out;
+        }
+
+        @keyframes orbFloat1 {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(80px, 60px, 0) scale(1.15); }
+        }
+
+        @keyframes orbFloat2 {
+            0% { transform: translate3d(0, 0, 0) scale(1.1); }
+            100% { transform: translate3d(-70px, -50px, 0) scale(0.95); }
+        }
+
+        @keyframes orbFloat3 {
+            0% { transform: translate3d(0, 0, 0) scale(0.9); }
+            100% { transform: translate3d(60px, -60px, 0) scale(1.2); }
+        }
+
+        /* Twinkling Space dust */
+        .cyber-dust {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -4;
+        }
+
+        .dust-layer-1 {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 
+                150px 200px #fff, 400px 80px #fff, 850px 120px #fff, 980px 450px #fff, 
+                1150px 70px #fff, 1380px 300px #fff, 200px 650px #fff, 550px 750px #fff, 
+                1050px 800px #fff, 1400px 950px #fff, 300px 1050px #fff, 850px 1100px #fff;
+            animation: dustTwinkle 3s infinite alternate;
+        }
+
+        .dust-layer-2 {
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: 
+                250px 120px var(--pluto-gold), 600px 380px var(--pluto-gold), 920px 80px var(--pluto-gold),
+                1300px 180px var(--pluto-gold), 80px 720px var(--pluto-gold), 480px 850px var(--pluto-gold),
+                880px 600px var(--pluto-gold), 1200px 850px var(--pluto-gold), 350px 1150px var(--pluto-gold);
+            animation: dustTwinkle 5s infinite alternate-reverse;
+        }
+
+        @keyframes dustTwinkle {
+            0% { opacity: 0.25; transform: translate3d(0, 0, 0); }
+            100% { opacity: 1; transform: translate3d(-10px, 10px, 0); }
+        }
+
+        /* 3D Cyber Grid Floor */
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(rgba(245, 158, 11, 0.015) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, rgba(245, 158, 11, 0.015) 1.5px, transparent 1.5px);
+            background-size: 70px 70px;
+            z-index: -3;
+            pointer-events: none;
+            opacity: 0.9;
+            transform: perspective(500px) rotateX(65deg) translate3d(-25%, -35%, 0);
+            transform-origin: center top;
+            animation: gridMove 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(500px) rotateX(65deg) translate3d(-25%, -35%, 0); }
+            100% { transform: perspective(500px) rotateX(65deg) translate3d(-25%, calc(-35% + 70px), 0); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-void); }
+        ::-webkit-scrollbar-thumb { background: var(--pluto-gold-dark); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--pluto-gold); }
+
+        /* Command Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 6%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(2, 1, 6, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 16px 6%;
+            background: rgba(2, 1, 6, 0.95);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .brand-logo-container {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--pluto-gold), var(--pluto-gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px var(--pluto-gold-glow);
+            position: relative;
+        }
+
+        .brand-logo-container i {
+            color: #000;
+            font-size: 22px;
+        }
+
+        .brand-name {
+            font-family: var(--font-logo);
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--white) 40%, var(--pluto-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--white-muted);
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--font-ar-heading);
+            transition: all 0.25s;
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pluto-gold);
+            transition: width 0.25s ease;
+            box-shadow: 0 0 8px var(--pluto-gold);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--white);
+        }
+
+        .nav-menu a:hover::after, .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Glass Cards */
+        .cyber-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cyber-card:hover {
+            border-color: var(--border-glass-hover);
+            box-shadow: 0 20px 50px rgba(245, 158, 11, 0.08);
+        }
+
+        /* Premium Buttons */
+        .cyber-btn-gold {
+            background: linear-gradient(135deg, var(--pluto-gold), #d97706);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-family: var(--font-ar-heading);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px var(--pluto-gold-glow);
+        }
+
+        .cyber-btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.45);
+        }
+
+        /* Layout Grid */
+        main {
+            padding: 140px 6% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Page Banner Header */
+        .page-header-block {
+            grid-column: span 2;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            font-size: clamp(32px, 5vw, 54px);
+            font-family: var(--font-ar-heading);
+            font-weight: 900;
+            background: linear-gradient(to bottom, var(--white) 30%, #fcd34d 80%, var(--pluto-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: clamp(15px, 2vw, 18px);
+            color: var(--white-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cyber-badge {
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.22);
+            color: var(--pluto-gold);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Gateways Panel Grid */
+        .gateways-panel-card {
+            padding: 35px;
+        }
+
+        .card-header-title {
+            font-size: 20px;
+            font-weight: 900;
+            font-family: var(--font-ar-heading);
+            color: #fff;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 15px;
+        }
+
+        .card-header-title i {
+            color: var(--pluto-gold);
+            font-size: 24px;
+        }
+
+        .gateways-list-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gateway-node {
+            background: rgba(2, 1, 6, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.25s;
+        }
+
+        .gateway-node:hover {
+            border-color: rgba(245, 158, 11, 0.25);
+            background: rgba(2, 1, 6, 0.9);
+        }
+
+        .gateway-node-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gateway-node-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            font-family: var(--font-ar-heading);
+        }
+
+        .gateway-node-icon {
+            font-size: 20px;
+            color: var(--pluto-gold);
+        }
+
+        .gateway-node-details {
+            font-size: 12px;
+            color: var(--white-muted);
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 10px;
+        }
+
+        /* Form Card Styling */
+        .payment-confirm-card {
+            padding: 35px;
+        }
+
+        .form-group-cyber {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .field-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white-muted);
+        }
+
+        .cyber-input {
+            width: 100%;
+            background: rgba(2, 1, 6, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #fff;
+            font-family: var(--font-ar-body);
+            font-size: 14px;
+            transition: all 0.25s;
+        }
+
+        .cyber-input:focus {
+            border-color: var(--pluto-gold);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+        }
+
+        select.cyber-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: 18px;
+        }
+
+        /* Simulated Receipt Upload preview */
+        .receipt-upload-preview {
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s;
+            background: rgba(2, 1, 6, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .receipt-upload-preview:hover {
+            border-color: var(--pluto-gold);
+            background: rgba(2, 1, 6, 0.8);
+        }
+
+        .receipt-upload-icon {
+            font-size: 32px;
+            color: var(--pluto-gold);
+        }
+
+        .receipt-upload-text {
+            font-size: 13px;
+            color: var(--white-muted);
+        }
+
+        /* Footer System Layout */
+        footer {
+            background: #030207;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 80px 6% 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-universe-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-brand-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--pluto-gold), var(--pluto-gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #000;
+        }
+
+        .footer-hub-desc {
+            color: var(--white-muted);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 320px;
+        }
+
+        .footer-social-matrix {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-matrix-node {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-muted);
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .social-matrix-node:hover {
+            background: var(--pluto-gold);
+            color: #000;
+            border-color: var(--pluto-gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-col h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-family: var(--font-ar-heading);
+        }
+
+        .footer-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links-list a {
+            text-decoration: none;
+            color: var(--white-muted);
+            font-size: 13px;
+            transition: color 0.25s;
+        }
+
+        .footer-links-list a:hover {
+            color: var(--pluto-gold);
+        }
+
+        .newsletter-panel p {
+            font-size: 13px;
+            color: var(--white-muted);
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form-cyber {
+            display: flex;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .newsletter-input-cyber {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 12px 16px;
+            color: #fff;
+            font-family: var(--font-ar-body);
+            font-size: 13px;
+        }
+
+        .newsletter-btn-cyber {
+            background: var(--pluto-gold);
+            color: #000;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+
+        .newsletter-btn-cyber:hover {
+            background: #fff;
+        }
+
+        .footer-bottom-row {
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--white-muted);
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1024px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            .page-header-block {
+                grid-column: span 1;
+            }
+            .footer-universe-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 77px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 77px);
+                background: rgba(2, 1, 6, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 40px;
+                gap: 30px;
+                transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                z-index: 999;
+                text-align: center;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .gateways-list-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-universe-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Cosmic Ambient Background -->
+    <div class="cyber-universe">
+        <div class="cosmic-orb orb-gold"></div>
+        <div class="cosmic-orb orb-purple"></div>
+        <div class="cosmic-orb orb-cyan"></div>
+        <div class="cyber-dust dust-layer-1"></div>
+        <div class="cyber-dust dust-layer-2"></div>
+        <div class="cyber-grid"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header">
+        <a href="me.html" class="brand">
+            <div class="brand-logo-container">
+                <i class="ph-bold ph-planet"></i>
+            </div>
+            <span class="brand-name">PLUTO</span>
+        </a>
+        
+        <ul class="nav-menu" id="nav-links">
+            <li><a href="me.html">الرئيسية</a></li>
+            <li><a href="profile.html">الملف الشخصي</a></li>
+            <li><a href="courses.html">الكورسات</a></li>
+            <li><a href="withdrawals.html">السحوبات</a></li>
+            <li><a href="prizes.html">الجوائز</a></li>
+            <li><a href="heroes.html">ساحة الأبطال</a></li>
+            <li><a href="news.html">الأخبار</a></li>
+            <li><a href="subscribe.html" class="active">بوابة الدفع</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="subscribe.html" class="cyber-btn-gold" style="padding: 10px 22px; font-size: 14px; border-radius: 10px;">
+                <i class="ph-bold ph-user-plus"></i> ابدأ الآن
+            </a>
+            <button class="nav-toggle" id="menu-toggle"><i class="ph-bold ph-list"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+        
+        <!-- Page Title Banner -->
+        <div class="page-header-block">
+            <div class="cyber-badge">
+                تأكيد المدفوعات والاشتراكات
+            </div>
+            <h1 class="page-title">بوابة الدفع الإلكتروني</h1>
+            <p class="page-subtitle">قم باختيار إحدى بوابات الدفع أدناه لتحويل قيمة اشتراك العضوية أو شراء الحساب الممول، ثم املأ نموذج التأكيد.</p>
+        </div>
+
+        <!-- Left Column: Gateways Details List -->
+        <div class="gateways-panel-card cyber-card">
+            <h2 class="card-header-title">
+                <i class="ph-bold ph-wallet"></i>
+                <span>عناوين وحسابات الدفع المتاحة</span>
+            </h2>
+
+            <div class="gateways-list-grid">
+                
+                <!-- Gateway 1 -->
+                <div class="gateway-node">
+                    <div class="gateway-node-header">
+                        <span class="gateway-node-title">البنكي المحلي</span>
+                        <span class="gateway-node-icon"><i class="fa-solid fa-building-columns"></i></span>
+                    </div>
+                    <div class="gateway-node-details">
+                        اسم المستلم: Rahim Global Ltd.<br>
+                        رقم الحساب: 2901-3849-1029-01<br>
+                        الآيبان IBAN: EG8003920193849102901
+                    </div>
+                </div>
+
+                <!-- Gateway 2 -->
+                <div class="gateway-node">
+                    <div class="gateway-node-header">
+                        <span class="gateway-node-title">فودافون كاش</span>
+                        <span class="gateway-node-icon"><i class="ph-bold ph-phone-call"></i></span>
+                    </div>
+                    <div class="gateway-node-details">
+                        الرقم: 01012345678<br>
+                        يرجى إرسال المبلغ بدقة مع حفظ لقطة الشاشة للتأكيد.
+                    </div>
+                </div>
+
+                <!-- Gateway 3 -->
+                <div class="gateway-node">
+                    <div class="gateway-node-header">
+                        <span class="gateway-node-title">اتصالات كاش</span>
+                        <span class="gateway-node-icon"><i class="ph-bold ph-phone-call"></i></span>
+                    </div>
+                    <div class="gateway-node-details">
+                        الرقم: 01112345678<br>
+                        التحويل متاح على مدار الساعة للمحفظة.
+                    </div>
+                </div>
+
+                <!-- Gateway 4 -->
+                <div class="gateway-node">
+                    <div class="gateway-node-header">
+                        <span class="gateway-node-title">أورانج كاش</span>
+                        <span class="gateway-node-icon"><i class="ph-bold ph-phone-call"></i></span>
+                    </div>
+                    <div class="gateway-node-details">
+                        الرقم: 01212345678<br>
+                        بوابة معالجة آمنة وسريعة للمحافظ.
+                    </div>
+                </div>
+
+                <!-- Gateway 5 -->
+                <div class="gateway-node" style="grid-column: span 2;">
+                    <div class="gateway-node-header">
+                        <span class="gateway-node-title">انستاباي InstaPay</span>
+                        <span class="gateway-node-icon"><i class="fa-solid fa-bolt"></i></span>
+                    </div>
+                    <div class="gateway-node-details">
+                        عنوان الدفع (IPA): rahim@instapay<br>
+                        الاسم بالكامل: Rahim Abdelhady
+                    </div>
+                </div>
+
+                <!-- Gateway 6 -->
+                <div class="gateway-node" style="grid-column: span 2;">
+                    <div class="gateway-node-header">
+                        <span class="gateway-node-title">USDT (Binance Pay)</span>
+                        <span class="gateway-node-icon"><i class="fa-solid fa-circle-dollar-to-slot"></i></span>
+                    </div>
+                    <div class="gateway-node-details">
+                        عنوان المحفظة (TRC-20): TXN89327591823759821739812<br>
+                        أو عبر Binance Pay ID: 893275918
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Column: Submission Form -->
+        <div class="payment-confirm-card cyber-card">
+            <h2 class="card-header-title">
+                <i class="ph-bold ph-shield-check"></i>
+                <span>نموذج تأكيد عملية الدفع</span>
+            </h2>
+
+            <form id="payment-confirm-form">
+                
+                <div class="form-group-cyber">
+                    <label class="field-label">حدد بوابة الدفع المستخدمة</label>
+                    <select class="cyber-input" id="payment-gateway" required>
+                        <option value="">-- اختر البوابة --</option>
+                        <option value="البنكي المحلي">البنكي المحلي</option>
+                        <option value="فودافون كاش">فودافون كاش</option>
+                        <option value="اتصالات كاش">اتصالات كاش</option>
+                        <option value="أورانج كاش">أورانج كاش</option>
+                        <option value="انستاباي InstaPay">انستاباي InstaPay</option>
+                        <option value="USDT (Binance Pay)">USDT (Binance Pay)</option>
+                    </select>
+                </div>
+
+                <div class="form-group-cyber">
+                    <label class="field-label">الباقة المطلوبة / نوع المنتج</label>
+                    <select class="cyber-input" id="payment-package" required>
+                        <option value="">-- اختر الباقة أو الحساب الممول --</option>
+                        <option value="اشتراك الباقة الفضية ($99 شهرياً)">اشتراك الباقة الفضية ($99 شهرياً)</option>
+                        <option value="اشتراك الباقة الذهبية ($299 لـ 6 أشهر)">اشتراك الباقة الذهبية ($299 لـ 6 أشهر)</option>
+                        <option value="اشتراك باقة النخبة السنوية ($499 لعام)">اشتراك باقة النخبة السنوية ($499 لعام)</option>
+                        <option value="حساب تداول ممول بقيمة $10k ($99)">حساب تداول ممول بقيمة $10k ($99)</option>
+                        <option value="حساب تداول ممول بقيمة $50k ($299)">حساب تداول ممول بقيمة $50k ($299)</option>
+                        <option value="حساب تداول ممول بقيمة $100k ($499)">حساب تداول ممول بقيمة $100k ($499)</option>
+                    </select>
+                </div>
+
+                <div class="form-group-cyber">
+                    <label class="field-label">الرقم المحول منه / معرف المعاملة (TXID)</label>
+                    <input type="text" class="cyber-input" id="transaction-id" placeholder="اكتب رقم هاتفك أو كود العملية بدقة" required>
+                </div>
+
+                <div class="form-group-cyber">
+                    <label class="field-label">صورة إيصال التحويل (لقطة شاشة)</label>
+                    <div class="receipt-upload-preview" id="receipt-upload-trigger">
+                        <i class="ph-bold ph-cloud-arrow-up receipt-upload-icon"></i>
+                        <span class="receipt-upload-text" id="upload-status-lbl">اضغط هنا لرفع أو تحديد إيصال الدفع</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="cyber-btn-gold" style="width: 100%; justify-content: center; margin-top: 10px;">
+                    <i class="ph-bold ph-paper-plane-tilt"></i> إرسال تأكيد الدفع
+                </button>
+
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-universe-grid">
+            <div class="footer-brand-hub">
+                <div class="footer-brand-logo-row">
+                    <div class="footer-brand-logo">
+                        <i class="ph-bold ph-planet"></i>
+                    </div>
+                    <span class="brand-name">PLUTO</span>
+                </div>
+                <p class="footer-hub-desc">
+                    المنصة المتكاملة الرائدة في تقديم الحلول التحليلية الفنية والتدريبات الأكاديمية والسيولة لمتداولي أسواق المال العالمية.
+                </p>
+                <div class="footer-social-matrix">
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="social-matrix-node"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>المناهج والأدوات</h4>
+                <ul class="footer-links-list">
+                    <li><a href="me.html">لوحة البيانات</a></li>
+                    <li><a href="courses.html">مسار الكورسات</a></li>
+                    <li><a href="prizes.html">برنامج الشراكة</a></li>
+                    <li><a href="subscribe.html">باقات العضوية</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>الدعم والمؤسسة</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="#">سياسة الأمان والخصوصية</a></li>
+                    <li><a href="#">شروط الخدمة والأحكام</a></li>
+                    <li><a href="contact.html">مركز الدعم والمساعدة</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-panel">
+                <h4>تحديثات السيولة والمؤشرات</h4>
+                <p>اشترك لتلقي أهم تقارير غرف التحليل والصفقات الحية مباشرة.</p>
+                <div class="newsletter-form-cyber">
+                    <input type="email" class="newsletter-input-cyber" placeholder="عنوان البريد الإلكتروني">
+                    <button class="newsletter-btn-cyber"><i class="ph-bold ph-paper-plane-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-row">
+            <p>جميع الحقوق محفوظة &copy; 2026 منظومة بلوتو للتداول.</p>
+            <p style="font-family: var(--font-logo); opacity: 0.6; letter-spacing: 1px;">PLUTO QUANT TERMINAL v2.4</p>
+        </div>
+    </footer>
+
+    <!-- Interactive script controllers -->
+    <script>
+        // Sticky Header scroll styling
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Toggle mobile navigation
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.className = 'ph-bold ph-x';
+            } else {
+                icon.className = 'ph-bold ph-list';
+            }
+        });
+
+        // Simulated Image Uploader
+        const uploadTrigger = document.getElementById('receipt-upload-trigger');
+        const statusLabel = document.getElementById('upload-status-lbl');
+        let fileUploaded = false;
+
+        uploadTrigger.addEventListener('click', () => {
+            statusLabel.innerText = "جاري رفع الملف...";
+            uploadTrigger.style.borderColor = "var(--neon-cyan)";
+            
+            setTimeout(() => {
+                statusLabel.innerText = "تم رفع إيصال الدفع بنجاح! (receipt_check.png)";
+                uploadTrigger.style.borderColor = "var(--neon-green)";
+                fileUploaded = true;
+            }, 1200);
+        });
+
+        // Form submission simulation
+        const paymentForm = document.getElementById('payment-confirm-form');
+        paymentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!fileUploaded) {
+                alert('يرجى الضغط على زر رفع الصورة وتحميل لقطة شاشة لإيصال التحويل أولاً لتأكيد المعاملة.');
+                return;
+            }
+
+            const gateway = document.getElementById('payment-gateway').value;
+            const packageVal = document.getElementById('payment-package').value;
+            const txnId = document.getElementById('transaction-id').value;
+
+            alert(`تم استلام طلب تأكيد الدفع بنجاح!\nالبوابة: ${gateway}\nالمنتج: ${packageVal}\nالمرجع: ${txnId}\n\nسيقوم الفريق المالي بمراجعة وتأكيد التحويل وتنشيط حسابك خلال دقائق معدودة.`);
+            paymentForm.reset();
+            statusLabel.innerText = "اضغط هنا لرفع أو تحديد إيصال الدفع";
+            uploadTrigger.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            fileUploaded = false;
+        });
+
+    </script>
+</body>
+</html>
