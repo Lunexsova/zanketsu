@@ -3277,3 +3277,499 @@ html[lang="en"] .quote-icon {
     left: auto;
 }
 
+
+/* ==========================================================================
+   SAND APP SHOWCASE SECTION
+   ========================================================================== */
+:root {
+    --sand-primary: #10b981; /* Emerald Green */
+    --sand-primary-glow: rgba(16, 185, 129, 0.4);
+    --sand-accent: #d4af37; /* Gold */
+    --sand-accent-glow: rgba(212, 175, 55, 0.4);
+    --sand-bg: #030805;
+    --sand-card-bg: rgba(10, 24, 17, 0.55);
+    --sand-card-border: rgba(16, 185, 129, 0.15);
+}
+
+.sand-section {
+    background: radial-gradient(circle at 50% 40%, #061f12 0%, var(--void) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 1.5rem;
+    border-top: 1px solid rgba(16, 185, 129, 0.12);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.12);
+}
+
+.sand-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sand-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sand-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1.9fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 991px) {
+    .sand-grid-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+/* App Showcase Left Column */
+.sand-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.sand-mockup-wrapper {
+    position: relative;
+    width: 290px;
+    height: 560px;
+    background: #040c08;
+    border-radius: 40px;
+    border: 4px solid #11281c;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.15);
+    padding: 10px;
+    margin-bottom: 2rem;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+    will-change: transform, box-shadow;
+}
+
+.sand-mockup-wrapper:hover {
+    transform: translateY(-12px) rotate(1deg);
+    box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(16, 185, 129, 0.3);
+}
+
+/* Phone screen content */
+.sand-phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #05140b 0%, #030805 100%);
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 1.5rem 2rem;
+}
+
+/* Phone Notch */
+.sand-phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 18px;
+    background: #11281c;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    z-index: 10;
+}
+
+.sand-phone-notch::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #08150f;
+    border-radius: 2px;
+}
+
+.sand-app-logo-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sand-app-logo-bg {
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, transparent 75%);
+    border-radius: 50%;
+    animation: sand-pulse-logo 3.5s ease-in-out infinite;
+}
+
+@keyframes sand-pulse-logo {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.25); opacity: 0.95; }
+}
+
+.sand-app-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(16, 185, 129, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.sand-app-meta-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.sand-app-meta-tagline {
+    font-size: 0.8rem;
+    color: var(--sand-accent);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.sand-phone-decorative {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+.sand-phone-bar {
+    height: 6px;
+    background: rgba(16, 185, 129, 0.08);
+    border-radius: 3px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.sand-phone-bar.short {
+    width: 50%;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Glowing Border Download Button */
+.sand-download-btn-wrapper {
+    position: relative;
+    display: inline-flex;
+    border-radius: 12px;
+    padding: 2.5px; /* Border thickness */
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+}
+
+.sand-download-btn-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #10b981 0%,
+        #d4af37 25%,
+        #059669 50%,
+        #d4af37 75%,
+        #10b981 100%
+    );
+    animation: sand-rotate-border 4s linear infinite;
+    z-index: -2;
+}
+
+.sand-download-btn-wrapper:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.35);
+}
+
+@keyframes sand-rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sand-download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.1rem 2.5rem;
+    background: #040e09; /* Matches phone notch/border */
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    outline: none;
+    min-width: 240px;
+}
+
+.sand-download-btn i {
+    font-size: 1.3rem;
+    color: var(--sand-accent);
+    transition: transform 0.3s ease;
+}
+
+.sand-download-btn-wrapper:hover .sand-download-btn {
+    background: #071910;
+    color: #ffffff;
+}
+
+.sand-download-btn-wrapper:hover .sand-download-btn i {
+    transform: translateY(2px);
+}
+
+.sand-download-info {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--silver);
+    opacity: 0.85;
+}
+
+.sand-download-info span {
+    color: var(--sand-primary);
+    font-weight: 700;
+}
+
+/* Features details side */
+.sand-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sand-content .section-tag {
+    color: var(--sand-primary);
+    justify-content: flex-start;
+}
+
+.sand-content .section-title {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+html[lang="en"] .sand-content .section-title {
+    text-align: left;
+}
+
+.sand-desc-long {
+    color: var(--silver);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    text-align: justify;
+}
+
+.sand-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 650px) {
+    .sand-features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
+.sand-feature-card {
+    background: var(--sand-card-bg);
+    border: 1px solid var(--sand-card-border);
+    padding: 1.5rem;
+    border-radius: 14px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sand-feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.04), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.sand-feature-card:hover {
+    border-color: rgba(16, 185, 129, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(16, 185, 129, 0.08);
+}
+
+.sand-feature-card:hover::before {
+    opacity: 1;
+}
+
+.sand-feature-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.sand-feature-icon {
+    font-size: 1.5rem;
+    color: var(--sand-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(16, 185, 129, 0.1);
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.sand-feature-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.sand-feature-desc {
+    font-size: 0.85rem;
+    color: var(--silver);
+    line-height: 1.7;
+}
+
+/* Why Sand Values */
+.sand-values-container {
+    border-top: 1px dashed rgba(16, 185, 129, 0.15);
+    padding-top: 2rem;
+}
+
+.sand-values-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.sand-values-title i {
+    color: var(--sand-primary);
+}
+
+.sand-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+@media (max-width: 650px) {
+    .sand-values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.sand-value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    background: rgba(16, 185, 129, 0.02);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(16, 185, 129, 0.05);
+}
+
+.sand-value-bullet {
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--sand-primary);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+    line-height: 0 !important;
+}
+
+.sand-value-bullet i {
+    font-size: 1.1rem;
+    color: var(--sand-primary);
+    line-height: 1 !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: middle !important;
+}
+
+.sand-value-text {
+    font-size: 0.85rem;
+    color: var(--silver);
+    line-height: 1.6;
+}
+
+.sand-value-text strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+/* LTR layout fixes for Sand App when loaded inside index-en.html */
+html[lang="en"] .sand-content .section-title {
+    text-align: left;
+}
+
+html[lang="en"] .sand-values-title {
+    direction: ltr;
+}
+
+html[lang="en"] .sand-value-item {
+    direction: ltr;
+}
+
+
+
+
