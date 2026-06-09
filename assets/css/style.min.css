@@ -3282,22 +3282,22 @@ html[lang="en"] .quote-icon {
    SAND APP SHOWCASE SECTION
    ========================================================================== */
 :root {
-    --sand-primary: #10b981; /* Emerald Green */
-    --sand-primary-glow: rgba(16, 185, 129, 0.4);
-    --sand-accent: #d4af37; /* Gold */
-    --sand-accent-glow: rgba(212, 175, 55, 0.4);
-    --sand-bg: #030805;
-    --sand-card-bg: rgba(10, 24, 17, 0.55);
-    --sand-card-border: rgba(16, 185, 129, 0.15);
+    --sand-primary: #d4af37; /* Gold */
+    --sand-primary-glow: rgba(212, 175, 55, 0.4);
+    --sand-accent: #f7e7b4; /* Light Gold */
+    --sand-accent-glow: rgba(247, 231, 180, 0.3);
+    --sand-bg: #050508;
+    --sand-card-bg: rgba(15, 15, 20, 0.65);
+    --sand-card-border: rgba(212, 175, 55, 0.12);
 }
 
 .sand-section {
-    background: radial-gradient(circle at 50% 40%, #061f12 0%, var(--void) 100%);
+    background: radial-gradient(circle at 50% 40%, #161208 0%, var(--void) 100%);
     position: relative;
     overflow: hidden;
     padding: 8rem 1.5rem;
-    border-top: 1px solid rgba(16, 185, 129, 0.12);
-    border-bottom: 1px solid rgba(16, 185, 129, 0.12);
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .sand-section::before {
@@ -3307,7 +3307,7 @@ html[lang="en"] .quote-icon {
     left: -10%;
     width: 50%;
     height: 50%;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
     z-index: 0;
     pointer-events: none;
 }
@@ -3319,7 +3319,7 @@ html[lang="en"] .quote-icon {
     right: -10%;
     width: 50%;
     height: 50%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 70%);
     z-index: 0;
     pointer-events: none;
 }
@@ -3355,10 +3355,10 @@ html[lang="en"] .quote-icon {
     position: relative;
     width: 290px;
     height: 560px;
-    background: #040c08;
+    background: #0d0d12;
     border-radius: 40px;
-    border: 4px solid #11281c;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.15);
+    border: 4px solid #282315;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.15);
     padding: 10px;
     margin-bottom: 2rem;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
@@ -3367,14 +3367,14 @@ html[lang="en"] .quote-icon {
 
 .sand-mockup-wrapper:hover {
     transform: translateY(-12px) rotate(1deg);
-    box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 35px 80px -10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 175, 55, 0.25);
 }
 
 /* Phone screen content */
 .sand-phone-screen {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #05140b 0%, #030805 100%);
+    background: linear-gradient(180deg, #18150d 0%, #08080a 100%);
     border-radius: 32px;
     overflow: hidden;
     position: relative;
@@ -3394,7 +3394,7 @@ html[lang="en"] .quote-icon {
     transform: translateX(-50%);
     width: 110px;
     height: 18px;
-    background: #11281c;
+    background: #282315;
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
     z-index: 10;
@@ -3408,7 +3408,7 @@ html[lang="en"] .quote-icon {
     transform: translateX(-50%);
     width: 40px;
     height: 4px;
-    background: #08150f;
+    background: #111116;
     border-radius: 2px;
 }
 
@@ -3423,7 +3423,7 @@ html[lang="en"] .quote-icon {
 .sand-app-logo-bg {
     position: absolute;
     inset: -15px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.35) 0%, transparent 75%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 75%);
     border-radius: 50%;
     animation: sand-pulse-logo 3.5s ease-in-out infinite;
 }
@@ -3440,7 +3440,7 @@ html[lang="en"] .quote-icon {
     border-radius: 24px;
     position: relative;
     z-index: 1;
-    border: 2px solid rgba(16, 185, 129, 0.45);
+    border: 2px solid rgba(212, 175, 55, 0.45);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
@@ -3473,7 +3473,7 @@ html[lang="en"] .quote-icon {
 
 .sand-phone-bar {
     height: 6px;
-    background: rgba(16, 185, 129, 0.08);
+    background: rgba(212, 175, 55, 0.08);
     border-radius: 3px;
     width: 85%;
     margin: 0 auto;
@@ -3493,7 +3493,7 @@ html[lang="en"] .quote-icon {
     overflow: hidden;
     z-index: 1;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
 }
 
 .sand-download-btn-wrapper::before {
@@ -3505,11 +3505,12 @@ html[lang="en"] .quote-icon {
     height: 200%;
     background: conic-gradient(
         from 0deg,
-        #10b981 0%,
-        #d4af37 25%,
-        #059669 50%,
-        #d4af37 75%,
-        #10b981 100%
+        #d4af37 0%,
+        #ff2a85 20%,
+        #8b5cf6 40%,
+        #00f5ff 60%,
+        #ff2a85 80%,
+        #d4af37 100%
     );
     animation: sand-rotate-border 4s linear infinite;
     z-index: -2;
@@ -3517,7 +3518,7 @@ html[lang="en"] .quote-icon {
 
 .sand-download-btn-wrapper:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.45);
 }
 
 @keyframes sand-rotate-border {
@@ -3532,7 +3533,7 @@ html[lang="en"] .quote-icon {
     justify-content: center;
     gap: 0.8rem;
     padding: 1.1rem 2.5rem;
-    background: #040e09; /* Matches phone notch/border */
+    background: #0d0d12; /* Matches phone notch/border */
     color: var(--white);
     text-decoration: none;
     font-weight: 700;
@@ -3548,12 +3549,12 @@ html[lang="en"] .quote-icon {
 
 .sand-download-btn i {
     font-size: 1.3rem;
-    color: var(--sand-accent);
+    color: var(--sand-primary);
     transition: transform 0.3s ease;
 }
 
 .sand-download-btn-wrapper:hover .sand-download-btn {
-    background: #071910;
+    background: #14141c;
     color: #ffffff;
 }
 
@@ -3630,15 +3631,15 @@ html[lang="en"] .sand-content .section-title {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.04), transparent);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.04), transparent);
     opacity: 0;
     transition: opacity 0.4s;
 }
 
 .sand-feature-card:hover {
-    border-color: rgba(16, 185, 129, 0.35);
+    border-color: rgba(212, 175, 55, 0.35);
     transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(16, 185, 129, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.08);
 }
 
 .sand-feature-card:hover::before {
@@ -3654,15 +3655,15 @@ html[lang="en"] .sand-content .section-title {
 
 .sand-feature-icon {
     font-size: 1.5rem;
-    color: var(--sand-accent);
+    color: var(--sand-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(212, 175, 55, 0.08);
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .sand-feature-title {
@@ -3679,7 +3680,7 @@ html[lang="en"] .sand-content .section-title {
 
 /* Why Sand Values */
 .sand-values-container {
-    border-top: 1px dashed rgba(16, 185, 129, 0.15);
+    border-top: 1px dashed rgba(212, 175, 55, 0.15);
     padding-top: 2rem;
 }
 
@@ -3714,14 +3715,14 @@ html[lang="en"] .sand-content .section-title {
     display: flex;
     align-items: flex-start;
     gap: 0.8rem;
-    background: rgba(16, 185, 129, 0.02);
+    background: rgba(212, 175, 55, 0.015);
     padding: 0.8rem 1rem;
     border-radius: 8px;
-    border: 1px solid rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.04);
 }
 
 .sand-value-bullet {
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(212, 175, 55, 0.12);
     color: var(--sand-primary);
     border-radius: 50%;
     width: 32px;
