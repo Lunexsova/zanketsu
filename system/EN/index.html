@@ -11,11 +11,16 @@
       document.documentElement.setAttribute('data-theme', savedTheme);
 
       var userLang = localStorage.getItem('zan_user_lang');
-      if (!userLang) {
-        var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        if (browserLang.startsWith('ar')) {
-          window.location.replace('../index.html');
+      if (userLang === 'ar') {
+        var target = window.location.pathname;
+        if (target.endsWith('EN/index.html')) {
+          target = target.replace('EN/index.html', 'index.html');
+        } else if (target.endsWith('EN/')) {
+          target = target.replace('EN/', 'index.html');
+        } else {
+          target = '../index.html';
         }
+        window.location.replace(target);
       }
     })();
   </script>
