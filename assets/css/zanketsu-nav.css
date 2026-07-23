@@ -1,0 +1,269 @@
+/* Shared Zanketsu Navigation Header CSS */
+
+.zank-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 2rem;
+  background: var(--glass-bg, rgba(15, 15, 19, 0.85));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color, rgba(226, 199, 153, 0.12));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  direction: rtl;
+  transition: all 0.4s ease;
+}
+
+.zank-nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.zank-nav-logo .logo-img {
+  height: clamp(35px, 4.5vw, 48px);
+  width: auto;
+  object-fit: contain;
+}
+
+.zank-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.zank-nav-links li a {
+  font-family: var(--font-arabic, 'Cairo', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary, #a1a1aa);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.zank-nav-links li a i {
+  font-size: 1.1rem;
+  color: var(--gold-primary, #e2c799);
+}
+
+.zank-nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-gradient, linear-gradient(135deg, #e2c799 0%, #9e7e55 100%));
+  transition: width 0.25s ease;
+}
+
+.zank-nav-links li a:hover,
+.zank-nav-links li a.active {
+  color: var(--text-primary, #ffffff);
+}
+
+.zank-nav-links li a:hover::after,
+.zank-nav-links li a.active::after {
+  width: 100%;
+}
+
+.zank-nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color, rgba(226, 199, 153, 0.15));
+  color: var(--text-primary, #ffffff);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.zank-nav-toggle:hover {
+  background: var(--gold-glow, rgba(226, 199, 153, 0.1));
+  border-color: var(--gold-primary, #e2c799);
+}
+
+/* Mobile Nav Overlay & Drawer */
+.zank-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 8, 10, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  direction: rtl;
+}
+
+.zank-mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.zank-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background: var(--bg-secondary, #0f0f13);
+  border-left: 1px solid var(--border-color, rgba(226, 199, 153, 0.15));
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zank-mobile-overlay.open .zank-mobile-drawer {
+  right: 0;
+}
+
+.zank-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.zank-mobile-header .mobile-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.zank-mobile-close {
+  background: none;
+  border: 1px solid var(--border-color, rgba(226, 199, 153, 0.15));
+  color: var(--text-primary, #ffffff);
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.zank-mobile-close:hover {
+  background: var(--gold-glow, rgba(226, 199, 153, 0.1));
+  border-color: var(--gold-primary, #e2c799);
+}
+
+.zank-mobile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.zank-mobile-links li a {
+  font-family: var(--font-arabic, 'Cairo', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-secondary, #a1a1aa);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.zank-mobile-links li a i {
+  font-size: 1.25rem;
+  color: var(--gold-primary, #e2c799);
+}
+
+.zank-mobile-links li a:hover,
+.zank-mobile-links li a.active {
+  color: var(--text-primary, #ffffff);
+  background: var(--gold-glow, rgba(226, 199, 153, 0.05));
+  border-color: var(--border-color, rgba(226, 199, 153, 0.12));
+}
+
+.zank-mobile-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color, rgba(226, 199, 153, 0.1));
+}
+
+.zank-hero-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--badge-bg, rgba(226, 199, 153, 0.08));
+  border: 1px solid var(--border-color, rgba(226, 199, 153, 0.15));
+  color: var(--gold-primary, #e2c799);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Responsive queries */
+@media (max-width: 1024px) {
+  .zank-nav-links {
+    display: none;
+  }
+  .zank-nav-toggle {
+    display: flex;
+  }
+}
+
+/* LTR Overrides for English Navigation */
+html[lang="en"] .zank-nav,
+html[dir="ltr"] .zank-nav,
+html[lang="en"] .zank-mobile-overlay,
+html[dir="ltr"] .zank-mobile-overlay {
+  direction: ltr !important;
+}
+
+html[lang="en"] .zank-mobile-drawer,
+html[dir="ltr"] .zank-mobile-drawer {
+  right: auto !important;
+  left: -320px !important;
+  border-left: none !important;
+  border-right: 1px solid var(--border-color, rgba(226, 199, 153, 0.15)) !important;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5) !important;
+  transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+html[lang="en"] .zank-mobile-overlay.open .zank-mobile-drawer,
+html[dir="ltr"] .zank-mobile-overlay.open .zank-mobile-drawer {
+  left: 0 !important;
+  right: auto !important;
+}
+
+/* Light mode overlay override */
+[data-theme="light"] .zank-mobile-overlay {
+  background: rgba(246, 244, 239, 0.85) !important;
+}
+
+
