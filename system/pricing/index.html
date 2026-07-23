@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!-- Theme Initialization to prevent flash -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('zanketsu-theme') || localStorage.getItem('zan_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <!-- Premium Layout & Navigation Helper -->
+  <link rel="stylesheet" href="../../../assets/css/tool-layout.css">
+  <script src="../../../assets/js/tool-bootstrap.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════════
+       SEO CORE — Zanketsu — Professional Price List Maker
+       ═══════════════════════════════════════════════ -->
+  <title>Zanketsu — Professional Price List Maker | Build Your List in One Minute</title>
+  <meta name="description" content="Create a clear and professional service price list for your salon clinic or gym with your logo and brand colors then display or print it free from Zanketsu no design skills needed">
+  <meta name="keywords" content="Zanketsu zanketsu zanketsu price list maker professional free salon clinic gym logo design pricing display print">
+  <meta name="author" content="Zanketsu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Canonical & Hreflang -->
+  <link rel="canonical" href="https://zanketsu.com/system/EN/pricing/">
+  <link rel="alternate" hreflang="en" href="https://zanketsu.com/system/EN/pricing/">
+  <link rel="alternate" hreflang="ar" href="https://zanketsu.com/system/pricing/">
+  <link rel="alternate" hreflang="x-default" href="https://zanketsu.com/system/pricing/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zanketsu.com/system/EN/pricing/">
+  <meta property="og:site_name" content="Zanketsu">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Zanketsu — Professional Price List Maker | Build Your List in One Minute">
+  <meta property="og:description" content="Create a clear and professional service price list for your salon clinic or gym with your logo and brand colors then display or print it free from Zanketsu no design skills needed">
+  <meta property="og:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zanketsu — Professional Price List Maker | Build Your List in One Minute">
+  <meta name="twitter:description" content="Create a clear and professional service price list for your salon clinic or gym with your logo and brand colors then display or print it free from Zanketsu no design skills needed">
+  <meta name="twitter:image" content="https://zanketsu.com/img/og/tools-hub.webp">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://zanketsu.com/system/EN/pricing/#tool",
+        "name": "Professional Price List Maker",
+        "url": "https://zanketsu.com/system/EN/pricing/",
+        "description": "Create a clear and professional service price list for your salon clinic or gym with your logo and brand colors then display or print it free from Zanketsu no design skills needed",
+        "applicationCategory": "Marketing Tools",
+        "operatingSystem": "Web Browser",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Zanketsu",
+          "url": "https://zanketsu.com"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://zanketsu.com/system/EN/pricing/#webpage",
+        "url": "https://zanketsu.com/system/EN/pricing/",
+        "name": "Zanketsu — Professional Price List Maker | Build Your List in One Minute",
+        "isPartOf": {"@id": "https://zanketsu.com/EN/#website"},
+        "inLanguage": "en",
+        "description": "Create a clear and professional service price list for your salon clinic or gym with your logo and brand colors then display or print it free from Zanketsu no design skills needed"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zanketsu.com/EN/"},
+          {"@type": "ListItem", "position": 2, "name": "Business Tools", "item": "https://zanketsu.com/system/EN/"},
+          {"@type": "ListItem", "position": 3, "name": "Professional Price List Maker", "item": "https://zanketsu.com/system/EN/pricing/"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph / Facebook --><!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="pricing.css">
+
+  <!-- JSON-LD Structured Data / SEO Schema -->
+
+  <script>
+    // Overriding HTMLInputElement.prototype.value to fallback to placeholder if empty
+    (function() {
+      const descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+      Object.defineProperty(HTMLInputElement.prototype, 'value', {
+        get: function() {
+          const val = descriptor.get.call(this);
+          if (val === '' && this.placeholder && (this.type === 'number' || this.type === 'text')) {
+            return this.placeholder;
+          }
+          return val;
+        },
+        set: function(val) {
+          descriptor.set.call(this, val);
+        },
+        configurable: true
+      });
+      
+      // Dispatch change event on currency input keypress to trigger calculations instantly
+      document.addEventListener('input', function(e) {
+        if (e.target && (e.target.id === 'currencySelect' || e.target.id === 'currency')) {
+          e.target.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../img/logo/zank.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="../../../img/logo/zank.ico">
+  <link rel="apple-touch-icon" href="../../../img/logo/zankw.webp">
+</head>
+<body>
+  <!-- nav:zanketsu-shared -->
+  <link rel="stylesheet" href="../../../assets/css/zanketsu-nav.css">
+  <nav class="zank-nav" id="zankNav">
+    <a href="../../../index-en.html" class="zank-nav-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="140" height="38" loading="eager">
+    </a>
+    <ul class="zank-nav-links">
+      <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+      <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+      <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+      <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+      <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+      <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+      <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+    </ul>
+    <button class="zank-nav-toggle" id="zankNavToggle" aria-label="List"><i class="ph-bold ph-list"></i></button>
+  </nav>
+
+  <div class="zank-mobile-overlay" id="zankMobileOverlay">
+    <div class="zank-mobile-drawer">
+      <div class="zank-mobile-header">
+        <a href="../../../index-en.html"><img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="130" height="36"></a>
+        <button class="zank-mobile-close" id="zankMobileClose"><i class="ph-bold ph-x"></i></button>
+      </div>
+      <ul class="zank-mobile-links">
+        <li><a href="../../../index-en.html#vision"><i class="ph-duotone ph-eye"></i> Vision</a></li>
+        <li><a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a></li>
+        <li><a href="../../../index-en.html#timeline"><i class="ph-duotone ph-calendar"></i> Timeline</a></li>
+        <li><a href="../../../marketing-en.html"><i class="ph-duotone ph-coins"></i> Affiliate</a></li>
+        <li><a href="../../../blog/EN/index.html"><i class="ph-duotone ph-book-open"></i> Blog</a></li>
+        <li><a href="../index.html" class="active"><i class="ph-duotone ph-briefcase"></i> Tools</a></li>
+        <li><a href="../../../index-en.html#contact"><i class="ph-duotone ph-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="zank-mobile-footer">
+        <div class="zank-hero-badge"><i class="ph-duotone ph-clock-countdown"></i> Coming in 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var t=document.getElementById("zankNavToggle");
+    var o=document.getElementById("zankMobileOverlay");
+    var c=document.getElementById("zankMobileClose");
+    if(t&&o&&c){
+      t.addEventListener("click",function(){o.classList.add("open");});
+      c.addEventListener("click",function(){o.classList.remove("open");});
+      o.addEventListener("click",function(e){if(e.target===o)o.classList.remove("open");});
+    }
+  })();
+  </script>
+
+  <!-- App Container -->
+  <div class="app-container">
+    <!-- Controls Column -->
+    <main class="calculator-card">
+      <a href="../index.html" class="back-btn"><i class="ph-bold ph-arrow-left"></i> Back to Dashboard</a>
+      
+      <div class="input-group">
+        <label class="input-label" for="currencySelect">Account currency:</label>
+        <input type="text" id="currencySelect" name="" class="form-control" placeholder="SAR" style="background: #111115; border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 0.4rem; border-radius: 4px; outline: none; width: 100%;">
+      </div>
+
+      <h2 class="section-title">
+        <i class="ph-duotone ph-gear"></i>
+        Input and service cost structure
+      </h2>
+
+      <!-- Service Name -->
+      <div class="input-group">
+        <label for="serviceName" class="input-label">Name of the target service:</label>
+        <input class="input-text" id="serviceName" placeholder="A luxurious hair treatment and styling session" type="text"/>
+      </div>
+
+      <!-- Employee Hourly Rate -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">The employee/specialist's hourly wage:</span>
+          <span class="input-value-badge" id="laborRateVal">50 SAR</span>
+        </div>
+        <input type="range" id="laborRate" class="input-range" min="10" max="300" step="5" value="50">
+      </div>
+
+      <!-- Service Duration -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Time taken for service (minutes):</span>
+          <span class="input-value-badge" id="durationVal">60 minute</span>
+        </div>
+        <input type="range" id="duration" class="input-range" min="10" max="240" step="5" value="60">
+      </div>
+
+      <!-- Consumables Cost -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Cost of consumables (shampoo, oils, solutions).):</span>
+          <span class="input-value-badge" id="materialsVal">30 SAR</span>
+        </div>
+        <input type="range" id="materials" class="input-range" min="0" max="500" step="5" value="30">
+      </div>
+
+      <!-- Overhead Share -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Hourly rent and operational utility contribution:</span>
+          <span class="input-value-badge" id="overheadVal">20 SAR</span>
+        </div>
+        <input type="range" id="overhead" class="input-range" min="0" max="200" step="5" value="20">
+      </div>
+
+      <!-- Profit Margin Target -->
+      <div class="input-group">
+        <div class="input-label-row">
+          <span class="input-label">Target profit margin (%):</span>
+          <span class="input-value-badge" id="marginVal">50%</span>
+        </div>
+        <input type="range" id="margin" class="input-range" min="10" max="90" step="5" value="50">
+      </div>
+    </main>
+
+    <!-- Results Column -->
+    <aside class="results-card">
+      <h2 class="section-title section-title-gold">
+        <i class="ph-duotone ph-coins"></i>
+        Analysis and proposed pricing
+      </h2>
+
+      <div class="results-grid">
+        <!-- Cost Price -->
+        <div class="result-box">
+          <span class="result-title">Total actual service cost:</span>
+          <span class="result-value" id="costPriceVal">0.00 SAR</span>
+        </div>
+
+        <!-- Labor Share -->
+        <div class="result-box">
+          <span class="result-title">Labor wage cost:</span>
+          <span class="result-value" id="laborCostVal">0.00 SAR</span>
+        </div>
+
+        <!-- Overhead Share -->
+        <div class="result-box">
+          <span class="result-title">Cost of operation and service facilities:</span>
+          <span class="result-value" id="overheadCostVal">0.00 SAR</span>
+        </div>
+
+        <!-- Net Profit -->
+        <div class="result-box">
+          <span class="result-title">Net service profit:</span>
+          <span class="result-value" style="color: #10b981;" id="netProfitVal">0.00 SAR</span>
+        </div>
+
+        <!-- Proposed Sale Price -->
+        <div class="result-box result-box-highlight">
+          <span class="result-title" style="color: var(--gold);">Proposed selling price to the customer:</span>
+          <span class="result-value result-value-gold" id="suggestedPriceVal">0.00 SAR</span>
+        </div>
+      </div>
+
+      <!-- Visual Breakdown Chart -->
+      <div class="chart-container">
+        <h4 style="font-size: 0.85rem; color: var(--silver); margin-bottom: 0.75rem;"><i class="ph-bold ph-chart-bar"></i> Cost distribution and profitability</h4>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span>Total cost ratio</span>
+              <span id="costPctVal">0%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill" id="costBar" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label-row">
+              <span>Net profit margin</span>
+              <span id="profitPctVal">0%</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill bar-fill-profit" id="profitBar" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promotion Card -->
+      <div class="promo-card">
+        <div class="promo-tag">
+          <i class="ph-duotone ph-rocket-launch animate-pulse"></i>
+          Are you having difficulty controlling margins?
+        </div>
+        <p class="promo-desc">
+          Systems **Zanketsu** Advanced cloud e.g **Tsubaki** For beauty salons and **FLEXHUB-X1** Gyms provide you with a smart inventory of materials and automatically link sales to employee incentive rates to ensure that profits are not leaked.
+        </p>
+        <div style="display:flex; justify-content:center; gap:0.5rem;">
+          <a href="https://wa.me/201202583640" target="_blank" class="promo-btn">
+            <i class="ph-bold ph-chats"></i> Free consultation
+          </a>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="print-row">
+        <button onclick="window.print();" class="btn-secondary">
+          <i class="ph-bold ph-printer"></i> Print the pricing statement
+        </button>
+      </div>
+      
+      <div class="watermark-print">
+        Created and printed by zanketsu.com
+      </div>
+    </aside>
+  </div>
+
+  <!-- Script Block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const laborRateInput = document.getElementById('laborRate');
+      const durationInput = document.getElementById('duration');
+      const materialsInput = document.getElementById('materials');
+      const overheadInput = document.getElementById('overhead');
+      const marginInput = document.getElementById('margin');
+      const currencySelect = document.getElementById('currencySelect');
+
+      function updateCalculations() {
+        const laborRate = parseFloat(laborRateInput.value);
+        const duration = parseFloat(durationInput.value);
+        const materials = parseFloat(materialsInput.value);
+        const overhead = parseFloat(overheadInput.value);
+        const margin = parseFloat(marginInput.value);
+        const currency = currencySelect.value;
+
+        // Update input badges
+        document.getElementById('laborRateVal').textContent = `${laborRate} ${currency}`;
+        document.getElementById('durationVal').textContent = `${duration} minute`;
+        document.getElementById('materialsVal').textContent = `${materials} ${currency}`;
+        document.getElementById('overheadVal').textContent = `${overhead} ${currency}`;
+        document.getElementById('marginVal').textContent = `${margin}%`;
+
+        // Calculations
+        const laborCost = (laborRate * duration) / 60;
+        const overheadCost = (overhead * duration) / 60;
+        const totalCost = laborCost + overheadCost + materials;
+        
+        let salePrice = totalCost / (1 - (margin / 100));
+        if (margin >= 100) salePrice = totalCost * 2;
+        
+        const netProfit = salePrice - totalCost;
+
+        // Update UI Result values
+        document.getElementById('costPriceVal').textContent = `${totalCost.toFixed(2)} ${currency}`;
+        document.getElementById('laborCostVal').textContent = `${laborCost.toFixed(2)} ${currency}`;
+        document.getElementById('overheadCostVal').textContent = `${overheadCost.toFixed(2)} ${currency}`;
+        document.getElementById('netProfitVal').textContent = `${netProfit.toFixed(2)} ${currency}`;
+        document.getElementById('suggestedPriceVal').textContent = `${salePrice.toFixed(2)} ${currency}`;
+
+        // Update Visual Charts
+        const costPct = (totalCost / salePrice) * 100;
+        const profitPct = (netProfit / salePrice) * 100;
+
+        document.getElementById('costPctVal').textContent = `${costPct.toFixed(0)}%`;
+        document.getElementById('profitPctVal').textContent = `${profitPct.toFixed(0)}%`;
+
+        document.getElementById('costBar').style.width = `${costPct}%`;
+        document.getElementById('profitBar').style.width = `${profitPct}%`;
+      }
+
+      // Bind listeners
+      [laborRateInput, durationInput, materialsInput, overheadInput, marginInput].forEach(input => {
+        input.addEventListener('input', updateCalculations);
+      });
+      currencySelect.addEventListener('change', updateCalculations);
+
+      // Initial trigger
+      updateCalculations();
+    });
+  </script>
+
+  <!-- footer:zanketsu-shared -->
+  <footer class="zank-footer" style="margin-top: 5rem;">
+    <a href="../../../index-en.html" class="zank-footer-logo">
+      <img src="../../../img/logo/zankw.webp" alt="Zanketsu" width="160" height="44" loading="lazy">
+    </a>
+    <div class="zank-footer-links">
+      <a href="../../../index-en.html"><i class="ph-duotone ph-house"></i> Home</a>
+      <a href="../index.html"><i class="ph-duotone ph-briefcase"></i> Tools</a>
+      <a href="../../../index-en.html#systems"><i class="ph-duotone ph-cube"></i> Systems</a>
+      <a href="../../../legal-en.html#terms"><i class="ph-duotone ph-shield-check"></i> Terms</a>
+      <a href="../../../legal-en.html#privacy"><i class="ph-duotone ph-lock-key"></i> Privacy</a>
+    </div>
+    <p class="zank-footer-copy">
+      <i class="ph-duotone ph-copyright"></i>
+      <span>All rights reserved</span>
+      <span>&copy; 2026 Zanketsu</span>
+      <span style="font-family: 'Noto Sans JP', sans-serif; opacity: 0.7;">斬決</span>
+    </p>
+  </footer>
+</body>
+</html>
