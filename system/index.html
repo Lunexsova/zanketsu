@@ -854,11 +854,10 @@
       document.documentElement.setAttribute('data-theme', savedTheme);
 
       var userLang = localStorage.getItem('zan_user_lang');
-      if (!userLang) {
-        var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        if (browserLang.startsWith('en')) {
-          window.location.replace('EN/index.html');
-        }
+      if (userLang === 'en') {
+        var target = window.location.pathname.endsWith('/') ? window.location.pathname + 'EN/index.html' : window.location.pathname + '/EN/index.html';
+        target = target.replace('index.html/EN/index.html', 'EN/index.html');
+        window.location.replace(target);
       }
     })();
   </script>
