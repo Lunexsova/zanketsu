@@ -1,0 +1,921 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-arabic: 'Cairo', sans-serif;
+  --font-english: 'Outfit', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease;
+}
+
+/* Dark Mode (Default) */
+[data-theme="dark"], :root:not([data-theme="light"]) {
+  --bg-primary: #08080a;
+  --bg-secondary: #0f0f13;
+  --bg-tertiary: #17171e;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #6e6e77;
+
+  --gold-raw: 226, 199, 153;
+  --gold-primary: #e2c799;
+  --gold-secondary: #c5a880;
+  --gold-dark: #9e7e55;
+  --gold-gradient: linear-gradient(135deg, #e2c799 0%, #c5a880 50%, #9e7e55 100%);
+  --gold-glow: rgba(226, 199, 153, 0.15);
+
+  --border-color: rgba(226, 199, 153, 0.12);
+  --border-hover: rgba(226, 199, 153, 0.35);
+  --glass-bg: rgba(15, 15, 19, 0.75);
+  --glass-border: rgba(226, 199, 153, 0.08);
+  --shadow-primary: rgba(0, 0, 0, 0.6);
+}
+
+/* Light Mode */
+[data-theme="light"] {
+  --bg-primary: #fdfdfc;
+  --bg-secondary: #f6f4ef;
+  --bg-tertiary: #ebe7de;
+  --text-primary: #1c1a17;
+  --text-secondary: #5a544a;
+  --text-muted: #8a8275;
+
+  --gold-raw: 168, 136, 84;
+  --gold-primary: #a88854;
+  --gold-secondary: #8c6e3d;
+  --gold-dark: #6e532b;
+  --gold-gradient: linear-gradient(135deg, #a88854 0%, #8c6e3d 50%, #6e532b 100%);
+  --gold-glow: rgba(168, 136, 84, 0.1);
+
+  --border-color: rgba(168, 136, 84, 0.28);
+  --border-hover: rgba(168, 136, 84, 0.55);
+  --glass-bg: rgba(246, 244, 239, 0.85);
+  --glass-border: rgba(168, 136, 84, 0.12);
+  --shadow-primary: rgba(168, 136, 84, 0.08);
+
+  /* Remapped Dark-mode specific tool variables */
+  --void: var(--bg-primary) !important;
+  --obsidian: var(--bg-secondary) !important;
+  --ink: var(--bg-tertiary) !important;
+  --white: var(--text-primary) !important;
+  --silver: var(--text-secondary) !important;
+}
+
+/* Header styling */
+.tool-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 80px !important;
+  background: var(--glass-bg) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: var(--transition-smooth) !important;
+  direction: ltr !important;
+}
+
+.tool-header .nav-container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.tool-header .brand img {
+  height: 62px !important;
+  width: auto !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.tool-back-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+  font-family: var(--font-english) !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  padding: 0.6rem 1.2rem !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 50px !important;
+  background: rgba(226, 199, 153, 0.03) !important;
+  transition: var(--transition-fast) !important;
+}
+
+[data-theme="light"] .tool-back-btn {
+  background: rgba(168, 136, 84, 0.03) !important;
+}
+
+.tool-back-btn:hover {
+  border-color: var(--gold-primary) !important;
+  color: var(--gold-primary) !important;
+  box-shadow: 0 0 15px var(--gold-glow) !important;
+  transform: translateX(-3px) !important;
+}
+
+.tool-header .nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+}
+
+/* Save Link Button */
+.tool-copy-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: var(--bg-primary) !important;
+  background: var(--gold-gradient) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.6rem 1.2rem !important;
+  font-family: var(--font-english) !important;
+  font-size: 0.9rem !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: var(--transition-fast) !important;
+  box-shadow: 0 4px 15px var(--gold-glow) !important;
+}
+
+.tool-copy-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(var(--gold-raw), 0.35) !important;
+}
+
+.tool-copy-btn.copied {
+  background: #25d366 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25) !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: transparent !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--gold-primary) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 1.2rem !important;
+  transition: var(--transition-fast) !important;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 12px var(--gold-glow) !important;
+}
+
+/* Theme Toggle Icons */
+.theme-toggle-btn .ph-sun-horizon {
+  display: none !important;
+}
+.theme-toggle-btn .ph-moon-stars {
+  display: block !important;
+}
+
+[data-theme="light"] .theme-toggle-btn .ph-sun-horizon {
+  display: block !important;
+}
+[data-theme="light"] .theme-toggle-btn .ph-moon-stars {
+  display: none !important;
+}
+
+/* Premium Footer (Hidden on Tool Pages as requested) */
+.tool-footer,
+.zank-footer {
+  display: none !important;
+}
+
+.tool-footer .footer-yemeni-grid {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.4 !important;
+  z-index: 1 !important;
+  background-image:
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='none' stroke='%23e2c799' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 80px 80px, 80px 80px, 80px 80px !important;
+}
+
+[data-theme="light"] .tool-footer .footer-yemeni-grid {
+  background-image:
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='none' stroke='%23a88854' stroke-width='1' stroke-opacity='0.15'/%3E%3C/svg%3E") !important;
+}
+
+.tool-footer .container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.tool-footer .footer-top {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr !important;
+  gap: 3rem !important;
+  margin-bottom: 3.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .tool-footer .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+.tool-footer .footer-brand h3 {
+  font-family: var(--font-english) !important;
+  font-size: 1.5rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+  background: var(--gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin-bottom: 1rem !important;
+}
+
+.tool-footer .footer-brand p {
+  font-family: var(--font-english) !important;
+  font-size: 0.9rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.6 !important;
+  max-width: 440px !important;
+}
+
+.tool-footer .footer-links h4 {
+  font-family: var(--font-english) !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.tool-footer .footer-links ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+}
+
+.tool-footer .footer-links ul li a {
+  font-family: var(--font-english) !important;
+  font-size: 0.85rem !important;
+  color: var(--text-secondary) !important;
+  text-decoration: none !important;
+  transition: var(--transition-fast) !important;
+}
+
+.tool-footer .footer-links ul li a:hover {
+  color: var(--gold-primary) !important;
+  padding-left: 4px !important;
+}
+
+.tool-footer .footer-bottom {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-top: 1px solid var(--border-color) !important;
+  padding-top: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  .tool-footer .footer-bottom {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    text-align: center !important;
+  }
+}
+
+.tool-footer .footer-bottom p {
+  font-family: var(--font-english) !important;
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+}
+
+.tool-footer .social-links {
+  display: flex !important;
+  gap: 1rem !important;
+}
+
+.tool-footer .social-icon {
+  width: 38px !important;
+  height: 38px !important;
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: var(--text-secondary) !important;
+  font-size: 1.1rem !important;
+  transition: var(--transition-fast) !important;
+  text-decoration: none !important;
+}
+
+.tool-footer .social-icon:hover {
+  border-color: var(--gold-primary) !important;
+  color: var(--gold-primary) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 14px var(--gold-glow) !important;
+}
+
+/* Push body down under the fixed header */
+body {
+  padding-top: 120px !important;
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
+/* Redesign back-btn inside the tool (remove old button) */
+.back-btn {
+  display: none !important; /* Managed by fixed header back button */
+}
+
+/* Redesign tool containers to look cohesive */
+.container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  padding: 0 1.5rem 4rem !important;
+  flex: 1 !important;
+}
+
+/* Responsive typography & layouts */
+.header h1 {
+  font-family: var(--font-english) !important;
+  font-weight: 900 !important;
+  background: var(--gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.header p {
+  color: var(--text-secondary) !important;
+}
+
+/* Design cards for invoice chooser */
+.design-card {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  transition: var(--transition-smooth) !important;
+}
+
+[data-theme="light"] .design-card {
+  box-shadow: 0 10px 30px rgba(168, 136, 84, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.design-card:hover {
+  border-color: var(--gold-primary) !important;
+  transform: translateY(-8px) !important;
+  box-shadow: 0 15px 35px var(--gold-glow) !important;
+}
+
+.design-name {
+  color: var(--text-primary) !important;
+  font-weight: 800 !important;
+}
+
+.design-desc {
+  color: var(--text-secondary) !important;
+}
+
+/* =========================================================
+   GENERIC OVERRIDES FOR SYSTEM CALCULATORS / TOOLS
+   ========================================================= */
+.calculator-card, 
+.results-card, 
+.tool-card-box, 
+.app-card, 
+.dashboard-card,
+.converter-box,
+.scheduler-box,
+.planner-box,
+.kanban-box,
+.pricing-box,
+.ltv-box,
+.nda-box,
+.consent-box {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-primary) !important;
+  transition: var(--transition-smooth) !important;
+}
+
+[data-theme="light"] .calculator-card, 
+[data-theme="light"] .results-card, 
+[data-theme="light"] .tool-card-box, 
+[data-theme="light"] .app-card, 
+[data-theme="light"] .dashboard-card,
+[data-theme="light"] .converter-box,
+[data-theme="light"] .scheduler-box,
+[data-theme="light"] .planner-box,
+[data-theme="light"] .kanban-box,
+[data-theme="light"] .pricing-box,
+[data-theme="light"] .ltv-box,
+[data-theme="light"] .nda-box,
+[data-theme="light"] .consent-box {
+  box-shadow: 0 10px 30px rgba(168, 136, 84, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Headings in tools */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+/* Inputs, Selects & Textareas inside tools */
+input, select, textarea {
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px !important;
+  padding: 0.65rem 0.85rem !important;
+  font-family: var(--font-english) !important;
+  font-size: 0.92rem !important;
+  transition: var(--transition-fast) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 8px var(--gold-glow) !important;
+  outline: none !important;
+}
+
+/* Buttons inside tools */
+button.btn-primary, 
+button[type="submit"], 
+.action-btn, 
+.calc-btn {
+  background: var(--gold-gradient) !important;
+  color: var(--bg-primary) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: var(--transition-fast) !important;
+  box-shadow: 0 4px 15px var(--gold-glow) !important;
+}
+
+button.btn-primary:hover, 
+button[type="submit"]:hover, 
+.action-btn:hover, 
+.calc-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(var(--gold-raw), 0.35) !important;
+}
+
+/* Labels and Helper Text inside tools */
+label {
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+.help-text, .hint {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem !important;
+}
+
+/* Result outputs */
+.result-value, .highlight-value {
+  color: var(--gold-primary) !important;
+  font-weight: 800 !important;
+}
+
+/* Light mode adaptations for elements using semi-transparent white */
+[data-theme="light"] .input-value-badge,
+[data-theme="light"] .input-value-badge-red {
+  background: rgba(168, 136, 84, 0.08) !important;
+  border: 1px solid rgba(168, 136, 84, 0.15) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .input-range {
+  background: rgba(168, 136, 84, 0.15) !important;
+}
+
+[data-theme="light"] .result-box {
+  background: rgba(168, 136, 84, 0.03) !important;
+  border: 1px solid rgba(168, 136, 84, 0.1) !important;
+}
+
+[data-theme="light"] .chart-container {
+  background: rgba(168, 136, 84, 0.05) !important;
+  border: 1px solid rgba(168, 136, 84, 0.1) !important;
+}
+
+[data-theme="light"] .bar-track {
+  background: rgba(168, 136, 84, 0.1) !important;
+}
+
+[data-theme="light"] .btn-secondary {
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  background: rgba(168, 136, 84, 0.03) !important;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--gold-primary) !important;
+}
+
+/* Explicit Light Mode Override for all tool panels, preview zones, sidebars, and dashboards */
+[data-theme="light"] .monitor-panel,
+[data-theme="light"] .preview-panel,
+[data-theme="light"] .app-container,
+[data-theme="light"] .editor-container,
+[data-theme="light"] .board,
+[data-theme="light"] .main-panel,
+[data-theme="light"] .dashboard,
+[data-theme="light"] .workspace,
+[data-theme="light"] .workspace-container {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .controls-panel,
+[data-theme="light"] .sidebar-panel,
+[data-theme="light"] .sidebar,
+[data-theme="light"] .controls,
+[data-theme="light"] .settings-panel,
+[data-theme="light"] .panel-sidebar {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Redefine card containers within tools */
+[data-theme="light"] .market-card,
+[data-theme="light"] .card,
+[data-theme="light"] .task-card,
+[data-theme="light"] .tool-card-box,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .loyalty-card,
+[data-theme="light"] .template-card {
+  background: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 8px 24px rgba(168, 136, 84, 0.05) !important;
+}
+
+/* Ensure self-contained template documents (invoices, menus, catalogs, NDAs, consents) maintain their original styling */
+.invoice-paper,
+.menu-brochure,
+.consent-document,
+.nda-document,
+.lease-document {
+  --white: #ffffff !important;
+  --silver: #a8a8b3 !important;
+  --void: #0f0f15 !important;
+  --obsidian: #1e1e26 !important;
+  --ink: #14141a !important;
+}
+
+/* Force correct contrast inside dark-themed templates (e.g. style-cyber) to override global styles and inline styles like color: #666 */
+.invoice-paper.style-cyber,
+.invoice-paper.style-cyber * {
+  color: #e0e0e0 !important;
+}
+.invoice-paper.style-cyber h2,
+.invoice-paper.style-cyber h2 * {
+  color: #ffffff !important;
+}
+.invoice-paper.style-cyber p,
+.invoice-paper.style-cyber p * {
+  color: #cccccc !important;
+}
+.invoice-paper.style-cyber p strong {
+  color: #ffffff !important;
+}
+.invoice-paper.style-cyber .inv-meta h1 {
+  color: #6B1E23 !important;
+}
+.invoice-paper.style-cyber .inv-meta-row,
+.invoice-paper.style-cyber .inv-meta-row * {
+  color: #a8a8b3 !important;
+}
+.invoice-paper.style-cyber .inv-meta-row strong {
+  color: #ffffff !important;
+}
+.invoice-paper.style-cyber .inv-detail-block p {
+  color: #ffffff !important;
+}
+.invoice-paper.style-cyber .inv-table th {
+  background: #1a1a24 !important;
+  color: #ffffff !important;
+}
+.invoice-paper.style-cyber .inv-table td {
+  color: #cccccc !important;
+}
+.invoice-paper.style-cyber .inv-summary-table td {
+  color: #a8a8b3 !important;
+}
+.invoice-paper.style-cyber .inv-summary-table tr.total-row td {
+  color: #ffffff !important;
+}
+.invoice-paper.style-cyber .inv-footer {
+  color: #a8a8b3 !important;
+}
+
+/* Specific resets for dark catalog skins to override light theme */
+.menu-brochure.skin-dark,
+.menu-brochure.skin-dark * {
+  color: #f5ead8 !important;
+}
+.menu-brochure.skin-dusk,
+.menu-brochure.skin-dusk * {
+  color: #fdf2e6 !important;
+}
+.menu-brochure.skin-abyss,
+.menu-brochure.skin-abyss * {
+  color: #e0f2f1 !important;
+}
+.menu-brochure.skin-forest,
+.menu-brochure.skin-forest * {
+  color: #e8f5e9 !important;
+}
+
+/* Ensure text inside control panels, monitors, and sidebars has high contrast in light mode */
+[data-theme="light"] .monitor-panel h1, [data-theme="light"] .monitor-panel h2, [data-theme="light"] .monitor-panel h3, [data-theme="light"] .monitor-panel h4,
+[data-theme="light"] .controls-panel h1, [data-theme="light"] .controls-panel h2, [data-theme="light"] .controls-panel h3, [data-theme="light"] .controls-panel h4,
+[data-theme="light"] .sidebar-panel h1, [data-theme="light"] .sidebar-panel h2, [data-theme="light"] .sidebar-panel h3, [data-theme="light"] .sidebar-panel h4,
+[data-theme="light"] .editor-container h1, [data-theme="light"] .editor-container h2, [data-theme="light"] .editor-container h3, [data-theme="light"] .editor-container h4,
+[data-theme="light"] .tool-header h1, [data-theme="light"] .tool-header h2, [data-theme="light"] .tool-header h3, [data-theme="light"] .tool-header h4,
+[data-theme="light"] .asset-name,
+[data-theme="light"] .asset-price,
+[data-theme="light"] .panel-title,
+[data-theme="light"] .section-title,
+[data-theme="light"] .card-title,
+[data-theme="light"] .task-title,
+[data-theme="light"] .tool-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .monitor-panel label, [data-theme="light"] .controls-panel label, [data-theme="light"] .sidebar-panel label, [data-theme="light"] .editor-container label,
+[data-theme="light"] .asset-symbol,
+[data-theme="light"] .asset-meta,
+[data-theme="light"] .live-status,
+[data-theme="light"] .result-title,
+[data-theme="light"] .input-label,
+[data-theme="light"] .help-text,
+[data-theme="light"] .hint {
+  color: var(--text-secondary) !important;
+}
+
+/* Specific overrides for inputs/selects that have hardcoded styles */
+[data-theme="light"] select,
+[data-theme="light"] select option,
+[data-theme="light"] input,
+[data-theme="light"] textarea {
+  background-color: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Explicit border visibility in light mode for navigation buttons */
+[data-theme="light"] .tool-back-btn,
+[data-theme="light"] .theme-toggle-btn {
+  border: 1px solid rgba(168, 136, 84, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(168, 136, 84, 0.08) !important;
+}
+
+/* Overrides for custom sub-headers/app-headers (e.g. trading page black sub-header bar) */
+[data-theme="light"] .app-header,
+[data-theme="light"] .actions-bar,
+[data-theme="light"] .tool-subheader {
+  background: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+[data-theme="light"] .app-header .header-logo,
+[data-theme="light"] .app-header .header-title,
+[data-theme="light"] .app-header .back-btn {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .app-header .back-btn {
+  border-color: rgba(168, 136, 84, 0.35) !important;
+  background: rgba(168, 136, 84, 0.05) !important;
+}
+
+[data-theme="light"] .app-header .back-btn:hover {
+  border-color: var(--gold-primary) !important;
+  color: var(--gold-primary) !important;
+  background: rgba(168, 136, 84, 0.1) !important;
+}
+
+/* Gold on silver mirror shimmer animation for sub-header titles */
+.app-header .header-title,
+.tool-subheader .header-title {
+  background: linear-gradient(90deg, #b4b4b4 0%, #ebc373 25%, #fafafa 50%, #ebc373 75%, #b4b4b4 100%) !important;
+  background-size: 200% auto !important;
+  color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  animation: mirror-shimmer 4s linear infinite !important;
+  display: inline-block !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  letter-spacing: 0.5px !important;
+}
+
+@keyframes mirror-shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Delete redundant logo inside app sub-headers */
+.app-header .header-logo img,
+.tool-subheader .header-logo img {
+  display: none !important;
+}
+
+.app-header .header-logo,
+.tool-subheader .header-logo {
+  gap: 0 !important;
+  text-decoration: none !important;
+}
+
+/* Redefine active template selector card in light mode to highlight with gold */
+[data-theme="light"] .template-card.active {
+  background: rgba(168, 136, 84, 0.08) !important;
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 15px rgba(168, 136, 84, 0.15) !important;
+}
+
+[data-theme="light"] .template-card i {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="light"] .template-card.active i,
+[data-theme="light"] .template-card.active .template-name {
+  color: var(--gold-primary) !important;
+}
+
+/* Layout overrides for invoice item rows to prevent horizontal overflow */
+.item-control-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr auto !important;
+  gap: 0.6rem !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  padding: 0.8rem !important;
+  border-radius: 6px !important;
+  border: 1px dashed var(--border-color) !important;
+}
+
+[data-theme="light"] .item-control-row {
+  background: rgba(168, 136, 84, 0.03) !important;
+}
+
+.item-control-row .item-desc {
+  grid-column: span 3 !important;
+  width: 100% !important;
+}
+
+.item-control-row .item-price {
+  grid-column: span 1 !important;
+  width: 100% !important;
+}
+
+.item-control-row .item-qty {
+  grid-column: span 1 !important;
+  width: 100% !important;
+}
+
+.item-control-row .delete-row-btn {
+  grid-column: span 1 !important;
+  margin-top: 0 !important;
+}
+
+/* Responsive adjustments for header (260px to 500px) - Single row layout */
+@media (max-width: 600px) {
+  .tool-header {
+    height: 80px !important; /* Keep the original height */
+    position: fixed !important;
+  }
+  
+  .tool-header .nav-container {
+    padding: 0 0.5rem !important;
+    gap: 0.25rem !important;
+    flex-wrap: nowrap !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .tool-header .brand img {
+    height: 62px !important; /* Keep the logo large as it is! */
+    width: auto !important;
+    max-width: 130px !important;
+    object-fit: contain !important;
+  }
+
+  .tool-header .nav-actions {
+    gap: 0.35rem !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .tool-back-btn,
+  .tool-copy-btn {
+    padding: 0.5rem 0.6rem !important;
+    font-size: 0.75rem !important;
+    height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: 50px !important;
+  }
+
+  .theme-toggle-btn {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Reset relative positionings */
+  .tool-header .brand,
+  .theme-toggle-btn {
+    position: static !important;
+  }
+}
+
+@media (max-width: 420px) {
+  /* To prevent wrapping of elements in very small widths, we hide the back button text, but KEEP copy button text */
+  .tool-back-btn span {
+    display: none !important;
+  }
+  
+  .tool-back-btn {
+    width: 36px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+  }
+
+  .tool-copy-btn span {
+    display: inline !important; /* Keep copy button text fully visible */
+  }
+}
+
+@media (max-width: 320px) {
+  /* Scale down widths on extremely narrow screens (less than 320px down to 260px) to prevent overflow */
+  .tool-header .brand img {
+    max-width: 90px !important;
+  }
+  
+  .tool-copy-btn {
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
